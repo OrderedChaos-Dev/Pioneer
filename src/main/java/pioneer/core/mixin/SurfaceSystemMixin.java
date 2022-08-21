@@ -68,7 +68,7 @@ public abstract class SurfaceSystemMixin {
 	            Holder<Biome> holder = manager.getBiome(blockpos1.set(i1, y0 ? 0 : k1, j1));
 	            if (holder.is(PioneerBiomes.RED_ROCK_CANYON.getKey())) {
 	            	flag = true;
-	               this.erodedBadlandsExtension(blockcolumn, i1, j1, k1, level);
+					this.erodedBadlandsExtension(blockcolumn, i1, j1, k1, level);
 	               
 		            int l1 = level.getHeight(Heightmap.Types.WORLD_SURFACE_WG, k, l) + 1;
 		            surfaceRulesContext.updateXZ(i1, j1);
@@ -111,8 +111,6 @@ public abstract class SurfaceSystemMixin {
 		               }
 		            }
 	            }
-	            
-
 			}
 		}
 		if(flag) {
