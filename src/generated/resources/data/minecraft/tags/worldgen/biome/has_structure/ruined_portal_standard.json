@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:pine_meadows",
+    "pioneer:aspen_grove",
+    "pioneer:prairie",
+    "pioneer:autumnal_coniferous_forest",
+    "pioneer:baobab_fields",
+    "pioneer:blossoming_fields",
+    "pioneer:boreal_forest",
+    "pioneer:crystal_lakes",
+    "pioneer:redwoods"
+  ]
+}

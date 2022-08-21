@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "pioneer:sakura_logs"
+    }
+  ],
+  "result": {
+    "item": "pioneer:sakura_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pioneer:coconut"
+    }
+  ],
+  "result": {
+    "item": "pioneer:cracked_coconut",
+    "count": 2
+  }
+}

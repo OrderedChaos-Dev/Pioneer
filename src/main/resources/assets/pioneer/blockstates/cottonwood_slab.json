@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/cottonwood_slab" },
+        "type=top": { "model": "pioneer:block/cottonwood_slab_top" },
+        "type=double": { "model": "pioneer:block/cottonwood_planks" }
+    }
+}

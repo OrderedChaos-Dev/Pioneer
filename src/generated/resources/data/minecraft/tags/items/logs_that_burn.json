@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:stripped_fir_log",
+    "pioneer:fir_log",
+    "pioneer:stripped_pine_log",
+    "pioneer:pine_log",
+    "pioneer:stripped_redwood_log",
+    "pioneer:redwood_log",
+    "pioneer:stripped_willow_log",
+    "pioneer:willow_log",
+    "pioneer:stripped_mangrove_log",
+    "pioneer:mangrove_log",
+    "pioneer:stripped_palm_log",
+    "pioneer:palm_log",
+    "pioneer:stripped_cottonwood_log",
+    "pioneer:cottonwood_log",
+    "pioneer:stripped_aspen_log",
+    "pioneer:aspen_log",
+    "pioneer:stripped_juniper_log",
+    "pioneer:juniper_log",
+    "pioneer:stripped_baobab_log",
+    "pioneer:baobab_log",
+    "pioneer:stripped_maple_log",
+    "pioneer:maple_log",
+    "pioneer:stripped_sakura_log",
+    "pioneer:sakura_log",
+    "pioneer:stripped_tamarack_log",
+    "pioneer:tamarack_log",
+    "pioneer:stripped_joshua_log",
+    "pioneer:joshua_log"
+  ]
+}

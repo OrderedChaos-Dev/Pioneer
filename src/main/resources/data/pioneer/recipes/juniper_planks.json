@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "pioneer:juniper_logs"
+    }
+  ],
+  "result": {
+    "item": "pioneer:juniper_planks",
+    "count": 4
+  }
+}

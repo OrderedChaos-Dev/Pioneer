@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:fir_stairs",
+    "pioneer:pine_stairs",
+    "pioneer:redwood_stairs",
+    "pioneer:willow_stairs",
+    "pioneer:mangrove_stairs",
+    "pioneer:palm_stairs",
+    "pioneer:cottonwood_stairs",
+    "pioneer:aspen_stairs",
+    "pioneer:juniper_stairs",
+    "pioneer:baobab_stairs",
+    "pioneer:maple_stairs",
+    "pioneer:sakura_stairs",
+    "pioneer:tamarack_stairs",
+    "pioneer:joshua_stairs"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "pioneer:block/sakura_door_bottom",
+        "top": "pioneer:block/sakura_door_top"
+    }
+}

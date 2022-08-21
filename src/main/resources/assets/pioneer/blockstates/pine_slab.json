@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/pine_slab" },
+        "type=top": { "model": "pioneer:block/pine_slab_top" },
+        "type=double": { "model": "pioneer:block/pine_planks" }
+    }
+}

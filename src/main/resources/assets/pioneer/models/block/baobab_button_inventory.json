@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_inventory",
+    "textures": {
+        "texture": "pioneer:block/baobab_planks"
+    }
+}

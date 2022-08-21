@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "pioneer:aspen_log"
+    }
+  },
+  "result": {
+    "item": "pioneer:aspen_wood",
+    "count": 3
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "pioneer:willow_logs"
+    }
+  ],
+  "result": {
+    "item": "pioneer:willow_planks",
+    "count": 4
+  }
+}

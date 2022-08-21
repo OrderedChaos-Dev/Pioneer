@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "pioneer:block/tamarack_log",
+        "side": "pioneer:block/tamarack_log"
+    }
+}

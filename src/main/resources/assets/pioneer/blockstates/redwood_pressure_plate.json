@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "pioneer:block/redwood_pressure_plate" },
+        "powered=true": { "model": "pioneer:block/redwood_pressure_plate_down" }
+    }
+}

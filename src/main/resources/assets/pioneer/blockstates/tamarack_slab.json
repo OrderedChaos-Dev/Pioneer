@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/tamarack_slab" },
+        "type=top": { "model": "pioneer:block/tamarack_slab_top" },
+        "type=double": { "model": "pioneer:block/tamarack_planks" }
+    }
+}

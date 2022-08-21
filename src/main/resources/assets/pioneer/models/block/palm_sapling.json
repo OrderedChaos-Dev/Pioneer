@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "pioneer:block/palm_sapling"
+    }
+}

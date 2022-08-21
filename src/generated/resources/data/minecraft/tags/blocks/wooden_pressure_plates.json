@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:fir_pressure_plate",
+    "pioneer:pine_pressure_plate",
+    "pioneer:redwood_pressure_plate",
+    "pioneer:willow_pressure_plate",
+    "pioneer:mangrove_pressure_plate",
+    "pioneer:palm_pressure_plate",
+    "pioneer:cottonwood_pressure_plate",
+    "pioneer:aspen_pressure_plate",
+    "pioneer:juniper_pressure_plate",
+    "pioneer:baobab_pressure_plate",
+    "pioneer:maple_pressure_plate",
+    "pioneer:sakura_pressure_plate",
+    "pioneer:tamarack_pressure_plate",
+    "pioneer:joshua_pressure_plate"
+  ]
+}

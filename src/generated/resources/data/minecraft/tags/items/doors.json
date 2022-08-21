@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:fir_door",
+    "pioneer:pine_door",
+    "pioneer:redwood_door",
+    "pioneer:willow_door",
+    "pioneer:mangrove_door",
+    "pioneer:palm_door",
+    "pioneer:cottonwood_door",
+    "pioneer:aspen_door",
+    "pioneer:juniper_door",
+    "pioneer:baobab_door",
+    "pioneer:maple_door",
+    "pioneer:sakura_door",
+    "pioneer:tamarack_door",
+    "pioneer:joshua_door"
+  ]
+}

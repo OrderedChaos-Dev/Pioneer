@@ -1,0 +1,7 @@
+{
+	"parent": "pioneer:block/rocks0",
+    "textures": {
+        "particle": "block/ice",
+        "0": "block/ice"
+    }
+}

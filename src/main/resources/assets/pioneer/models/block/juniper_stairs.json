@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "pioneer:block/juniper_planks",
+        "top": "pioneer:block/juniper_planks",
+        "side": "pioneer:block/juniper_planks"
+    }
+}

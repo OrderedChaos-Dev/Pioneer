@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "pioneer:block/willow_log",
+        "side": "pioneer:block/willow_log"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:verdant_sands",
+    "pioneer:pine_meadows",
+    "pioneer:autumnal_coniferous_forest",
+    "pioneer:boreal_forest",
+    "pioneer:snowy_boreal_forest",
+    "pioneer:desert_shrubland",
+    "pioneer:overgrown_spires",
+    "pioneer:prairie",
+    "pioneer:redwoods",
+    "pioneer:snowy_boreal_forest",
+    "pioneer:baobab_fields",
+    "pioneer:crystal_lakes",
+    "pioneer:blossoming_fields",
+    "pioneer:aspen_grove"
+  ]
+}

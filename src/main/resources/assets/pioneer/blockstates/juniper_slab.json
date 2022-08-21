@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/juniper_slab" },
+        "type=top": { "model": "pioneer:block/juniper_slab_top" },
+        "type=double": { "model": "pioneer:block/juniper_planks" }
+    }
+}

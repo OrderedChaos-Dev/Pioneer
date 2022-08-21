@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "pioneer:cottonwood_planks"
+    }
+  ],
+  "result": {
+    "item": "pioneer:cottonwood_button"
+  }
+}

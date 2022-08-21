@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "pioneer:block/baobab_planks",
+        "top": "pioneer:block/baobab_planks",
+        "side": "pioneer:block/baobab_planks"
+    }
+}

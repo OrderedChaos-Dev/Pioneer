@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:fir_leaves",
+    "pioneer:pine_leaves",
+    "pioneer:redwood_leaves",
+    "pioneer:willow_leaves",
+    "pioneer:mangrove_leaves",
+    "pioneer:palm_leaves",
+    "pioneer:cottonwood_leaves",
+    "pioneer:aspen_leaves",
+    "pioneer:berried_juniper_leaves",
+    "pioneer:juniper_leaves",
+    "pioneer:baobab_leaves",
+    "pioneer:red_maple_leaves",
+    "pioneer:orange_maple_leaves",
+    "pioneer:purple_maple_leaves",
+    "pioneer:pink_sakura_leaves",
+    "pioneer:white_sakura_leaves",
+    "pioneer:tamarack_leaves",
+    "pioneer:joshua_leaves"
+  ]
+}

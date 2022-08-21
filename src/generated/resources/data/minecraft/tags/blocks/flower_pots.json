@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:potted_palm_sapling",
+    "pioneer:potted_redwood_sapling",
+    "pioneer:potted_fir_sapling",
+    "pioneer:potted_pine_sapling",
+    "pioneer:potted_willow_sapling",
+    "pioneer:potted_mangrove_sapling",
+    "pioneer:potted_baobab_sapling",
+    "pioneer:potted_juniper_sapling",
+    "pioneer:potted_cottonwood_sapling",
+    "pioneer:potted_aspen_sapling",
+    "pioneer:potted_red_maple_sapling",
+    "pioneer:potted_orange_maple_sapling",
+    "pioneer:potted_purple_maple_sapling",
+    "pioneer:potted_pink_sakura_sapling",
+    "pioneer:potted_white_sakura_sapling",
+    "pioneer:potted_tamarack_sapling",
+    "pioneer:potted_joshua_sapling"
+  ]
+}

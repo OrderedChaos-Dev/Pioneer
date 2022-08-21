@@ -1,0 +1,9 @@
+{
+	"required": true,
+	"package": "pioneer.core.mixin",
+	"minVersion": "0.8",
+	"refmap": "pioneer.refmap.json",
+	"mixins": [
+		"SurfaceSystemMixin"
+	]
+}

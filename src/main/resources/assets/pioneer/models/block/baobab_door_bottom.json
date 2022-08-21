@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "pioneer:block/baobab_door_bottom",
+        "top": "pioneer:block/baobab_door_top"
+    }
+}

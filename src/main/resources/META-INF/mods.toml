@@ -1,0 +1,23 @@
+modLoader="javafml" #mandatory
+loaderVersion="[40,)" #mandatory
+license="All rights reserved"
+issueTrackerURL="https://github.com/OrderedChaos-Dev/pioneer/issues" #optional
+
+[[mods]] #mandatory
+modId="pioneer" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Pioneer" #mandatory
+displayURL="https://www.ordered-chaos.dev/" #optional
+logoFile="examplemod.png" #optional
+credits="My three geckos: soup, stew, and broth" #optional
+authors="OrderedChaosDev" #optional
+description='''
+Biomes for the wilds!
+'''
+
+[[dependencies.wildlands]]
+    modId = "blueprint"
+    mandatory = true
+    versionRange = "[5.4.3,)"
+    ordering = "BEFORE"
+    side = "BOTH"

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "pioneer:block/pink_sakura_sapling"
+    }
+}

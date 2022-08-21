@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/sakura_slab" },
+        "type=top": { "model": "pioneer:block/sakura_slab_top" },
+        "type=double": { "model": "pioneer:block/sakura_planks" }
+    }
+}

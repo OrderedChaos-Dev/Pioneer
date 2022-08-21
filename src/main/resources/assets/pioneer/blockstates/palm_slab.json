@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/palm_slab" },
+        "type=top": { "model": "pioneer:block/palm_slab_top" },
+        "type=double": { "model": "pioneer:block/palm_planks" }
+    }
+}

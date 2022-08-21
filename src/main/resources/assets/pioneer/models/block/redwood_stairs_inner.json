@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "pioneer:block/redwood_planks",
+        "top": "pioneer:block/redwood_planks",
+        "side": "pioneer:block/redwood_planks"
+    }
+}

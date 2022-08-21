@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "pioneer:block/redwood_planks"
+    }
+}

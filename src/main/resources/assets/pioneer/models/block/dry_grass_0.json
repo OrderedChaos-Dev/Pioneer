@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "pioneer:block/dry_grass_0"
+    }
+}

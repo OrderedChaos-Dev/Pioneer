@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "pioneer:block/pink_sakura_leaves"
+    }
+}

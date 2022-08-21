@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "pioneer:block/tamarack_log" },
+        "axis=z":   { "model": "pioneer:block/tamarack_log", "x": 90 },
+        "axis=x":   { "model": "pioneer:block/tamarack_log", "x": 90, "y": 90 }
+    }
+}

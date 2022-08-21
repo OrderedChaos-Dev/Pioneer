@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/joshua_slab" },
+        "type=top": { "model": "pioneer:block/joshua_slab_top" },
+        "type=double": { "model": "pioneer:block/joshua_planks" }
+    }
+}

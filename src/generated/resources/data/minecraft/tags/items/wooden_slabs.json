@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:fir_slab",
+    "pioneer:pine_slab",
+    "pioneer:redwood_slab",
+    "pioneer:willow_slab",
+    "pioneer:mangrove_slab",
+    "pioneer:palm_slab",
+    "pioneer:cottonwood_slab",
+    "pioneer:aspen_slab",
+    "pioneer:juniper_slab",
+    "pioneer:baobab_slab",
+    "pioneer:maple_slab",
+    "pioneer:sakura_slab",
+    "pioneer:tamarack_slab",
+    "pioneer:joshua_slab"
+  ]
+}

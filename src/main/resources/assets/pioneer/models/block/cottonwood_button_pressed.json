@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_pressed",
+    "textures": {
+        "texture": "pioneer:block/cottonwood_planks"
+    }
+}

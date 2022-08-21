@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/willow_slab" },
+        "type=top": { "model": "pioneer:block/willow_slab_top" },
+        "type=double": { "model": "pioneer:block/willow_planks" }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "pioneer:fir_trapdoor",
+    "pioneer:pine_trapdoor",
+    "pioneer:redwood_trapdoor",
+    "pioneer:willow_trapdoor",
+    "pioneer:mangrove_trapdoor",
+    "pioneer:palm_trapdoor",
+    "pioneer:cottonwood_trapdoor",
+    "pioneer:aspen_trapdoor",
+    "pioneer:juniper_trapdoor",
+    "pioneer:baobab_trapdoor",
+    "pioneer:maple_trapdoor",
+    "pioneer:sakura_trapdoor",
+    "pioneer:tamarack_trapdoor",
+    "pioneer:joshua_trapdoor"
+  ]
+}

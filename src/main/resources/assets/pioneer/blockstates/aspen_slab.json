@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pioneer:block/aspen_slab" },
+        "type=top": { "model": "pioneer:block/aspen_slab_top" },
+        "type=double": { "model": "pioneer:block/aspen_planks" }
+    }
+}
