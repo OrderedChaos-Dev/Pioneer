@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "pioneer:desert_shrubland",
-    "pioneer:verdant_sands"
+    "pioneer:verdant_sands",
+    "pioneer:red_rock_canyon"
   ]
 }

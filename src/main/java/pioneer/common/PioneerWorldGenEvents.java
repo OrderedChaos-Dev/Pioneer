@@ -7,6 +7,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.biome.Biome.BiomeCategory;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.BiomeDictionary;
@@ -30,7 +31,7 @@ public class PioneerWorldGenEvents {
 			vegetalFeatures.add(PioneerPlacements.TREES_PALM.getHolder().get());
 		}
 		
-		if(biome == Biomes.BADLANDS || biome == Biomes.ERODED_BADLANDS) {
+		if(event.getCategory() == BiomeCategory.MESA) {
 			vegetalFeatures.add(PioneerPlacements.TREES_JUNIPER.getHolder().get());
 		}
 		

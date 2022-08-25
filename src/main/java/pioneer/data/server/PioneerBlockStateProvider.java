@@ -1,4 +1,4 @@
-package pioneer.data.tags;
+package pioneer.data.server;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;

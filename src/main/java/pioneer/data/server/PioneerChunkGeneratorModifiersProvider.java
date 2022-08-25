@@ -1,4 +1,4 @@
-package pioneer.data.tags;
+package pioneer.data.server;
 
 import com.teamabnormals.blueprint.common.world.modification.chunk.ChunkGeneratorModifierProvider;
 import com.teamabnormals.blueprint.common.world.modification.chunk.modifiers.SurfaceRuleModifier;
