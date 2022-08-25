@@ -46,7 +46,7 @@ public class PioneerBiomeTagsProvider extends BiomeTagsProvider {
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_JUNGLE).add(PioneerBiomes.OVERGROWN_SPIRES.getKey());
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_STANDARD).add(PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.ASPEN_GROVE.getKey(), PioneerBiomes.PRAIRIE.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey(),
 				PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BLOSSOMING_FIELDS.getKey(), PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.CRYSTAL_LAKES.getKey(), PioneerBiomes.REDWOODS.getKey(),
-				PioneerBiomes.RED_ROCK_CANYON.getKey());
+				PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.FLOODED_FOREST.getKey());
 		this.tag(BiomeTags.HAS_MINESHAFT_MESA).add(PioneerBiomes.RED_ROCK_CANYON.getKey());
 		this.tag(BiomeTags.HAS_RUINED_PORTAL_MOUNTAIN).add(PioneerBiomes.RED_ROCK_CANYON.getKey());
 
@@ -66,6 +66,7 @@ public class PioneerBiomeTagsProvider extends BiomeTagsProvider {
 		addTags(PioneerBiomes.BLOSSOMING_FIELDS.getKey(), Tags.Biomes.IS_PLAINS, Tags.Biomes.IS_OVERWORLD);
 		addTags(PioneerBiomes.ASPEN_GROVE.getKey(), Tags.Biomes.IS_COLD, Tags.Biomes.IS_COLD_OVERWORLD, Tags.Biomes.IS_OVERWORLD);
 		addTags(PioneerBiomes.RED_ROCK_CANYON.getKey(), Tags.Biomes.IS_LUSH, Tags.Biomes.IS_HOT, Tags.Biomes.IS_HOT_OVERWORLD, Tags.Biomes.IS_SANDY, Tags.Biomes.IS_DRY, Tags.Biomes.IS_DRY_OVERWORLD, Tags.Biomes.IS_OVERWORLD);
+		addTags(PioneerBiomes.FLOODED_FOREST.getKey(), Tags.Biomes.IS_LUSH, Tags.Biomes.IS_WET, Tags.Biomes.IS_WET_OVERWORLD, Tags.Biomes.IS_OVERWORLD);
 	};
 	
 

@@ -46,7 +46,7 @@ public class Pioneer
     	bus.addListener(this::clientSetup);
     	bus.addListener(this::data);
     	
-//    	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PioneerConfig.COMMON_CONFIG);
+    	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PioneerConfig.COMMON_CONFIG);
  
         REGISTRY_HELPER.register(bus);
         PioneerFeatures.FEATURES.register(bus);
@@ -75,7 +75,7 @@ public class Pioneer
     }
     
     private void registerConfigConditions(RegistryEvent.Register<Biome> event) {
-    	DataUtil.registerConfigCondition(MOD_ID, PioneerConfig.INSTANCE);
+//    	DataUtil.registerConfigCondition(MOD_ID, PioneerConfig.INSTANCE);
     }
 
     private void data(GatherDataEvent event) {

@@ -6,7 +6,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -44,6 +46,8 @@ public class PioneerPlacements {
 
 	public static final RegistryObject<PlacedFeature> CRYSTAL_POOL = register("crystal_pool", PioneerConfiguredFeatures.CRYSTAL_POOL, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final RegistryObject<PlacedFeature> AMETHYST_CRYSTALS = register("amethyst_crystals", PioneerConfiguredFeatures.AMETHYST_CRYSTALS, VegetationPlacements.worldSurfaceSquaredWithCount(3));
+	public static final RegistryObject<PlacedFeature> FLOOD_POOL = register("flood_pool", PioneerConfiguredFeatures.FLOOD_POOL, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+	public static final RegistryObject<PlacedFeature> DRIPLEAF = register("dripleaf", PioneerConfiguredFeatures.DRIPLEAF, AquaticPlacements.seagrassPlacement(16));
 	
 	public static final RegistryObject<PlacedFeature> TREES_PALM = register("trees_palm", PioneerVegetationFeatures.TREES_PALM, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
 	public static final RegistryObject<PlacedFeature> TREES_JUNIPER = register("trees_juniper", PioneerVegetationFeatures.TREES_JUNIPER, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1)));
@@ -60,10 +64,14 @@ public class PioneerPlacements {
 	public static final RegistryObject<PlacedFeature> BLOSSOMING_FIELDS_TREES = register("blossoming_fields_trees", PioneerVegetationFeatures.BLOSSOMING_FIELDS_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)));
 	public static final RegistryObject<PlacedFeature> ASPEN_GROVE_TREES = register("aspen_grove_trees", PioneerVegetationFeatures.ASPEN_GROVE_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.2F, 1)));
 //	public static final RegistryObject<PlacedFeature> LUSH_CACTUS = register("lush_cactus", VegetationFeatures.PATCH_CACTUS, PVJPlacements.onceEvery(2));
-	public static final RegistryObject<PlacedFeature> DESERT_AGAVE = register("desert_agave", PioneerVegetationFeatures.DESERT_AGAVE, PioneerPlacements.onceEvery(16));
+	public static final RegistryObject<PlacedFeature> DESERT_AGAVE = register("desert_agave", PioneerVegetationFeatures.DESERT_AGAVE, PioneerPlacements.onceEvery(32));
 	
 	public static RegistryObject<PlacedFeature> register(String name, RegistryObject<ConfiguredFeature<?, ?>> feature, List<PlacementModifier> modifiers) {
 		return PLACED_FEATURES.register(name, () -> new PlacedFeature(feature.getHolder().orElseThrow(), modifiers));
+	}
+	
+	public static RegistryObject<PlacedFeature> register(String name, Holder<ConfiguredFeature<?, ?>> feature, List<PlacementModifier> modifiers) {
+		return PLACED_FEATURES.register(name, () -> new PlacedFeature(feature, modifiers));
 	}
 
 	public static RegistryObject<PlacedFeature> register(String name, RegistryObject<ConfiguredFeature<?, ?>> feature, PlacementModifier... modifiers) {

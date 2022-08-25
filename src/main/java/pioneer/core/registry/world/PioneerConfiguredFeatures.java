@@ -5,7 +5,11 @@ import java.util.OptionalInt;
 import java.util.function.Supplier;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.AquaticFeatures;
 import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -13,10 +17,14 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.BiasedToBottomInt;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SmallDripleafBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -24,6 +32,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConf
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.FeatureSize;
@@ -44,6 +53,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.DeferredRegister;
@@ -88,6 +98,7 @@ public class PioneerConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PURPLE_MAPLE_FALLEN_LEAVES = register("purple_maple_fallen_leaves", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.PURPLE_MAPLE_FALLEN_LEAVES.get().defaultBlockState())));
 	
 	public static final RegistryObject<ConfiguredFeature<?, ?>> AMETHYST_CRYSTALS = register("amethyst_crystals", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, simpleRandomPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SMALL_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.LARGE_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.AMETHYST_CLUSTER.defaultBlockState(), 1)))));
+	public static final RegistryObject<ConfiguredFeature<?, ?>> DRIPLEAF = register("dripleaf", () -> new ConfiguredFeature<>(Feature.SIMPLE_RANDOM_SELECTOR, new SimpleRandomFeatureConfiguration(HolderSet.direct(makeSmallDripleaf(), makeDripleaf(Direction.EAST), makeDripleaf(Direction.WEST), makeDripleaf(Direction.SOUTH), makeDripleaf(Direction.NORTH)))));
 	
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PALM_TREE = register("palm_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new PalmTrunkPlacer(7, 2, 2), new PalmFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.PALM_LOG.get(), PioneerBlocks.PALM_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2), List.of(new CoconutDecorator()))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> BIG_REDWOOD_TREE = register("big_redwood_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new RedwoodTrunkPlacer(31, 23, 17), new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(17, 24)), PioneerBlocks.REDWOOD_LOG.get(), PioneerBlocks.REDWOOD_LEAVES.get(), new TwoLayersFeatureSize(1, 1, 2))));
@@ -124,7 +135,9 @@ public class PioneerConfiguredFeatures {
 	
 	public static final RegistryObject<ConfiguredFeature<?, ?>> CRYSTAL_POOL = register("crystal_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
 					BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.STONE), PlacementUtils.inlinePlaced(CaveFeatures.GLOW_LICHEN), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-	
+	public static final RegistryObject<ConfiguredFeature<?, ?>> FLOOD_POOL = register("flood_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
+			BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(CaveFeatures.DRIPLEAF), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
+
 	public static <FC extends FeatureConfiguration, F extends Feature<FC>> RegistryObject<ConfiguredFeature<?, ?>> register(String name, Supplier<ConfiguredFeature<?, ?>> configuredFeature) {
 		return CONFIGURED_FEATURES.register(name, configuredFeature);
 	}
@@ -166,5 +179,30 @@ public class PioneerConfiguredFeatures {
 																						foliagePlacer, featureSize).ignoreVines().build();
 	}
 	
+	private static Holder<PlacedFeature> makeDripleaf(Direction p_206468_) {
+		return PlacementUtils.inlinePlaced(Feature.BLOCK_COLUMN,
+				new BlockColumnConfiguration(
+						List.of(BlockColumnConfiguration.layer(
+								new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+										.add(UniformInt.of(0, 4), 2).add(ConstantInt.of(0), 1).build()),
+								BlockStateProvider.simple(Blocks.BIG_DRIPLEAF_STEM.defaultBlockState()
+										.setValue(BlockStateProperties.HORIZONTAL_FACING, p_206468_))),
+								BlockColumnConfiguration.layer(ConstantInt.of(1),
+										BlockStateProvider.simple(Blocks.BIG_DRIPLEAF.defaultBlockState()
+												.setValue(BlockStateProperties.HORIZONTAL_FACING, p_206468_)))),
+						Direction.UP, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	}
 
+	private static Holder<PlacedFeature> makeSmallDripleaf() {
+		return PlacementUtils.inlinePlaced(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+						.add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+								Direction.EAST), 1)
+						.add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+								Direction.WEST), 1)
+						.add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+								Direction.NORTH), 1)
+						.add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+								Direction.SOUTH), 1))));
+	}
 }

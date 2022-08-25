@@ -14,7 +14,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.18.2-4.0.0-ALPHA7'
+version = '1.18.2-1.0.0-BETA1'
 group = 'com.pioneer'
 archivesBaseName = 'pioneer'
 

@@ -1,23 +1,24 @@
 package pioneer.common;
 
 import java.util.List;
-import java.util.Set;
 
 import net.minecraft.core.Holder;
+import net.minecraft.data.worldgen.features.CaveFeatures;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Biome.BiomeCategory;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.world.MobSpawnSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import pioneer.common.world.placements.PioneerPlacements;
-import pioneer.common.world.placements.PioneerTreePlacements;
+import pioneer.core.PioneerConfig;
 import pioneer.core.registry.world.PioneerBiomes;
 
 public class PioneerWorldGenEvents {
@@ -27,11 +28,11 @@ public class PioneerWorldGenEvents {
 		ResourceKey<Biome> biome = ResourceKey.create(ForgeRegistries.Keys.BIOMES, event.getName());
 		List<Holder<PlacedFeature>> vegetalFeatures = event.getGeneration().getFeatures(Decoration.VEGETAL_DECORATION);
 		
-		if(biome == Biomes.BEACH) {
+		if(biome == Biomes.BEACH && PioneerConfig.palmTrees.get()) {
 			vegetalFeatures.add(PioneerPlacements.TREES_PALM.getHolder().get());
 		}
 		
-		if(event.getCategory() == BiomeCategory.MESA) {
+		if(event.getCategory() == BiomeCategory.MESA && PioneerConfig.juniperTrees.get()) {
 			vegetalFeatures.add(PioneerPlacements.TREES_JUNIPER.getHolder().get());
 		}
 		
@@ -73,6 +74,14 @@ public class PioneerWorldGenEvents {
 			vegetalFeatures.add(PioneerPlacements.PURPLE_MAPLE_FALLEN_LEAVES.getHolder().get());
 		} else if(biome == PioneerBiomes.RED_ROCK_CANYON.getKey()) {
 
+		} else if(biome == PioneerBiomes.FLOODED_FOREST.getKey()) {
+			vegetalFeatures.add(PioneerPlacements.FLOOD_POOL.getHolder().get());
+			vegetalFeatures.add(VegetationPlacements.FLOWER_SWAMP);
+			vegetalFeatures.add(VegetationPlacements.PATCH_GRASS_PLAIN);
+			vegetalFeatures.add(VegetationPlacements.PATCH_WATERLILY);
+			vegetalFeatures.add(AquaticPlacements.SEAGRASS_NORMAL);
+			vegetalFeatures.add(VegetationPlacements.PATCH_SUGAR_CANE_SWAMP);
+			vegetalFeatures.add(PioneerPlacements.DRIPLEAF.getHolder().get());
 		}
 	}
 }

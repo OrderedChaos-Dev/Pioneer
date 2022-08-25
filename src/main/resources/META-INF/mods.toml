@@ -15,7 +15,7 @@ description='''
 Biomes for the wilds!
 '''
 
-[[dependencies.wildlands]]
+[[dependencies.pioneer]]
     modId = "blueprint"
     mandatory = true
     versionRange = "[5.4.3,)"

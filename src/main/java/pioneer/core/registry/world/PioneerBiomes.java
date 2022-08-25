@@ -3,6 +3,7 @@ package pioneer.core.registry.world;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.BiomeSubRegistryHelper.KeyedBiome;
 
+import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -42,8 +43,9 @@ public class PioneerBiomes {
 	public static final KeyedBiome BLOSSOMING_FIELDS = HELPER.createBiome("blossoming_fields", BlossomingFieldsBiome::blossomingFields);
 	public static final KeyedBiome CRYSTAL_LAKES = HELPER.createBiome("crystal_lakes", CrystalLakesBiome::crystalLakes);
 	public static final KeyedBiome RED_ROCK_CANYON = HELPER.createBiome("red_rock_canyon", RedRockCanyonBiome::redRockCanyon);
+	public static final KeyedBiome FLOODED_FOREST = HELPER.createBiome("flooded_forest", () -> OverworldBiomes.forest(false, false, false));
 
-	// deprecated, since biomes should now be used tags
+	// deprecated, since biomes should now use tags
 	// but including this here just in case for extra compatibility
 	public static void registerBiomeTypes() {
 		BiomeDictionary.addTypes(VERDANT_SANDS.getKey(), Type.SAVANNA, Type.SANDY, Type.LUSH, Type.HOT, Type.DENSE, Type.OVERWORLD);
@@ -60,5 +62,6 @@ public class PioneerBiomes {
 		BiomeDictionary.addTypes(CRYSTAL_LAKES.getKey(), Type.FOREST, Type.WET, Type.COLD, Type.CONIFEROUS, Type.OVERWORLD);
 		BiomeDictionary.addTypes(BLOSSOMING_FIELDS.getKey(), Type.PLAINS, Type.OVERWORLD);
 		BiomeDictionary.addTypes(ASPEN_GROVE.getKey(), Type.FOREST, Type.COLD, Type.OVERWORLD);
+		BiomeDictionary.addTypes(FLOODED_FOREST.getKey(), Type.FOREST, Type.WET, Type.OVERWORLD);
 	}
 }
