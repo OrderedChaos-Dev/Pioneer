@@ -3,10 +3,12 @@ package pioneer.core;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.teamabnormals.blueprint.core.util.DataUtil;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 
+import net.minecraft.core.Registry;
+import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -22,10 +24,11 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import pioneer.client.BlockRendering;
 import pioneer.common.PioneerCompostables;
 import pioneer.common.PioneerWorldGenEvents;
-import pioneer.common.world.placements.PioneerPlacements;
+import pioneer.common.world.surfacerules.RandomThresholdConditionSource;
 import pioneer.core.registry.world.PioneerBiomes;
 import pioneer.core.registry.world.PioneerConfiguredFeatures;
 import pioneer.core.registry.world.PioneerFeatures;
+import pioneer.core.registry.world.PioneerPlacements;
 import pioneer.core.registry.world.PioneerTreePlacers;
 import pioneer.data.server.PioneerBiomeTagsProvider;
 import pioneer.data.server.PioneerBlockTagsProvider;
@@ -75,7 +78,7 @@ public class Pioneer
     }
     
     private void registerConfigConditions(RegistryEvent.Register<Biome> event) {
-//    	DataUtil.registerConfigCondition(MOD_ID, PioneerConfig.INSTANCE);
+    	BuiltinRegistries.register(Registry.CONDITION, new ResourceLocation(MOD_ID, "random_threshold"), RandomThresholdConditionSource.CODEC);
     }
 
     private void data(GatherDataEvent event) {

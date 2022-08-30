@@ -1,21 +1,22 @@
 package pioneer.data.server;
 
+import static net.minecraft.world.level.levelgen.SurfaceRules.ifTrue;
+import static net.minecraft.world.level.levelgen.SurfaceRules.isBiome;
+import static net.minecraft.world.level.levelgen.SurfaceRules.sequence;
+import static net.minecraft.world.level.levelgen.SurfaceRules.state;
+
 import com.teamabnormals.blueprint.common.world.modification.chunk.ChunkGeneratorModifierProvider;
 import com.teamabnormals.blueprint.common.world.modification.chunk.modifiers.SurfaceRuleModifier;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import pioneer.common.world.surfacerules.RandomThresholdConditionSource;
 import pioneer.core.Pioneer;
 import pioneer.core.registry.world.PioneerBiomes;
-import static net.minecraft.world.level.levelgen.SurfaceRules.ifTrue;
-import static net.minecraft.world.level.levelgen.SurfaceRules.isBiome;
-import static net.minecraft.world.level.levelgen.SurfaceRules.sequence;
-import static net.minecraft.world.level.levelgen.SurfaceRules.state;
 
 public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifierProvider {
 
@@ -33,12 +34,15 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 	private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
 	private static final SurfaceRules.RuleSource TERRACOTTA = makeStateRule(Blocks.TERRACOTTA);
 	private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
-	
+    private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+    private static final SurfaceRules.RuleSource COBBLESTONE = makeStateRule(Blocks.COBBLESTONE);
+    private static final SurfaceRules.RuleSource ANDESITE = makeStateRule(Blocks.ANDESITE);
+    private static final SurfaceRules.RuleSource MOSSY_COBBLESTONE = makeStateRule(Blocks.MOSSY_COBBLESTONE);
     private static final SurfaceRules.RuleSource WHITE_TERRACOTTA = makeStateRule(Blocks.WHITE_TERRACOTTA);
     private static final SurfaceRules.RuleSource ORANGE_TERRACOTTA = makeStateRule(Blocks.ORANGE_TERRACOTTA);
     private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
     private static final SurfaceRules.RuleSource RED_SANDSTONE = makeStateRule(Blocks.RED_SANDSTONE);
-    private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+
 	
 	private static final SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 	
@@ -96,32 +100,43 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 	
 	public static final SurfaceRules.RuleSource RED_ROCK_CANYON = ifTrue(isBiome(PioneerBiomes.RED_ROCK_CANYON.getKey()), BADLANDS);
 	
+	public static final SurfaceRules.RuleSource WINDSWEPT_CLIFFS = ifTrue(isBiome(PioneerBiomes.WINDSWEPT_CLIFFS.getKey()),
+																	sequence(ifTrue(random(0.15F), STONE),
+																			ifTrue(random(0.30F), GRAVEL),
+																			ifTrue(random(0.35F), GRASS_BLOCK),
+																			ifTrue(random(0.6F), ANDESITE),
+																			ifTrue(random(0.75F), MOSSY_COBBLESTONE),
+																			COBBLESTONE));
 	
 	@Override
 	protected void registerEntries() {
 		this.entry("verdant_sands_surface_rule")
 			.selects("minecraft:overworld")
-			.addModifier(new SurfaceRuleModifier(VERDANT_SANDS, false));
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), VERDANT_SANDS), false));
 		
 		this.entry("pine_meadows_surface_rule")
 			.selects("minecraft:overworld")
-			.addModifier(new SurfaceRuleModifier(PINE_MEADOWS, false));
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), PINE_MEADOWS), false));
 		
 		this.entry("overgrown_spires_surface_rule")
 			.selects("minecraft:overworld")
-			.addModifier(new SurfaceRuleModifier(OVERGROWN_SPIRES, false));
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), OVERGROWN_SPIRES), false));
 		
 		this.entry("redwoods_surface_rule")
 			.selects("minecraft:overworld")
-			.addModifier(new SurfaceRuleModifier(REDWOODS, false));
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), REDWOODS), false));
 		
 		this.entry("desert_shrubland_surface_rule")
 			.selects("minecraft:overworld")
-			.addModifier(new SurfaceRuleModifier(DESERT_SHRUBLAND, false));
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), DESERT_SHRUBLAND), false));
 		
 		this.entry("red_rock_canyon_surface_rule")
 			.selects("minecraft:overworld")
-			.addModifier(new SurfaceRuleModifier(RED_ROCK_CANYON, false));
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), RED_ROCK_CANYON), false));
+		
+		this.entry("windswept_surface_rule")
+			.selects("minecraft:overworld")
+			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), WINDSWEPT_CLIFFS), false));
 	}
 	
 	private static SurfaceRules.RuleSource makeStateRule(Block block) {
@@ -130,5 +145,9 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 
 	private static SurfaceRules.ConditionSource surfaceNoiseAbove(double noise) {
 		return SurfaceRules.noiseCondition(Noises.SURFACE, noise / 8.25D, Double.MAX_VALUE);
+	}
+	
+	private static RandomThresholdConditionSource random(float threshold) {
+		return new RandomThresholdConditionSource(threshold);
 	}
 }

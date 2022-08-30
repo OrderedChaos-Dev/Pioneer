@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "pioneer:overgrown_spires",
-    "pioneer:crystal_lakes"
+    "pioneer:crystal_lakes",
+    "pioneer:flooded_forest",
+    "pioneer:willow_wetlands"
   ]
 }

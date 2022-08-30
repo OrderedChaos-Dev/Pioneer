@@ -17,9 +17,9 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.ForgeRegistries;
-import pioneer.common.world.placements.PioneerPlacements;
 import pioneer.core.PioneerConfig;
 import pioneer.core.registry.world.PioneerBiomes;
+import pioneer.core.registry.world.PioneerPlacements;
 
 public class PioneerWorldGenEvents {
 
@@ -75,13 +75,17 @@ public class PioneerWorldGenEvents {
 		} else if(biome == PioneerBiomes.RED_ROCK_CANYON.getKey()) {
 
 		} else if(biome == PioneerBiomes.FLOODED_FOREST.getKey()) {
+			vegetalFeatures.add(AquaticPlacements.SEAGRASS_SWAMP);
 			vegetalFeatures.add(PioneerPlacements.FLOOD_POOL.getHolder().get());
-			vegetalFeatures.add(VegetationPlacements.FLOWER_SWAMP);
-			vegetalFeatures.add(VegetationPlacements.PATCH_GRASS_PLAIN);
-			vegetalFeatures.add(VegetationPlacements.PATCH_WATERLILY);
-			vegetalFeatures.add(AquaticPlacements.SEAGRASS_NORMAL);
-			vegetalFeatures.add(VegetationPlacements.PATCH_SUGAR_CANE_SWAMP);
 			vegetalFeatures.add(PioneerPlacements.DRIPLEAF.getHolder().get());
+		} else if(biome == PioneerBiomes.WINDSWEPT_CLIFFS.getKey()) {
+			vegetalFeatures.add(PioneerPlacements.WINDSWEPT_CLIFFS_TREES.getHolder().get());
+			vegetalFeatures.add(PioneerPlacements.WINDSWEPT_SPIKE.getHolder().get());
+		} else if(biome == PioneerBiomes.WILLOW_WETLANDS.getKey()) {
+			vegetalFeatures.add(PioneerPlacements.WILLOW_WETLANDS_TREES.getHolder().get());
+			vegetalFeatures.add(PioneerPlacements.WATER_WILLOW_WETLANDS_TREES.getHolder().get());
+			vegetalFeatures.add(PioneerPlacements.WETLANDS_POOL.getHolder().get());
+			vegetalFeatures.add(AquaticPlacements.SEAGRASS_WARM);
 		}
 	}
 }

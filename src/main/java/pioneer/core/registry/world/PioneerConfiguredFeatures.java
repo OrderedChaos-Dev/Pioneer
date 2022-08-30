@@ -29,7 +29,9 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.CountConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
@@ -89,6 +91,8 @@ public class PioneerConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> DRY_GRASS = register("dry_grass", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new RandomizedIntStateProvider(BlockStateProvider.simple(PioneerBlocks.DRY_GRASS.get()), DryGrassBlock.MODEL, UniformInt.of(0, 1))))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PRAIRIE_GRASS = register("prairie_grass", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(64, 7, 3, PioneerBlocks.PRAIRIE_GRASS.get().defaultBlockState())));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> SPRUCE_BUSH = register("spruce_bush", () -> new ConfiguredFeature<>(Feature.TREE, tree(new StraightTrunkPlacer(1, 0, 0), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), Blocks.SPRUCE_LOG, Blocks.OAK_LEAVES, new TwoLayersFeatureSize(0, 0, 0))));
+	public static final RegistryObject<ConfiguredFeature<?, ?>> OAK_BUSH = register("oak_bush", () -> new ConfiguredFeature<>(Feature.TREE, tree(new StraightTrunkPlacer(1, 0, 0), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), Blocks.OAK_LOG, Blocks.OAK_LEAVES, new TwoLayersFeatureSize(0, 0, 0))));
+	public static final RegistryObject<ConfiguredFeature<?, ?>> WINDSWEPT_SPIKE = register("windswept_spike", () -> new ConfiguredFeature<>(PioneerFeatures.WINDSWEPT_SPIKE.get(), NoneFeatureConfiguration.INSTANCE));
 	
 	public static final RegistryObject<ConfiguredFeature<?, ?>> WHITE_SAKURA_FALLEN_LEAVES = register("white_sakura_fallen_leaves", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.WHITE_SAKURA_FALLEN_LEAVES.get().defaultBlockState())));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PINK_SAKURA_FALLEN_LEAVES = register("pink_sakura_fallen_leaves", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.PINK_SAKURA_FALLEN_LEAVES.get().defaultBlockState())));
@@ -136,8 +140,12 @@ public class PioneerConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> CRYSTAL_POOL = register("crystal_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
 					BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.STONE), PlacementUtils.inlinePlaced(CaveFeatures.GLOW_LICHEN), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> FLOOD_POOL = register("flood_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
-			BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(CaveFeatures.DRIPLEAF), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
+					BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(CaveFeatures.DRIPLEAF), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
+	public static final RegistryObject<ConfiguredFeature<?, ?>> SEA_PICKLE = register("sea_pickle", () ->  new ConfiguredFeature<>(Feature.SEA_PICKLE, new CountConfiguration(3)));
+	public static final RegistryObject<ConfiguredFeature<?, ?>> WETLANDS_POOL = register("wetlands_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
+					BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(SEA_PICKLE.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.02F, UniformInt.of(4, 7), 0.7F)));
 
+	
 	public static <FC extends FeatureConfiguration, F extends Feature<FC>> RegistryObject<ConfiguredFeature<?, ?>> register(String name, Supplier<ConfiguredFeature<?, ?>> configuredFeature) {
 		return CONFIGURED_FEATURES.register(name, configuredFeature);
 	}

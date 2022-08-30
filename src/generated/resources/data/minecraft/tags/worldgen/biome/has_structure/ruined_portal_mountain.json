@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "pioneer:red_rock_canyon"
+    "pioneer:red_rock_canyon",
+    "pioneer:windswept_cliffs"
   ]
 }

@@ -677,7 +677,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -704,7 +704,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -12341,7 +12341,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -12368,7 +12368,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -13097,7 +13097,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -13124,7 +13124,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -13853,7 +13853,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -13880,7 +13880,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -14609,7 +14609,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -14636,7 +14636,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -15365,7 +15365,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -15392,7 +15392,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -30485,7 +30485,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -30512,7 +30512,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -30539,7 +30539,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -30566,7 +30566,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -30575,33 +30575,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            -1.0,
-            -0.35
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "pioneer:prairie"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.9333,
             -0.7666
@@ -30628,6 +30601,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            -1.0,
+            -0.35
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "pioneer:prairie"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             -0.9333,
@@ -30647,7 +30647,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -30674,7 +30674,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31187,7 +31187,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31214,7 +31214,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31241,7 +31241,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31268,7 +31268,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31349,7 +31349,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31376,7 +31376,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31889,7 +31889,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31916,7 +31916,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31943,7 +31943,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -31970,7 +31970,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32051,7 +32051,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32078,7 +32078,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32591,7 +32591,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32618,7 +32618,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32645,7 +32645,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32672,7 +32672,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32681,33 +32681,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.9333,
             -0.7666
@@ -32734,6 +32707,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             -0.9333,
@@ -32753,7 +32753,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -32780,7 +32780,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -33293,7 +33293,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -33320,7 +33320,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -33347,7 +33347,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -33374,7 +33374,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -33383,33 +33383,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.9333,
-            -0.7666
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.9333,
             -0.7666
@@ -33436,6 +33409,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.9333,
+            -0.7666
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             -0.9333,
@@ -33455,7 +33455,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -33482,7 +33482,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -46361,7 +46361,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -46388,7 +46388,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -46469,7 +46469,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -46496,7 +46496,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -46955,7 +46955,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -46982,7 +46982,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -47063,7 +47063,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -47090,7 +47090,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -47549,7 +47549,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -47576,7 +47576,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -47657,7 +47657,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -47684,7 +47684,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48143,7 +48143,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48170,7 +48170,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48251,7 +48251,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48278,7 +48278,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48737,7 +48737,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48764,7 +48764,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48845,7 +48845,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -48872,7 +48872,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -62885,7 +62885,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -62912,7 +62912,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -62939,7 +62939,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -62966,7 +62966,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -62975,33 +62975,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.5666,
-            -0.4
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            -1.0,
-            -0.35
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "pioneer:prairie"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.5666,
             -0.4
@@ -63028,6 +63001,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.5666,
+            -0.4
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            -1.0,
+            -0.35
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "pioneer:prairie"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             -0.5666,
@@ -63047,7 +63047,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63074,7 +63074,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63587,7 +63587,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63614,7 +63614,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63641,7 +63641,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63668,7 +63668,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63749,7 +63749,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -63776,7 +63776,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64289,7 +64289,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64316,7 +64316,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64343,7 +64343,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64370,7 +64370,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64451,7 +64451,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64478,7 +64478,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -64991,7 +64991,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65018,7 +65018,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65045,7 +65045,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65072,7 +65072,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65081,33 +65081,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.5666,
-            -0.4
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.5666,
             -0.4
@@ -65134,6 +65107,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.5666,
+            -0.4
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             -0.5666,
@@ -65153,7 +65153,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65180,7 +65180,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65693,7 +65693,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65720,7 +65720,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65747,7 +65747,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65774,7 +65774,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65783,33 +65783,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.5666,
-            -0.4
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.5666,
             -0.4
@@ -65836,6 +65809,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.5666,
+            -0.4
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             -0.5666,
@@ -65855,7 +65855,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -65882,7 +65882,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -69905,7 +69905,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -69932,7 +69932,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -81569,7 +81569,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -81596,7 +81596,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -82325,7 +82325,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -82352,7 +82352,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -83081,7 +83081,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -83108,7 +83108,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -83837,7 +83837,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -83864,7 +83864,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -84593,7 +84593,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -84620,7 +84620,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:overgrown_spires"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -89183,7 +89183,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -89210,7 +89210,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -103439,7 +103439,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -103466,7 +103466,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -103475,33 +103475,6 @@
             1.0
           ],
           "depth": 0.0,
-          "weirdness": [
-            -0.05,
-            0.05
-          ],
-          "offset": 0.0,
-          "temperature": [
-            -1.0,
-            -0.45
-          ],
-          "humidity": [
-            -1.0,
-            1.0
-          ],
-          "continentalness": [
-            -0.11,
-            1.0
-          ]
-        },
-        "biome": "minecraft:frozen_river"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            0.55,
-            1.0
-          ],
-          "depth": 1.0,
           "weirdness": [
             -0.05,
             0.05
@@ -103525,6 +103498,33 @@
       {
         "parameters": {
           "erosion": [
+            0.55,
+            1.0
+          ],
+          "depth": 1.0,
+          "weirdness": [
+            -0.05,
+            0.05
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -1.0,
+            -0.45
+          ],
+          "humidity": [
+            -1.0,
+            1.0
+          ],
+          "continentalness": [
+            -0.11,
+            1.0
+          ]
+        },
+        "biome": "minecraft:frozen_river"
+      },
+      {
+        "parameters": {
+          "erosion": [
             -1.0,
             -0.375
           ],
@@ -104951,7 +104951,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -104978,7 +104978,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -118829,7 +118829,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -118856,7 +118856,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -129683,7 +129683,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -129710,7 +129710,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -130385,7 +130385,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -130412,7 +130412,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -131087,7 +131087,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -131114,7 +131114,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -131789,7 +131789,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -131816,7 +131816,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -132491,7 +132491,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -132518,7 +132518,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147287,7 +147287,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147314,7 +147314,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147341,7 +147341,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147368,7 +147368,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147377,33 +147377,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            0.4,
-            0.5666
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            -1.0,
-            -0.35
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "pioneer:prairie"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             0.4,
             0.5666
@@ -147430,6 +147403,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            0.4,
+            0.5666
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            -1.0,
+            -0.35
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "pioneer:prairie"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             0.4,
@@ -147449,7 +147449,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147476,7 +147476,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -147989,7 +147989,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148016,7 +148016,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148043,7 +148043,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148070,7 +148070,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148151,7 +148151,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148178,7 +148178,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148691,7 +148691,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148718,7 +148718,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148745,7 +148745,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148772,7 +148772,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148853,7 +148853,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -148880,7 +148880,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -149393,7 +149393,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -149420,7 +149420,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -149447,7 +149447,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -149474,7 +149474,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -149483,33 +149483,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            0.4,
-            0.5666
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             0.4,
             0.5666
@@ -149536,6 +149509,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            0.4,
+            0.5666
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             0.4,
@@ -149555,7 +149555,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -149582,7 +149582,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -150095,7 +150095,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -150122,7 +150122,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -150149,7 +150149,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -150176,7 +150176,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -150185,33 +150185,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            0.4,
-            0.5666
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             0.4,
             0.5666
@@ -150238,6 +150211,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            0.4,
+            0.5666
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             0.4,
@@ -150257,7 +150257,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -150284,7 +150284,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163163,7 +163163,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163190,7 +163190,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163271,7 +163271,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163298,7 +163298,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163757,7 +163757,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163784,7 +163784,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163865,7 +163865,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -163892,7 +163892,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -164351,7 +164351,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -164378,7 +164378,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -164459,7 +164459,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -164486,7 +164486,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -164945,7 +164945,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -164972,7 +164972,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -165053,7 +165053,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -165080,7 +165080,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -165539,7 +165539,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -165566,7 +165566,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -165647,7 +165647,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -165674,7 +165674,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -179687,7 +179687,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -179714,7 +179714,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -179741,7 +179741,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -179768,7 +179768,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -179777,33 +179777,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            0.7666,
-            0.9333
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            -1.0,
-            -0.35
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "pioneer:prairie"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             0.7666,
             0.9333
@@ -179830,6 +179803,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            0.7666,
+            0.9333
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            -1.0,
+            -0.35
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "pioneer:prairie"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             0.7666,
@@ -179849,7 +179849,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -179876,7 +179876,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -180389,7 +180389,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -180416,7 +180416,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -180443,7 +180443,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -180470,7 +180470,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -180551,7 +180551,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -180578,7 +180578,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181091,7 +181091,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181118,7 +181118,7 @@
             0.03
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181145,7 +181145,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181172,7 +181172,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181253,7 +181253,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181280,7 +181280,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181793,7 +181793,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181820,7 +181820,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181847,7 +181847,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181874,7 +181874,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181883,33 +181883,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            0.7666,
-            0.9333
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.1,
-            0.3
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             0.7666,
             0.9333
@@ -181936,6 +181909,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            0.7666,
+            0.9333
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.1,
+            0.3
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             0.7666,
@@ -181955,7 +181955,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -181982,7 +181982,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -182495,7 +182495,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -182522,7 +182522,7 @@
             0.03
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -182549,7 +182549,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -182576,7 +182576,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:stony_peaks"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -182585,33 +182585,6 @@
             -0.375
           ],
           "depth": 0.0,
-          "weirdness": [
-            0.7666,
-            0.9333
-          ],
-          "offset": 0.0,
-          "temperature": [
-            0.2,
-            0.55
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "continentalness": [
-            -0.11,
-            0.03
-          ]
-        },
-        "biome": "blueprint:original_source_marker"
-      },
-      {
-        "parameters": {
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "depth": 1.0,
           "weirdness": [
             0.7666,
             0.9333
@@ -182638,6 +182611,33 @@
             -0.7799,
             -0.375
           ],
+          "depth": 1.0,
+          "weirdness": [
+            0.7666,
+            0.9333
+          ],
+          "offset": 0.0,
+          "temperature": [
+            0.2,
+            0.55
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "continentalness": [
+            -0.11,
+            0.03
+          ]
+        },
+        "biome": "blueprint:original_source_marker"
+      },
+      {
+        "parameters": {
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
           "depth": 0.0,
           "weirdness": [
             0.7666,
@@ -182657,7 +182657,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -182684,7 +182684,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -186707,7 +186707,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -186734,7 +186734,7 @@
             1.0
           ]
         },
-        "biome": "minecraft:swamp"
+        "biome": "pioneer:willow_wetlands"
       },
       {
         "parameters": {
@@ -197561,7 +197561,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -197588,7 +197588,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -198263,7 +198263,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -198290,7 +198290,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -198965,7 +198965,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -198992,7 +198992,7 @@
             1.0
           ]
         },
-        "biome": "blueprint:original_source_marker"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -199667,7 +199667,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -199694,7 +199694,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -200369,7 +200369,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {
@@ -200396,7 +200396,7 @@
             1.0
           ]
         },
-        "biome": "pioneer:baobab_fields"
+        "biome": "pioneer:windswept_cliffs"
       },
       {
         "parameters": {

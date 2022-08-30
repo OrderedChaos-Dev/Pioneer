@@ -1,10 +1,16 @@
-package pioneer.common.world.placements;
+package pioneer.core.registry.world;
 
+import java.util.List;
+
+import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.RegistryObject;
 import pioneer.core.registry.PioneerBlocks;
-import pioneer.core.registry.world.PioneerConfiguredFeatures;
 
 public class PioneerTreePlacements {
 
@@ -35,6 +41,6 @@ public class PioneerTreePlacements {
 	public static final RegistryObject<PlacedFeature> TAMARACK_TREE_CHECKED = PioneerPlacements.register("tamarack_tree_checked", PioneerConfiguredFeatures.TAMARACK_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.TAMARACK_SAPLING.get()));
 	public static final RegistryObject<PlacedFeature> TAMARACK_TREE_BEES_CHECKED = PioneerPlacements.register("tamarack_tree_bees_checked", PioneerConfiguredFeatures.TAMARACK_TREE_BEES_0002, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.TAMARACK_SAPLING.get()));
 	public static final RegistryObject<PlacedFeature> JOSHUA_TREE_CHECKED = PioneerPlacements.register("joshua_tree_checked", PioneerConfiguredFeatures.JOSHUA_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.JOSHUA_SAPLING.get()));
-
+	
 	public static void init() {};
 }

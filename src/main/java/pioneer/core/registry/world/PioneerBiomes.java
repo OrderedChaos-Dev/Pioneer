@@ -20,6 +20,8 @@ import pioneer.common.world.biome.PrairieBiome;
 import pioneer.common.world.biome.RedRockCanyonBiome;
 import pioneer.common.world.biome.RedwoodsBiome;
 import pioneer.common.world.biome.VerdantSandsBiome;
+import pioneer.common.world.biome.WillowWetlandsBiome;
+import pioneer.common.world.biome.WindsweptCliffsBiome;
 import pioneer.core.Pioneer;
 
 @SuppressWarnings("deprecation")
@@ -44,6 +46,8 @@ public class PioneerBiomes {
 	public static final KeyedBiome CRYSTAL_LAKES = HELPER.createBiome("crystal_lakes", CrystalLakesBiome::crystalLakes);
 	public static final KeyedBiome RED_ROCK_CANYON = HELPER.createBiome("red_rock_canyon", RedRockCanyonBiome::redRockCanyon);
 	public static final KeyedBiome FLOODED_FOREST = HELPER.createBiome("flooded_forest", () -> OverworldBiomes.forest(false, false, false));
+	public static final KeyedBiome WINDSWEPT_CLIFFS = HELPER.createBiome("windswept_cliffs", WindsweptCliffsBiome::windsweptCliffs);
+	public static final KeyedBiome WILLOW_WETLANDS = HELPER.createBiome("willow_wetlands", WillowWetlandsBiome::willowWetlands);
 
 	// deprecated, since biomes should now use tags
 	// but including this here just in case for extra compatibility
@@ -63,5 +67,7 @@ public class PioneerBiomes {
 		BiomeDictionary.addTypes(BLOSSOMING_FIELDS.getKey(), Type.PLAINS, Type.OVERWORLD);
 		BiomeDictionary.addTypes(ASPEN_GROVE.getKey(), Type.FOREST, Type.COLD, Type.OVERWORLD);
 		BiomeDictionary.addTypes(FLOODED_FOREST.getKey(), Type.FOREST, Type.WET, Type.OVERWORLD);
+		BiomeDictionary.addTypes(WINDSWEPT_CLIFFS.getKey(), Type.MOUNTAIN, Type.PEAK, Type.OVERWORLD);
+		BiomeDictionary.addTypes(WILLOW_WETLANDS.getKey(), Type.SWAMP, Type.WET, Type.OVERWORLD);
 	}
 }
