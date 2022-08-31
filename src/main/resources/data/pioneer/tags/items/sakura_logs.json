@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:sakura_log",
+	"pioneer:sakura_wood",
+	"pioneer:stripped_sakura_log",
+	"pioneer:stripped_sakura_wood"
+  ]
+}

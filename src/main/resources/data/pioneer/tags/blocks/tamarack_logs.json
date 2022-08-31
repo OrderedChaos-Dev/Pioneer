@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:tamarack_log",
+	"pioneer:tamarack_wood",
+	"pioneer:stripped_tamarack_log",
+	"pioneer:stripped_tamarack_wood"
+  ]
+}

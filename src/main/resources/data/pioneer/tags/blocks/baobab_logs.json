@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:baobab_log",
+	"pioneer:baobab_wood",
+	"pioneer:stripped_baobab_log",
+	"pioneer:stripped_baobab_wood"
+  ]
+}

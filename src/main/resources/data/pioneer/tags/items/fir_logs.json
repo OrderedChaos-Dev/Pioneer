@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:fir_log",
+	"pioneer:fir_wood",
+	"pioneer:stripped_fir_log",
+	"pioneer:stripped_fir_wood"
+  ]
+}

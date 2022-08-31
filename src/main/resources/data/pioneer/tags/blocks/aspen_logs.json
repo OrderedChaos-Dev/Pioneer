@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:aspen_log",
+	"pioneer:aspen_wood",
+	"pioneer:stripped_aspen_log",
+	"pioneer:stripped_aspen_wood"
+  ]
+}

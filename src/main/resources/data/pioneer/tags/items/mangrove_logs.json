@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:mangrove_log",
+	"pioneer:mangrove_wood",
+	"pioneer:stripped_mangrove_log",
+	"pioneer:stripped_mangrove_wood"
+  ]
+}

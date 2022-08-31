@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:palm_log",
+	"pioneer:palm_wood",
+	"pioneer:stripped_palm_log",
+	"pioneer:stripped_palm_wood"
+  ]
+}

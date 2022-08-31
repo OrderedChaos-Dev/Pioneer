@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	"pioneer:willow_log",
+	"pioneer:willow_wood",
+	"pioneer:stripped_willow_log",
+	"pioneer:stripped_willow_wood"
+  ]
+}
