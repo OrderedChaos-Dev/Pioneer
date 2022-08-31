@@ -75,6 +75,12 @@
                           "type": "minecraft:block"
                         },
                         "type": "minecraft:condition"
+                      },
+                      {
+                        "result_state": {
+                          "Name": "minecraft:stone"
+                        },
+                        "type": "minecraft:block"
                       }
                     ],
                     "type": "minecraft:sequence"
@@ -155,6 +161,12 @@
                         "type": "minecraft:block"
                       },
                       "type": "minecraft:condition"
+                    },
+                    {
+                      "result_state": {
+                        "Name": "minecraft:stone"
+                      },
+                      "type": "minecraft:block"
                     }
                   ],
                   "type": "minecraft:sequence"

@@ -60,10 +60,15 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
     
     private static SurfaceRules.RuleSource onCeilingStoneGravel = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, STONE), GRAVEL);
     
-	public static final SurfaceRules.RuleSource GRASS_DIRT_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK))), ifTrue(SurfaceRules.UNDER_FLOOR, DIRT));
+	public static final SurfaceRules.RuleSource GRASS_DIRT_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK))), ifTrue(SurfaceRules.UNDER_FLOOR, DIRT), STONE);
 	public static final SurfaceRules.RuleSource DESERT = sequence(ifTrue(SurfaceRules.ON_CEILING, SANDSTONE), ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, SAND))), ifTrue(SurfaceRules.UNDER_FLOOR, SANDSTONE));
-	public static final SurfaceRules.RuleSource COARSE_DIRT_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, COARSE_DIRT))), ifTrue(SurfaceRules.UNDER_FLOOR, DIRT));
+	public static final SurfaceRules.RuleSource COARSE_DIRT_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, COARSE_DIRT))), ifTrue(SurfaceRules.UNDER_FLOOR, DIRT), STONE);
 	public static final SurfaceRules.RuleSource PODZOL_DIRT_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, PODZOL))), ifTrue(SurfaceRules.UNDER_FLOOR, DIRT));
+	public static final SurfaceRules.RuleSource STONE_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, STONE))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
+	public static final SurfaceRules.RuleSource GRAVEL_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, GRAVEL))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
+	public static final SurfaceRules.RuleSource ANDESITE_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, ANDESITE))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
+	public static final SurfaceRules.RuleSource COBBLESTONE_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, COBBLESTONE))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
+	public static final SurfaceRules.RuleSource MOSSY_COBBLESTONE_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, MOSSY_COBBLESTONE))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
 	
     private static final SurfaceRules.RuleSource BADLANDS = SurfaceRules.sequence(
 							SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
@@ -93,19 +98,19 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 																							ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, -2.0D), ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, -0.02D, 0.02D), DIORITE)), GRASS_DIRT_FLOOR));
 	
 	public static final SurfaceRules.RuleSource OVERGROWN_SPIRES = ifTrue(isBiome(PioneerBiomes.OVERGROWN_SPIRES.getKey()),
-																	sequence(ifTrue(surfaceNoiseAbove(1.75D), STONE), ifTrue(surfaceNoiseAbove(-0.5D), COARSE_DIRT), GRASS_DIRT_FLOOR));
+																	sequence(ifTrue(surfaceNoiseAbove(1.75D), STONE_FLOOR), ifTrue(surfaceNoiseAbove(-0.5D), COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR));
 	
 	public static final SurfaceRules.RuleSource REDWOODS = ifTrue(isBiome(PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey()),
-																	sequence(ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT_FLOOR), ifTrue(surfaceNoiseAbove(1.25D), COARSE_DIRT), ifTrue(surfaceNoiseAbove(-0.90D), PODZOL_DIRT_FLOOR), GRASS_DIRT_FLOOR));
+																	sequence(ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT_FLOOR), ifTrue(surfaceNoiseAbove(-0.90D), PODZOL_DIRT_FLOOR), GRASS_DIRT_FLOOR));
 	
 	public static final SurfaceRules.RuleSource RED_ROCK_CANYON = ifTrue(isBiome(PioneerBiomes.RED_ROCK_CANYON.getKey()), BADLANDS);
 	
 	public static final SurfaceRules.RuleSource WINDSWEPT_CLIFFS = ifTrue(isBiome(PioneerBiomes.WINDSWEPT_CLIFFS.getKey()),
-																	sequence(ifTrue(random(0.15F), STONE),
-																			ifTrue(random(0.30F), GRAVEL),
-																			ifTrue(random(0.35F), GRASS_BLOCK),
-																			ifTrue(random(0.6F), ANDESITE),
-																			ifTrue(random(0.75F), MOSSY_COBBLESTONE),
+																	sequence(ifTrue(random(0.15F), STONE_FLOOR),
+																			ifTrue(random(0.30F), GRAVEL_FLOOR),
+																			ifTrue(random(0.35F), GRASS_DIRT_FLOOR),
+																			ifTrue(random(0.6F), ANDESITE_FLOOR),
+																			ifTrue(random(0.75F), MOSSY_COBBLESTONE_FLOOR),
 																			COBBLESTONE));
 	
 	@Override
