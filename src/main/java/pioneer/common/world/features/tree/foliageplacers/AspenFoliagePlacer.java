@@ -8,6 +8,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,8 +34,8 @@ public class AspenFoliagePlacer extends FoliagePlacer  {
 
 	@Override
 	protected void createFoliage(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer,
-			Random rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
-			int p_161352_, int p_161353_, int p_161354_) {
+															 RandomSource rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
+															 int p_161352_, int p_161353_, int p_161354_) {
 		
 		BlockPos pos = foliage.pos();
 		for(Direction dir : Direction.values()) {
@@ -43,12 +44,12 @@ public class AspenFoliagePlacer extends FoliagePlacer  {
 	}
 
 	@Override
-	public int foliageHeight(Random rand, int h, TreeConfiguration config) {
+	public int foliageHeight(RandomSource rand, int h, TreeConfiguration config) {
 		return 1;
 	}
 
 	@Override
-	protected boolean shouldSkipLocation(Random rand, int x, int y, int z, int radius, boolean p_230373_6_) {
+	protected boolean shouldSkipLocation(RandomSource rand, int x, int y, int z, int radius, boolean p_230373_6_) {
 		return rand.nextBoolean() || Math.abs(x) == Math.abs(z);
 	}
 

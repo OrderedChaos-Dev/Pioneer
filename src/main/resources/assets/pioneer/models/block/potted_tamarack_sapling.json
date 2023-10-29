@@ -1,5 +1,6 @@
 {
     "parent": "block/flower_pot_cross",
+    "render_type": "minecraft:cutout",
     "textures": {
         "plant": "pioneer:block/tamarack_sapling"
     }

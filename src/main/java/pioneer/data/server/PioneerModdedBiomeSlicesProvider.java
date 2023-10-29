@@ -23,16 +23,11 @@ public class PioneerModdedBiomeSlicesProvider extends ModdedBiomeSliceProvider {
 	
 	@Override
 	protected void registerSlices() {
-		ImmutableList.Builder<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder = new ImmutableList.Builder<Pair<Climate.ParameterPoint, ResourceKey<Biome>>>();
-		new PioneerBiomeBuilder().addBiomes(pair -> builder.add(pair));
-		this.registerSlice("pioneer_modded_slice", 7, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(builder.build())), OVERWORLD);
-		
-//		ImmutableList.Builder<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder = new ImmutableList.Builder<Pair<Climate.ParameterPoint, ResourceKey<Biome>>>();
-//		new PioneerBiomeBuilder().addBiomes(pair -> builder.add(pair));
-//		this.registerSlice("pioneer_modded_slice", new ConditionedResourceSelector(new NamesResourceSelector(LevelStem.OVERWORLD.location()),
-//				new ConfigValueCondition(new ResourceLocation(Pioneer.MOD_ID, "config"),
-//						PioneerConfig.enableBiomes, "enableBiomes", Collections.emptyMap(), false)),
-//				8, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(builder.build())));
+		for(int i = 1; i <= 3; i++) {
+			ImmutableList.Builder<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder = new ImmutableList.Builder<Pair<Climate.ParameterPoint, ResourceKey<Biome>>>();
+			new PioneerBiomeBuilder(i).addBiomes(pair -> builder.add(pair));
+			this.registerSlice("pioneer_modded_slice_" + i, 6, new BiomeUtil.MultiNoiseModdedBiomeProvider(new Climate.ParameterList<>(builder.build())), OVERWORLD);
+		}
 	}
 	
 

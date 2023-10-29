@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.function.BiConsumer;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,8 +21,8 @@ public class PioneerPineFoliagePlacer extends SpruceFoliagePlacer {
 	
 	@Override
 	protected void createFoliage(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer,
-			Random rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
-			int p_161352_, int p_161353_, int p_161354_) {
+															 RandomSource rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
+															 int p_161352_, int p_161353_, int p_161354_) {
 		BlockPos blockpos = foliage.pos();
 		int i = rand.nextInt(2);
 		int j = 1;
@@ -44,7 +45,7 @@ public class PioneerPineFoliagePlacer extends SpruceFoliagePlacer {
 		}
 	}
 	
-	protected void placeLeaves(LevelSimulatedReader world, Random rand, BiConsumer<BlockPos, BlockState> placer, TreeConfiguration config, BlockPos pos, int p_236753_5_, int p_236753_7_, boolean p_236753_8_) {
+	protected void placeLeaves(LevelSimulatedReader world, RandomSource rand, BiConsumer<BlockPos, BlockState> placer, TreeConfiguration config, BlockPos pos, int p_236753_5_, int p_236753_7_, boolean p_236753_8_) {
 		int i = p_236753_8_ ? 1 : 0;
 		BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 
@@ -60,7 +61,7 @@ public class PioneerPineFoliagePlacer extends SpruceFoliagePlacer {
 		}
 	}
 	
-	protected void placeLeavesWithChance(LevelSimulatedReader world, Random rand, BiConsumer<BlockPos, BlockState> placer, TreeConfiguration config, BlockPos pos, int p_236753_5_, int p_236753_7_, boolean p_236753_8_, float chance) {
+	protected void placeLeavesWithChance(LevelSimulatedReader world, RandomSource rand, BiConsumer<BlockPos, BlockState> placer, TreeConfiguration config, BlockPos pos, int p_236753_5_, int p_236753_7_, boolean p_236753_8_, float chance) {
 		int i = p_236753_8_ ? 1 : 0;
 		BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 

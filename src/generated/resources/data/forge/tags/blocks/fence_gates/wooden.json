@@ -1,11 +1,9 @@
 {
-  "replace": false,
   "values": [
     "pioneer:fir_fence_gate",
     "pioneer:pine_fence_gate",
     "pioneer:redwood_fence_gate",
     "pioneer:willow_fence_gate",
-    "pioneer:mangrove_fence_gate",
     "pioneer:palm_fence_gate",
     "pioneer:cottonwood_fence_gate",
     "pioneer:aspen_fence_gate",

@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "pioneer:stripped_fir_log",
     "pioneer:fir_log",
@@ -45,17 +44,6 @@
     "pioneer:willow_fence",
     "pioneer:willow_door",
     "pioneer:willow_stairs",
-    "pioneer:stripped_mangrove_log",
-    "pioneer:mangrove_log",
-    "pioneer:mangrove_planks",
-    "pioneer:mangrove_pressure_plate",
-    "pioneer:mangrove_trapdoor",
-    "pioneer:mangrove_button",
-    "pioneer:mangrove_slab",
-    "pioneer:mangrove_fence_gate",
-    "pioneer:mangrove_fence",
-    "pioneer:mangrove_door",
-    "pioneer:mangrove_stairs",
     "pioneer:stripped_palm_log",
     "pioneer:palm_log",
     "pioneer:palm_planks",

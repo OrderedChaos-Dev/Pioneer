@@ -1,5 +1,6 @@
 package pioneer.data.server;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.data.DataGenerator;
@@ -33,7 +34,7 @@ public class PioneerBlockTagsProvider extends BlockTagsProvider {
     protected void addTags() {
     	PioneerBlocks.HELPER.getDeferredRegister().getEntries().forEach((block) -> {
     		ResourceKey<Block> key = block.getKey();
-    		String name = block.get().getRegistryName().getPath();
+    		String name = ForgeRegistries.BLOCKS.getKey(block.get()).getPath();
     		
     		if(name.endsWith("_log")) {
     			this.tag(BlockTags.LOGS).add(key);

@@ -9,6 +9,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -34,7 +35,7 @@ public class RedwoodTrunkPlacer extends TrunkPlacer {
 	}
 
 	@Override
-	public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, int height, BlockPos pos, TreeConfiguration config) {
+	public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, RandomSource rand, int height, BlockPos pos, TreeConfiguration config) {
 		BlockPos blockpos = pos.below();
 		//place dirt
 		setDirtAt(world, placer, rand, blockpos, config);
@@ -76,13 +77,13 @@ public class RedwoodTrunkPlacer extends TrunkPlacer {
 		return ImmutableList.of(new FoliagePlacer.FoliageAttachment(pos.above(height), 0, true));
 	}
 
-	private static void placeLog(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, BlockPos.MutableBlockPos pos, TreeConfiguration config, BlockPos start, int offX, int offY, int offZ) {
+	private static void placeLog(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, RandomSource rand, BlockPos.MutableBlockPos pos, TreeConfiguration config, BlockPos start, int offX, int offY, int offZ) {
 		pos.setWithOffset(start, offX, offY, offZ);
 		//place log
 		placer.accept(pos, config.trunkProvider.getState(rand, pos));
 	}
 	
-	public static void placeBase(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, BlockPos.MutableBlockPos pos, TreeConfiguration config, BlockPos start, int heightMin, int heightMax, int offX, int offZ) {
+	public static void placeBase(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, RandomSource rand, BlockPos.MutableBlockPos pos, TreeConfiguration config, BlockPos start, int heightMin, int heightMax, int offX, int offZ) {
 		int height = rand.nextInt(heightMax - heightMin) + heightMin;
 		int offY = 1;
 		while(offY > -4 && world.isStateAtPosition(pos.setWithOffset(start, offX, offY, offZ), (state) -> state.getMaterial().isReplaceable())) {

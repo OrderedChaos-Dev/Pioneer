@@ -6,11 +6,8 @@ import java.util.function.Supplier;
 import com.teamabnormals.blueprint.core.util.BlockUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
@@ -26,6 +23,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WoodButtonBlock;
+import net.minecraft.world.level.block.grower.MangroveTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,6 +33,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pioneer.common.blocks.BerriedJuniperLeavesBlock;
 import pioneer.common.blocks.CoconutBlock;
@@ -43,7 +42,6 @@ import pioneer.common.blocks.DesertBushBlock;
 import pioneer.common.blocks.DesertDoubleHighPlantBlock;
 import pioneer.common.blocks.DryGrassBlock;
 import pioneer.common.blocks.FallenLeavesBlock;
-import pioneer.common.blocks.MangroveSaplingBlock;
 import pioneer.common.blocks.PrairieGrassBlock;
 import pioneer.common.blocks.grower.AspenTreeGrower;
 import pioneer.common.blocks.grower.BaobabTreeGrower;
@@ -51,7 +49,6 @@ import pioneer.common.blocks.grower.CottonwoodTreeGrower;
 import pioneer.common.blocks.grower.FirTreeGrower;
 import pioneer.common.blocks.grower.JoshuaTreeGrower;
 import pioneer.common.blocks.grower.JuniperTreeGrower;
-import pioneer.common.blocks.grower.MangroveTreeGrower;
 import pioneer.common.blocks.grower.OrangeMapleTreeGrower;
 import pioneer.common.blocks.grower.PalmTreeGrower;
 import pioneer.common.blocks.grower.PineTreeGrower;
@@ -154,22 +151,6 @@ public class PioneerBlocks {
 	public static final RegistryObject<Block> WILLOW_FENCE = HELPER.createBlock("willow_fence", () -> new FenceBlock(Properties.copy(Blocks.SPRUCE_FENCE)), PioneerCreativeModeTab.INSTANCE);
 	public static final RegistryObject<Block> WILLOW_DOOR = HELPER.createBlock("willow_door", () -> new DoorBlock(Properties.copy(Blocks.SPRUCE_DOOR)), PioneerCreativeModeTab.INSTANCE);
 	public static final RegistryObject<Block> WILLOW_STAIRS = HELPER.createBlock("willow_stairs", () -> new StairBlock(() -> WILLOW_PLANKS.get().defaultBlockState(), Properties.copy(Blocks.SPRUCE_STAIRS)), PioneerCreativeModeTab.INSTANCE);
-	
-	public static final RegistryObject<Block> STRIPPED_MANGROVE_LOG = HELPER.createBlock("stripped_mangrove_log", () -> createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD, null), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> STRIPPED_MANGROVE_WOOD = HELPER.createBlock("stripped_mangrove_wood", () -> createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD, null), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_SAPLING = HELPER.createBlock("mangrove_sapling", () -> new MangroveSaplingBlock(new MangroveTreeGrower(), Properties.copy(Blocks.OAK_SAPLING)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_LOG = HELPER.createBlock("mangrove_log", () -> createLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_BROWN, STRIPPED_MANGROVE_LOG), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_LEAVES = HELPER.createBlock("mangrove_leaves", () -> new LeavesBlock(Properties.copy(Blocks.OAK_LEAVES)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_WOOD = HELPER.createBlock("mangrove_wood", () -> createLogBlock(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN, STRIPPED_MANGROVE_WOOD), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_PLANKS = HELPER.createBlock("mangrove_planks", () -> createPlanksBlock(), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_PRESSURE_PLATE = HELPER.createBlock("mangrove_pressure_plate", () -> createPressurePlate(MANGROVE_PLANKS.get().defaultMaterialColor()), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_TRAPDOOR = HELPER.createBlock("mangrove_trapdoor", () -> new TrapDoorBlock(Properties.copy(Blocks.OAK_TRAPDOOR)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_BUTTON = HELPER.createBlock("mangrove_button", () -> new WoodButtonBlock(Properties.copy(Blocks.OAK_BUTTON)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_SLAB = HELPER.createBlock("mangrove_slab", () -> new SlabBlock(Properties.copy(Blocks.OAK_SLAB)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_FENCE_GATE = HELPER.createBlock("mangrove_fence_gate", () -> new FenceGateBlock(Properties.copy(Blocks.SPRUCE_FENCE_GATE)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_FENCE = HELPER.createBlock("mangrove_fence", () -> new FenceBlock(Properties.copy(Blocks.SPRUCE_FENCE)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_DOOR = HELPER.createBlock("mangrove_door", () -> new DoorBlock(Properties.copy(Blocks.SPRUCE_DOOR)), PioneerCreativeModeTab.INSTANCE);
-	public static final RegistryObject<Block> MANGROVE_STAIRS = HELPER.createBlock("mangrove_stairs", () -> new StairBlock(() -> MANGROVE_PLANKS.get().defaultBlockState(), Properties.copy(Blocks.SPRUCE_STAIRS)), PioneerCreativeModeTab.INSTANCE);
 	
 	public static final RegistryObject<Block> STRIPPED_PALM_LOG = HELPER.createBlock("stripped_palm_log", () -> createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD, null), PioneerCreativeModeTab.INSTANCE);
 	public static final RegistryObject<Block> STRIPPED_PALM_WOOD = HELPER.createBlock("stripped_palm_wood", () -> createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD, null), PioneerCreativeModeTab.INSTANCE);
@@ -327,7 +308,6 @@ public class PioneerBlocks {
 	public static final RegistryObject<Block> POTTED_FIR_SAPLING = HELPER.createBlockNoItem("potted_fir_sapling", () -> createFlowerPot(FIR_SAPLING.get()));
 	public static final RegistryObject<Block> POTTED_PINE_SAPLING = HELPER.createBlockNoItem("potted_pine_sapling", () -> createFlowerPot(PINE_SAPLING.get()));
 	public static final RegistryObject<Block> POTTED_WILLOW_SAPLING = HELPER.createBlockNoItem("potted_willow_sapling", () -> createFlowerPot(WILLOW_SAPLING.get()));
-	public static final RegistryObject<Block> POTTED_MANGROVE_SAPLING = HELPER.createBlockNoItem("potted_mangrove_sapling", () -> createFlowerPot(MANGROVE_SAPLING.get()));
 	public static final RegistryObject<Block> POTTED_BAOBAB_SAPLING = HELPER.createBlockNoItem("potted_baobab_sapling", () -> createFlowerPot(BAOBAB_SAPLING.get()));
 	public static final RegistryObject<Block> POTTED_JUNIPER_SAPLING = HELPER.createBlockNoItem("potted_juniper_sapling", () -> createFlowerPot(JUNIPER_SAPLING.get()));
 	public static final RegistryObject<Block> POTTED_COTTONWOOD_SAPLING = HELPER.createBlockNoItem("potted_cottonwood_sapling", () -> createFlowerPot(COTTONWOOD_SAPLING.get()));
@@ -346,10 +326,10 @@ public class PioneerBlocks {
 			return state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : barkColor;
 		}).strength(2.0F).sound(SoundType.WOOD)) {
 			@Override
-			public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolType) {
-				if(toolType == ToolActions.AXE_STRIP)
+			public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction action, boolean simulate) {
+				if(action == ToolActions.AXE_STRIP)
 					return stripped != null ? BlockUtil.transferAllBlockStates(state, stripped.get().defaultBlockState()) : null;
-				return super.getToolModifiedState(state, world, pos, player, stack, toolType);
+				return super.getToolModifiedState(state, context, action, simulate);
 			}
 		};
 	}
@@ -367,7 +347,7 @@ public class PioneerBlocks {
 	
 	public static Block createFlowerPot(Block plant) {
 		Block block = new FlowerPotBlock(() -> (FlowerPotBlock)Blocks.FLOWER_POT, ()-> plant, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT));
-		((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(plant.getRegistryName(), () -> block);
+		((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ForgeRegistries.BLOCKS.getKey(plant), () -> block);
 		return block;
 	}
 }

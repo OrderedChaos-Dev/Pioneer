@@ -2,10 +2,14 @@ package pioneer.common.world.biome;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.Musics;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
+import pioneer.common.world.PioneerBiomeFeatures;
 
 public class PineMeadowsBiome {
 	
@@ -21,12 +25,13 @@ public class PineMeadowsBiome {
 		biomeGenSettings.addFeature(Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_PLAINS);
 		BiomeDefaultFeatures.addJungleGrass(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
+		BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
+		PioneerBiomeFeatures.addPineMeadowsTrees(biomeGenSettings);
 
 		
 		MobSpawnSettings.Builder mobSpawnSettings = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.plainsSpawns(mobSpawnSettings);
 
-	    return BiomeUtils.biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 0.7F, 0.8F, 4159204, 329011, 0x59cf70, 0x69cf59, mobSpawnSettings, biomeGenSettings, null);
+		return BiomeUtils.biome(Biome.Precipitation.RAIN, 0.7F, 0.8F, 4159204, 329011, 0x59cf70, 0x69cf59, mobSpawnSettings, biomeGenSettings, null);
 	}
 }

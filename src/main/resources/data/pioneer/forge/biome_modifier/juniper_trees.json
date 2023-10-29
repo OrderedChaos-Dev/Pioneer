@@ -1,0 +1,6 @@
+{
+  "type": "pioneer:basic_biome_modifier",
+  "biomes": "#minecraft:is_badlands",
+  "feature": "pioneer:trees_juniper",
+  "configOption": "juniperTrees"
+}

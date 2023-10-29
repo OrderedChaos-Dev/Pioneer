@@ -1,6 +1,0 @@
-{
-    "parent": "block/button",
-    "textures": {
-        "texture": "pioneer:block/mangrove_planks"
-    }
-}

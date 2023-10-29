@@ -24,8 +24,8 @@ public class BiomeUtils {
 		BiomeDefaultFeatures.addSurfaceFreezing(builder);
 	}
 	
-	public static Biome biome(Biome.Precipitation precipation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder biomeGenSettings, @Nullable Music music) {
-		return (new Biome.BiomeBuilder()).precipitation(precipation).biomeCategory(category).temperature(temperature)
+	public static Biome biome(Biome.Precipitation precipation, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder biomeGenSettings, @Nullable Music music) {
+		return (new Biome.BiomeBuilder()).precipitation(precipation).temperature(temperature)
 				.downfall(downfall)
 				.specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor)
 						.fogColor(12638463).skyColor(calculateSkyColor(temperature))
@@ -33,8 +33,8 @@ public class BiomeUtils {
 				.mobSpawnSettings(mobSpawnSettings.build()).generationSettings(biomeGenSettings.build()).build();
 	}
 	
-	public static Biome biome(Biome.Precipitation precipation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, int grassColor, int foliageColor, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder biomeGenSettings, @Nullable Music music) {
-		return (new Biome.BiomeBuilder()).precipitation(precipation).biomeCategory(category).temperature(temperature)
+	public static Biome biome(Biome.Precipitation precipation, float temperature, float downfall, int waterColor, int waterFogColor, int grassColor, int foliageColor, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder biomeGenSettings, @Nullable Music music) {
+		return (new Biome.BiomeBuilder()).precipitation(precipation).temperature(temperature)
 				.downfall(downfall)
 				.specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor)
 						.fogColor(12638463).skyColor(calculateSkyColor(temperature))
@@ -43,8 +43,8 @@ public class BiomeUtils {
 				.mobSpawnSettings(mobSpawnSettings.build()).generationSettings(biomeGenSettings.build()).build();
 	}
 	
-	public static Biome biome(Biome.Precipitation precipation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, int grassColor, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder biomeGenSettings, @Nullable Music music) {
-		return (new Biome.BiomeBuilder()).precipitation(precipation).biomeCategory(category).temperature(temperature)
+	public static Biome biome(Biome.Precipitation precipation, float temperature, float downfall, int waterColor, int waterFogColor, int grassColor, MobSpawnSettings.Builder mobSpawnSettings, BiomeGenerationSettings.Builder biomeGenSettings, @Nullable Music music) {
+		return (new Biome.BiomeBuilder()).precipitation(precipation).temperature(temperature)
 				.downfall(downfall)
 				.specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor)
 						.fogColor(12638463).skyColor(calculateSkyColor(temperature))

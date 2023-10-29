@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_top_rh",
-    "textures": {
-        "bottom": "pioneer:block/willow_door_bottom",
-        "top": "pioneer:block/willow_door_top"
-    }
-}

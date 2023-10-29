@@ -1,11 +1,9 @@
 {
-  "replace": false,
   "values": [
     "pioneer:fir_sapling",
     "pioneer:pine_sapling",
     "pioneer:redwood_sapling",
     "pioneer:willow_sapling",
-    "pioneer:mangrove_sapling",
     "pioneer:palm_sapling",
     "pioneer:cottonwood_sapling",
     "pioneer:aspen_sapling",

@@ -27,7 +27,6 @@ public class PioneerCompostables {
 		setCompostInfo(PioneerBlocks.PINE_LEAVES.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.REDWOOD_LEAVES.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.WILLOW_LEAVES.get(), 0.3F);
-		setCompostInfo(PioneerBlocks.MANGROVE_LEAVES.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.PALM_LEAVES.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.ASPEN_LEAVES.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.JUNIPER_LEAVES.get(), 0.3F);
@@ -46,7 +45,6 @@ public class PioneerCompostables {
 		setCompostInfo(PioneerBlocks.PINE_SAPLING.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.REDWOOD_SAPLING.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.WILLOW_SAPLING.get(), 0.3F);
-		setCompostInfo(PioneerBlocks.MANGROVE_SAPLING.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.PALM_SAPLING.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.ASPEN_SAPLING.get(), 0.3F);
 		setCompostInfo(PioneerBlocks.JUNIPER_SAPLING.get(), 0.3F);

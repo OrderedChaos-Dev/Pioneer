@@ -1,12 +1,10 @@
 {
-  "replace": false,
   "values": [
     "pioneer:potted_palm_sapling",
     "pioneer:potted_redwood_sapling",
     "pioneer:potted_fir_sapling",
     "pioneer:potted_pine_sapling",
     "pioneer:potted_willow_sapling",
-    "pioneer:potted_mangrove_sapling",
     "pioneer:potted_baobab_sapling",
     "pioneer:potted_juniper_sapling",
     "pioneer:potted_cottonwood_sapling",

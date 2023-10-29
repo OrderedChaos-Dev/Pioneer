@@ -16,16 +16,11 @@ public class PrairieGrassBlock extends BushBlock {
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 	
 	public PrairieGrassBlock() {
-		super(Block.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS));
+		super(Block.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(OffsetType.XYZ));
 	}
 	
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return SHAPE;
-	}
-
-	@Override
-	public BlockBehaviour.OffsetType getOffsetType() {
-		return BlockBehaviour.OffsetType.XYZ;
 	}
 }

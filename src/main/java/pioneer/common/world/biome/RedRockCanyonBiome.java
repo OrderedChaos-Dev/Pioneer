@@ -16,8 +16,8 @@ public class RedRockCanyonBiome {
 		BiomeGenerationSettings.Builder biomeGenSettings = new BiomeGenerationSettings.Builder();
 		BiomeUtils.globalOverworldGeneration(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultOres(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
-	    BiomeDefaultFeatures.addDesertExtraDecoration(biomeGenSettings);
+		BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
+		BiomeDefaultFeatures.addDesertExtraDecoration(biomeGenSettings);
 	    
 		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
 		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
@@ -28,6 +28,6 @@ public class RedRockCanyonBiome {
 	    BiomeDefaultFeatures.addDesertVegetation(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
 	    BiomeDefaultFeatures.addDesertExtraVegetation(biomeGenSettings);
-		return BiomeUtils.biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.MESA, 2.0F, 0.55F, 4159204, 329011, 0x8aab32, mobSpawnSettings, biomeGenSettings, null);
+		return BiomeUtils.biome(Biome.Precipitation.RAIN, 2.0F, 0.55F, 4159204, 329011, 0x8aab32, mobSpawnSettings, biomeGenSettings, null);
 	}
 }

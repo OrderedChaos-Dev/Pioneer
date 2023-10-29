@@ -1,5 +1,6 @@
 {
   "parent": "block/thin_block",
+  "render_type": "minecraft:cutout",
   "textures": {
     "particle": "pioneer:block/pink_sakura_leaves",
     "texture": "pioneer:block/pink_sakura_leaves"

@@ -1,0 +1,8 @@
+{
+  "type": "pioneer:basic_biome_modifier",
+  "biomes": [
+    "minecraft:beach"
+  ],
+  "feature": "pioneer:trees_palm",
+  "configOption": "palmTrees"
+}

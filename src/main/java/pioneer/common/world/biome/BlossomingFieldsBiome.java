@@ -7,6 +7,7 @@ import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
+import pioneer.common.world.PioneerBiomeFeatures;
 
 public class BlossomingFieldsBiome {
 	
@@ -16,21 +17,21 @@ public class BlossomingFieldsBiome {
 		BiomeUtils.globalOverworldGeneration(biomeGenSettings);
 
 		BiomeDefaultFeatures.addDefaultOres(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
+		BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
 	    
-	    biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FOREST_FLOWERS);
-	    biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
+		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FOREST_FLOWERS);
+		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
 
 		BiomeDefaultFeatures.addPlainGrass(biomeGenSettings);
 		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
-
+		BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
+		PioneerBiomeFeatures.addBlossomingFieldsVegetation(biomeGenSettings);
 		
 		MobSpawnSettings.Builder mobSpawnSettings = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.farmAnimals(mobSpawnSettings);
 		BiomeDefaultFeatures.commonSpawns(mobSpawnSettings);
 
-	    return BiomeUtils.biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 0.5F, 0.55F, 4159204, 329011, 0xaeed5c, 0xaeed5c, mobSpawnSettings, biomeGenSettings, null);
+	    return BiomeUtils.biome(Biome.Precipitation.RAIN, 0.5F, 0.55F, 4159204, 329011, 0xaeed5c, 0xaeed5c, mobSpawnSettings, biomeGenSettings, null);
 	}
 }

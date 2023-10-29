@@ -1,11 +1,9 @@
 {
-  "replace": false,
   "values": [
     "pioneer:fir_button",
     "pioneer:pine_button",
     "pioneer:redwood_button",
     "pioneer:willow_button",
-    "pioneer:mangrove_button",
     "pioneer:palm_button",
     "pioneer:cottonwood_button",
     "pioneer:aspen_button",

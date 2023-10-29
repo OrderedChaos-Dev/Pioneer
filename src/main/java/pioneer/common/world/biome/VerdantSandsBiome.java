@@ -14,12 +14,12 @@ public class VerdantSandsBiome {
 	public static Biome verdantSands() {
 		BiomeGenerationSettings.Builder biomeGenSettings = (new BiomeGenerationSettings.Builder());
 		
-	    BiomeDefaultFeatures.addFossilDecoration(biomeGenSettings);
+		BiomeDefaultFeatures.addFossilDecoration(biomeGenSettings);
 		BiomeUtils.globalOverworldGeneration(biomeGenSettings);
 
 		BiomeDefaultFeatures.addDefaultOres(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
-	    BiomeDefaultFeatures.addDesertExtraDecoration(biomeGenSettings);
+		BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
+		BiomeDefaultFeatures.addDesertExtraDecoration(biomeGenSettings);
 	    
 		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
 		biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
@@ -27,9 +27,9 @@ public class VerdantSandsBiome {
 		BiomeDefaultFeatures.addSavannaTrees(biomeGenSettings);
 		BiomeDefaultFeatures.addWarmFlowers(biomeGenSettings);
 		BiomeDefaultFeatures.addJungleGrass(biomeGenSettings);
-	    BiomeDefaultFeatures.addDesertVegetation(biomeGenSettings);
+		BiomeDefaultFeatures.addDesertVegetation(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
-	    BiomeDefaultFeatures.addDesertExtraVegetation(biomeGenSettings);
+		BiomeDefaultFeatures.addDesertExtraVegetation(biomeGenSettings);
 
 		BiomeDefaultFeatures.addDefaultSeagrass(biomeGenSettings);
 
@@ -39,6 +39,6 @@ public class VerdantSandsBiome {
 		BiomeDefaultFeatures.desertSpawns(mobSpawnSettings);
 		mobSpawnSettings.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
 
-	    return BiomeUtils.biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.DESERT, 1.5F, 0.5F, 4159204, 329011, mobSpawnSettings, biomeGenSettings, null);
+	    return BiomeUtils.biome(Biome.Precipitation.RAIN, 1.5F, 0.5F, 4159204, 329011, mobSpawnSettings, biomeGenSettings, null);
 	}
 }

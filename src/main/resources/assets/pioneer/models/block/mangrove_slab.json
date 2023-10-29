@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "pioneer:block/mangrove_planks",
-        "top": "pioneer:block/mangrove_planks",
-        "side": "pioneer:block/mangrove_planks"
-    }
-}

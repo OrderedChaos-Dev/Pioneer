@@ -7,6 +7,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,20 +33,20 @@ public class DesertJuniperFoliagePlacer extends FoliagePlacer  {
 
 	@Override
 	protected void createFoliage(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer,
-			Random rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
-			int p_161352_, int p_161353_, int p_161354_) {
+															 RandomSource rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
+															 int p_161352_, int p_161353_, int p_161354_) {
 		BlockPos pos = foliage.pos();
 		this.placeLeavesRow(world, placer, rand, config, pos, 1, 0, foliage.doubleTrunk());
 		this.placeLeavesRow(world, placer, rand, config, pos.above(), 0, 0, foliage.doubleTrunk());
 	}
 
 	@Override
-	public int foliageHeight(Random rand, int h, TreeConfiguration config) {
+	public int foliageHeight(RandomSource rand, int h, TreeConfiguration config) {
 		return 1;
 	}
 
 	@Override
-	protected boolean shouldSkipLocation(Random rand, int x, int y, int z, int radius, boolean p_230373_6_) {
+	protected boolean shouldSkipLocation(RandomSource rand, int x, int y, int z, int radius, boolean p_230373_6_) {
 		return rand.nextInt(4) == 0 && radius == 1;
 	}
 

@@ -23,7 +23,6 @@ import pioneer.common.world.features.tree.foliageplacers.PalmFoliagePlacer;
 import pioneer.common.world.features.tree.trunkplacers.AspenTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.BaobabTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.DesertJuniperTrunkPlacer;
-import pioneer.common.world.features.tree.trunkplacers.MangroveTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.PalmTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.RedwoodTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.SmallRedwoodTrunkPlacer;
@@ -41,7 +40,6 @@ public class PioneerTreePlacers {
 		public static final RegistryObject<TrunkPlacerType<AspenTrunkPlacer>> ASPEN_TRUNK_PLACER = registerTrunkPlacer("aspen_trunk_placer", () -> new TrunkPlacerType<AspenTrunkPlacer>(AspenTrunkPlacer.CODEC));
 		public static final RegistryObject<TrunkPlacerType<BaobabTrunkPlacer>> BAOBAB_TRUNK_PLACER = registerTrunkPlacer("baobab_trunk_placer", () -> new TrunkPlacerType<BaobabTrunkPlacer>(BaobabTrunkPlacer.CODEC));
 		public static final RegistryObject<TrunkPlacerType<DesertJuniperTrunkPlacer>> DESERT_JUNIPER_TRUNK_PLACER = registerTrunkPlacer("desert_juniper_trunk_placer", () -> new TrunkPlacerType<DesertJuniperTrunkPlacer>(DesertJuniperTrunkPlacer.CODEC));
-		public static final RegistryObject<TrunkPlacerType<MangroveTrunkPlacer>> MANGROVE_TRUNK_PLACER = registerTrunkPlacer("mangrove_trunk_placer", () -> new TrunkPlacerType<MangroveTrunkPlacer>(MangroveTrunkPlacer.CODEC));
 		public static final RegistryObject<TrunkPlacerType<RedwoodTrunkPlacer>> REDWOOD_TRUNK_PLACER = registerTrunkPlacer("redwood_trunk_placer", () -> new TrunkPlacerType<RedwoodTrunkPlacer>(RedwoodTrunkPlacer.CODEC));
 		public static final RegistryObject<TrunkPlacerType<SmallRedwoodTrunkPlacer>> SMALL_REDWOOD_TRUNK_PLACER = registerTrunkPlacer("small_redwood_trunk_placer", () -> new TrunkPlacerType<SmallRedwoodTrunkPlacer>(SmallRedwoodTrunkPlacer.CODEC));
 		public static final RegistryObject<TrunkPlacerType<TwistedTrunkPlacer>> TWISTED_TRUNK_PLACER = registerTrunkPlacer("twisted_trunk_placer", () -> new TrunkPlacerType<TwistedTrunkPlacer>(TwistedTrunkPlacer.CODEC));

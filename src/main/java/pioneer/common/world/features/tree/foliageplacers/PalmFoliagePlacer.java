@@ -7,6 +7,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -27,8 +28,8 @@ public class PalmFoliagePlacer extends FoliagePlacer {
 	
 	@Override
 	protected void createFoliage(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer,
-			Random rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
-			int p_161352_, int p_161353_, int p_161354_) {
+															 RandomSource rand, TreeConfiguration config, int p_161350_, FoliagePlacer.FoliageAttachment foliage,
+															 int p_161352_, int p_161353_, int p_161354_) {
 		boolean flag = foliage.doubleTrunk();
 		BlockPos logPos = foliage.pos();
 		BlockState leaf = config.foliageProvider.getState(rand, logPos);
@@ -78,12 +79,12 @@ public class PalmFoliagePlacer extends FoliagePlacer {
 	}
 
 	@Override
-	public int foliageHeight(Random p_230374_1_, int p_230374_2_, TreeConfiguration config) {
+	public int foliageHeight(RandomSource p_230374_1_, int p_230374_2_, TreeConfiguration config) {
 		return 3;
 	}
 
 	@Override
-	protected boolean shouldSkipLocation(Random p_230373_1_, int p_230373_2_, int p_230373_3_, int p_230373_4_, int p_230373_5_, boolean p_230373_6_) {
+	protected boolean shouldSkipLocation(RandomSource p_230373_1_, int p_230373_2_, int p_230373_3_, int p_230373_4_, int p_230373_5_, boolean p_230373_6_) {
 		return false;
 	}
 }

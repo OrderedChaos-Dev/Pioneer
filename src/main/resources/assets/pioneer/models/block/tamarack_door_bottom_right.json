@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/door_bottom_right",
+    "render_type": "minecraft:cutout",
+    "textures": {
+        "bottom": "pioneer:block/tamarack_door_bottom",
+        "top": "pioneer:block/tamarack_door_top"
+    }
+}

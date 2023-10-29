@@ -1,14 +1,7 @@
 package pioneer.common.world.features.tree.decorators;
 
-import java.util.List;
-import java.util.Random;
-import java.util.function.BiConsumer;
 
 import com.mojang.serialization.Codec;
-
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.LevelSimulatedReader;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import pioneer.core.registry.PioneerBlocks;
@@ -27,10 +20,10 @@ public class CoconutDecorator extends TreeDecorator {
 	}
 
 	@Override
-	public void place(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, List<BlockPos> logs, List<BlockPos> leaves) {
-		leaves.forEach((pos) -> {
-			if(world.isStateAtPosition(pos.below(), (state) -> state.getMaterial().isReplaceable()) && rand.nextFloat() <= 0.15F)
-				placer.accept(pos.below(), PioneerBlocks.COCONUT.get().defaultBlockState());
+	public void place(Context context) {
+		context.leaves().forEach((pos) -> {
+			if(context.level().isStateAtPosition(pos.below(), (state) -> state.getMaterial().isReplaceable()) && context.random().nextFloat() <= 0.15F)
+				context.setBlock(pos.below(), PioneerBlocks.COCONUT.get().defaultBlockState());
 		});
 	}
 }

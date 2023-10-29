@@ -1,11 +1,9 @@
 {
-  "replace": false,
   "values": [
     "pioneer:fir_planks",
     "pioneer:pine_planks",
     "pioneer:redwood_planks",
     "pioneer:willow_planks",
-    "pioneer:mangrove_planks",
     "pioneer:palm_planks",
     "pioneer:cottonwood_planks",
     "pioneer:aspen_planks",

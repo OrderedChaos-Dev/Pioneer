@@ -4,12 +4,7 @@ import java.util.List;
 import java.util.OptionalInt;
 import java.util.function.Supplier;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.features.AquaticFeatures;
+import net.minecraft.core.*;
 import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -71,7 +66,6 @@ import pioneer.common.world.features.tree.foliageplacers.PioneerPineFoliagePlace
 import pioneer.common.world.features.tree.trunkplacers.AspenTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.BaobabTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.DesertJuniperTrunkPlacer;
-import pioneer.common.world.features.tree.trunkplacers.MangroveTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.PalmTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.RedwoodTrunkPlacer;
 import pioneer.common.world.features.tree.trunkplacers.SmallRedwoodTrunkPlacer;
@@ -111,8 +105,7 @@ public class PioneerConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> SMALL_REDWOOD_TREE_BEES_005 = register("small_redwood_tree_bees_005", () -> new ConfiguredFeature<>(Feature.TREE, tree(new SmallRedwoodTrunkPlacer(7, 5, 0), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), PioneerBlocks.REDWOOD_LOG.get(), PioneerBlocks.REDWOOD_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2), List.of(BEEHIVE_005))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> FIR_TREE = register("fir_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new StraightTrunkPlacer(15, 4, 6), new SpruceFoliagePlacer(UniformInt.of(2, 4), UniformInt.of(1, 1), UniformInt.of(2, 4)), PioneerBlocks.FIR_LOG.get(), PioneerBlocks.FIR_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PINE_TREE = register("pine_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new StraightTrunkPlacer(9, 2, 2), new PioneerPineFoliagePlacer(UniformInt.of(3, 3), UniformInt.of(1, 1), UniformInt.of(2, 3)), PioneerBlocks.PINE_LOG.get(), PioneerBlocks.PINE_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2))));
-	public static final RegistryObject<ConfiguredFeature<?, ?>> WILLOW_TREE = register("willow_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new WillowTrunkPlacer(6, 3, 3), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), PioneerBlocks.WILLOW_LOG.get(), PioneerBlocks.WILLOW_LEAVES.get(), new TwoLayersFeatureSize(1, 0, 1), List.of(new LeaveVineDecorator()))));
-	public static final RegistryObject<ConfiguredFeature<?, ?>> MANGROVE_TREE = register("mangrove_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new MangroveTrunkPlacer(4, 2, 2), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), PioneerBlocks.MANGROVE_LOG.get(), PioneerBlocks.MANGROVE_LEAVES.get(), new TwoLayersFeatureSize(1, 0, 1))));
+	public static final RegistryObject<ConfiguredFeature<?, ?>> WILLOW_TREE = register("willow_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new WillowTrunkPlacer(6, 3, 3), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), PioneerBlocks.WILLOW_LOG.get(), PioneerBlocks.WILLOW_LEAVES.get(), new TwoLayersFeatureSize(1, 0, 1), List.of(new LeaveVineDecorator(0.5F)))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> BAOBAB_TREE = register("baobab_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new BaobabTrunkPlacer(20, 5, 2), new BaobabFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.BAOBAB_LOG.get(), PioneerBlocks.BAOBAB_LEAVES.get(), new TwoLayersFeatureSize(1, 1, 2))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> JUNIPER_TREE = register("juniper_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new DesertJuniperTrunkPlacer(7, 2, 1), new DesertJuniperFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.JUNIPER_LOG.get(), PioneerBlocks.JUNIPER_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2), List.of(new JuniperBerriesDecorator()))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> COTTONWOOD_TREE = register("cottonwood_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new FancyTrunkPlacer(15, 4, 3), new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 4), PioneerBlocks.COTTONWOOD_LOG.get(), PioneerBlocks.COTTONWOOD_LEAVES.get(), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))));
@@ -152,9 +145,9 @@ public class PioneerConfiguredFeatures {
 	
 	private static RandomPatchConfiguration createRandomPatchFeature(int tries, int xzSpread, int ySpread, BlockState block) {
 		return new RandomPatchConfiguration(tries, xzSpread, ySpread, PlacementUtils.filtered(PioneerFeatures.SIMPLE_BLOCK_MATCH_WATER.get(),
-				new SimpleBlockConfiguration(BlockStateProvider.simple(block)), BlockPredicate.allOf(BlockPredicate.replaceable(), BlockPredicate.not(BlockPredicate.matchesBlock(Blocks.ICE, new BlockPos(0, -1, 0))),
-								BlockPredicate.not(BlockPredicate.matchesBlock(Blocks.SNOW, new BlockPos(0, 0, 0))),
-								BlockPredicate.not(BlockPredicate.matchesFluid(Fluids.WATER, new BlockPos(0, 0, 0))))));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(block)), BlockPredicate.allOf(BlockPredicate.replaceable(), BlockPredicate.not(BlockPredicate.matchesBlocks(new BlockPos(0, -1, 0), Blocks.ICE)),
+								BlockPredicate.not(BlockPredicate.matchesBlocks(new BlockPos(0, 0, 0), Blocks.SNOW)),
+								BlockPredicate.not(BlockPredicate.matchesFluids(new BlockPos(0, 0, 0), Fluids.WATER)))));
 	}
 	
 	private static RandomPatchConfiguration simpleRandomPatch(BlockState blockstate) {
@@ -167,12 +160,13 @@ public class PioneerConfiguredFeatures {
 	
 	private static RandomPatchConfiguration columnPlantWithFluid(int tries, int xzspread, int yspread, Block block, Fluid fluid1, Fluid fluid2) {
 		return new RandomPatchConfiguration(tries, xzspread, yspread, PlacementUtils.filtered(Feature.BLOCK_COLUMN, BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(block)),
-		    		  BlockPredicate.allOf(BlockPredicate.matchesBlock(Blocks.AIR, BlockPos.ZERO),
+		    		  BlockPredicate.allOf(BlockPredicate.matchesBlocks(BlockPos.ZERO, Blocks.AIR),
 		    				  BlockPredicate.wouldSurvive(block.defaultBlockState(), BlockPos.ZERO),
-		    				  BlockPredicate.anyOf(BlockPredicate.matchesFluids(List.of(fluid1, fluid2),
-		    						  new BlockPos(1, -1, 0)), BlockPredicate.matchesFluids(List.of(fluid1, fluid2),
-		    								  new BlockPos(-1, -1, 0)), BlockPredicate.matchesFluids(List.of(fluid1, fluid2),
-		    										  new BlockPos(0, -1, 1)), BlockPredicate.matchesFluids(List.of(fluid1, fluid2), new BlockPos(0, -1, -1))))));
+		    				  BlockPredicate.anyOf(
+										BlockPredicate.matchesFluids(new BlockPos(1, -1, 0), List.of(fluid1, fluid2)),
+										BlockPredicate.matchesFluids(new BlockPos(-1, -1, 0), List.of(fluid1, fluid2)),
+										BlockPredicate.matchesFluids(new BlockPos(0, -1, 1), List.of(fluid1, fluid2)),
+										BlockPredicate.matchesFluids(new BlockPos(0, -1, -1), List.of(fluid1, fluid2))))));
 	}
 	
 	private static TreeConfiguration tree(TrunkPlacer trunkPlacer, FoliagePlacer foliagePlacer, Block log, Block leaves, FeatureSize featureSize, List<TreeDecorator> decorators) {

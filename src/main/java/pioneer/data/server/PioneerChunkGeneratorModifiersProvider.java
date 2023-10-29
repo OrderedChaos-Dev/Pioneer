@@ -34,31 +34,30 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 	private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
 	private static final SurfaceRules.RuleSource TERRACOTTA = makeStateRule(Blocks.TERRACOTTA);
 	private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.AIR);
-    private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
-    private static final SurfaceRules.RuleSource COBBLESTONE = makeStateRule(Blocks.COBBLESTONE);
-    private static final SurfaceRules.RuleSource ANDESITE = makeStateRule(Blocks.ANDESITE);
-    private static final SurfaceRules.RuleSource MOSSY_COBBLESTONE = makeStateRule(Blocks.MOSSY_COBBLESTONE);
-    private static final SurfaceRules.RuleSource WHITE_TERRACOTTA = makeStateRule(Blocks.WHITE_TERRACOTTA);
-    private static final SurfaceRules.RuleSource ORANGE_TERRACOTTA = makeStateRule(Blocks.ORANGE_TERRACOTTA);
-    private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
-    private static final SurfaceRules.RuleSource RED_SANDSTONE = makeStateRule(Blocks.RED_SANDSTONE);
-
+	private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+	private static final SurfaceRules.RuleSource COBBLESTONE = makeStateRule(Blocks.COBBLESTONE);
+	private static final SurfaceRules.RuleSource ANDESITE = makeStateRule(Blocks.ANDESITE);
+	private static final SurfaceRules.RuleSource MOSSY_COBBLESTONE = makeStateRule(Blocks.MOSSY_COBBLESTONE);
+	private static final SurfaceRules.RuleSource WHITE_TERRACOTTA = makeStateRule(Blocks.WHITE_TERRACOTTA);
+	private static final SurfaceRules.RuleSource ORANGE_TERRACOTTA = makeStateRule(Blocks.ORANGE_TERRACOTTA);
+	private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
+	private static final SurfaceRules.RuleSource RED_SANDSTONE = makeStateRule(Blocks.RED_SANDSTONE);
 	
 	private static final SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 	
-    private static SurfaceRules.ConditionSource yBlockCheck1 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(256), 0);
-    private static SurfaceRules.ConditionSource yStartCheck2 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(63), -1);
-    private static SurfaceRules.ConditionSource yStartCheck1 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(74), 1);
-    private static  SurfaceRules.ConditionSource yBlockCheck2 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0);
-    private static SurfaceRules.ConditionSource waterBlockCheck = SurfaceRules.waterBlockCheck(-1, 0);
-    private static  SurfaceRules.ConditionSource waterStartcheck = SurfaceRules.waterStartCheck(-6, -1);
-    private static SurfaceRules.ConditionSource hole = SurfaceRules.hole();
-    
-    private static SurfaceRules.ConditionSource noise1 = SurfaceRules.noiseCondition(Noises.SURFACE, -0.909D, -0.5454D);
-    private static SurfaceRules.ConditionSource noise2 = SurfaceRules.noiseCondition(Noises.SURFACE, -0.1818D, 0.1818D);
-    private static SurfaceRules.ConditionSource noise3 = SurfaceRules.noiseCondition(Noises.SURFACE, 0.5454D, 0.909D);
-    
-    private static SurfaceRules.RuleSource onCeilingStoneGravel = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, STONE), GRAVEL);
+	private static SurfaceRules.ConditionSource yBlockCheck1 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(256), 0);
+	private static SurfaceRules.ConditionSource yStartCheck2 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(63), -1);
+	private static SurfaceRules.ConditionSource yStartCheck1 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(74), 1);
+	private static  SurfaceRules.ConditionSource yBlockCheck2 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0);
+	private static SurfaceRules.ConditionSource waterBlockCheck = SurfaceRules.waterBlockCheck(-1, 0);
+	private static  SurfaceRules.ConditionSource waterStartcheck = SurfaceRules.waterStartCheck(-6, -1);
+	private static SurfaceRules.ConditionSource hole = SurfaceRules.hole();
+
+	private static SurfaceRules.ConditionSource noise1 = SurfaceRules.noiseCondition(Noises.SURFACE, -0.909D, -0.5454D);
+	private static SurfaceRules.ConditionSource noise2 = SurfaceRules.noiseCondition(Noises.SURFACE, -0.1818D, 0.1818D);
+	private static SurfaceRules.ConditionSource noise3 = SurfaceRules.noiseCondition(Noises.SURFACE, 0.5454D, 0.909D);
+
+	private static SurfaceRules.RuleSource onCeilingStoneGravel = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, STONE), GRAVEL);
     
 	public static final SurfaceRules.RuleSource GRASS_DIRT_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK))), ifTrue(SurfaceRules.UNDER_FLOOR, DIRT), STONE);
 	public static final SurfaceRules.RuleSource DESERT = sequence(ifTrue(SurfaceRules.ON_CEILING, SANDSTONE), ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, SAND))), ifTrue(SurfaceRules.UNDER_FLOOR, SANDSTONE));
@@ -70,20 +69,20 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 	public static final SurfaceRules.RuleSource COBBLESTONE_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, COBBLESTONE))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
 	public static final SurfaceRules.RuleSource MOSSY_COBBLESTONE_FLOOR = sequence(ifTrue(SurfaceRules.ON_FLOOR, sequence(ifTrue(isAtOrAboveWaterLevel, MOSSY_COBBLESTONE))), ifTrue(SurfaceRules.UNDER_FLOOR, STONE));
 	
-    private static final SurfaceRules.RuleSource BADLANDS = SurfaceRules.sequence(
-							SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
-									SurfaceRules.ifTrue(yBlockCheck1, ORANGE_TERRACOTTA),
-									SurfaceRules.ifTrue(yStartCheck1,
-											SurfaceRules.sequence(
-													SurfaceRules.ifTrue(noise1, TERRACOTTA),
-													SurfaceRules.ifTrue(noise2, TERRACOTTA),
-													SurfaceRules.ifTrue(noise3, TERRACOTTA),
-													SurfaceRules.bandlands())),
-									SurfaceRules.ifTrue(waterBlockCheck, SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, RED_SANDSTONE), ifTrue(surfaceNoiseAbove(1.8D), RED_SAND), ifTrue(surfaceNoiseAbove(0.1D), GRASS_DIRT_FLOOR), RED_SAND)),
-									SurfaceRules.ifTrue(SurfaceRules.not(hole), ORANGE_TERRACOTTA),
-									SurfaceRules.ifTrue(waterStartcheck, WHITE_TERRACOTTA), onCeilingStoneGravel)),
-							SurfaceRules.ifTrue(yStartCheck2, SurfaceRules.sequence(SurfaceRules.ifTrue(yBlockCheck2, SurfaceRules.ifTrue(SurfaceRules.not(yStartCheck1), ORANGE_TERRACOTTA)), SurfaceRules.bandlands())),
-							SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,SurfaceRules.ifTrue(waterStartcheck, WHITE_TERRACOTTA)));
+	private static final SurfaceRules.RuleSource BADLANDS = SurfaceRules.sequence(
+			SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
+					SurfaceRules.ifTrue(yBlockCheck1, ORANGE_TERRACOTTA),
+					SurfaceRules.ifTrue(yStartCheck1,
+							SurfaceRules.sequence(
+									SurfaceRules.ifTrue(noise1, TERRACOTTA),
+									SurfaceRules.ifTrue(noise2, TERRACOTTA),
+									SurfaceRules.ifTrue(noise3, TERRACOTTA),
+									SurfaceRules.bandlands())),
+					SurfaceRules.ifTrue(waterBlockCheck, SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, RED_SANDSTONE), ifTrue(surfaceNoiseAbove(1.8D), RED_SAND), ifTrue(surfaceNoiseAbove(0.1D), GRASS_DIRT_FLOOR), RED_SAND)),
+					SurfaceRules.ifTrue(SurfaceRules.not(hole), ORANGE_TERRACOTTA),
+					SurfaceRules.ifTrue(waterStartcheck, WHITE_TERRACOTTA), onCeilingStoneGravel)),
+			SurfaceRules.ifTrue(yStartCheck2, SurfaceRules.sequence(SurfaceRules.ifTrue(yBlockCheck2, SurfaceRules.ifTrue(SurfaceRules.not(yStartCheck1), ORANGE_TERRACOTTA)), SurfaceRules.bandlands())),
+			SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,SurfaceRules.ifTrue(waterStartcheck, WHITE_TERRACOTTA)));
 
 	
 	public static final SurfaceRules.RuleSource DESERT_SHRUBLAND = ifTrue(isBiome(PioneerBiomes.DESERT_SHRUBLAND.getKey()), DESERT);
@@ -112,7 +111,7 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 																			ifTrue(random(0.6F), ANDESITE_FLOOR),
 																			ifTrue(random(0.75F), MOSSY_COBBLESTONE_FLOOR),
 																			COBBLESTONE));
-	
+
 	@Override
 	protected void registerEntries() {
 		this.entry("verdant_sands_surface_rule")
@@ -138,7 +137,7 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 		this.entry("red_rock_canyon_surface_rule")
 			.selects("minecraft:overworld")
 			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), RED_ROCK_CANYON), false));
-		
+
 		this.entry("windswept_surface_rule")
 			.selects("minecraft:overworld")
 			.addModifier(new SurfaceRuleModifier(ifTrue(SurfaceRules.abovePreliminarySurface(), WINDSWEPT_CLIFFS), false));

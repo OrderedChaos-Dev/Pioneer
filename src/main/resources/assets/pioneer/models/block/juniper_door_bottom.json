@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom",
-    "textures": {
-        "bottom": "pioneer:block/juniper_door_bottom",
-        "top": "pioneer:block/juniper_door_top"
-    }
-}

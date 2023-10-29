@@ -10,11 +10,11 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.AmbientMoodSettings;
 import net.minecraft.world.level.biome.AmbientParticleSettings;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biome.BiomeCategory;
 import net.minecraft.world.level.biome.Biome.Precipitation;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
+import pioneer.common.world.PioneerBiomeFeatures;
 
 public class WindsweptCliffsBiome {
 	
@@ -25,20 +25,20 @@ public class WindsweptCliffsBiome {
 		
 		BiomeUtils.globalOverworldGeneration(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultOres(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
-	    BiomeDefaultFeatures.addDefaultFlowers(biomeGenSettings);
+		BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenSettings);
+		BiomeDefaultFeatures.addDefaultFlowers(biomeGenSettings);
 		BiomeDefaultFeatures.addForestGrass(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
 		BiomeDefaultFeatures.addExtraEmeralds(biomeGenSettings);
-	    BiomeDefaultFeatures.addInfestedStone(biomeGenSettings);
+		BiomeDefaultFeatures.addInfestedStone(biomeGenSettings);
+		PioneerBiomeFeatures.addWindsweptCliffsVegetation(biomeGenSettings);
 
 		BiomeDefaultFeatures.farmAnimals(mobSpawnSettings);
 		BiomeDefaultFeatures.commonSpawns(mobSpawnSettings);
 
 		Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_STONY_PEAKS);
 		return new Biome.BiomeBuilder()
-				.biomeCategory(BiomeCategory.MOUNTAIN)
 				.precipitation(Precipitation.RAIN)
 				.temperature(0.5F)
 				.downfall(0.3F)

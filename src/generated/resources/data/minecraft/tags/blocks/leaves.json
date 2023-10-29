@@ -1,11 +1,9 @@
 {
-  "replace": false,
   "values": [
     "pioneer:fir_leaves",
     "pioneer:pine_leaves",
     "pioneer:redwood_leaves",
     "pioneer:willow_leaves",
-    "pioneer:mangrove_leaves",
     "pioneer:palm_leaves",
     "pioneer:cottonwood_leaves",
     "pioneer:aspen_leaves",

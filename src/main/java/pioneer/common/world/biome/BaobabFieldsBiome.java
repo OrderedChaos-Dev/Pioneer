@@ -6,6 +6,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings;
+import pioneer.common.world.PioneerBiomeFeatures;
 
 public class BaobabFieldsBiome {
 
@@ -18,6 +19,7 @@ public class BaobabFieldsBiome {
 		BiomeDefaultFeatures.addSavannaTrees(biomeGenSettings);
 		BiomeDefaultFeatures.addWarmFlowers(biomeGenSettings);
 		BiomeDefaultFeatures.addSavannaExtraGrass(biomeGenSettings);
+		PioneerBiomeFeatures.addBaobabFieldTrees(biomeGenSettings);
 
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
@@ -27,7 +29,7 @@ public class BaobabFieldsBiome {
 				.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
 		BiomeDefaultFeatures.commonSpawns(mobSpawnSettings);
 
-		return BiomeUtils.biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.SAVANNA, 1.2F, 0.0F, 4159204, 329011,
+		return BiomeUtils.biome(Biome.Precipitation.RAIN, 1.2F, 0.0F, 4159204, 329011,
 				0x8aab32, 0xa6c918, mobSpawnSettings, biomeGenSettings, null);
 	}
 }

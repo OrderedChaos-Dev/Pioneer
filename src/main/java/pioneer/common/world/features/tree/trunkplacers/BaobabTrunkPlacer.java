@@ -10,6 +10,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -34,7 +35,7 @@ public class BaobabTrunkPlacer extends TrunkPlacer {
 	}
 
 	@Override
-	public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, int height, BlockPos pos, TreeConfiguration config) {
+	public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, RandomSource rand, int height, BlockPos pos, TreeConfiguration config) {
 		List<FoliagePlacer.FoliageAttachment> list = Lists.newArrayList();
 		BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 		
@@ -85,13 +86,13 @@ public class BaobabTrunkPlacer extends TrunkPlacer {
 		return list;
 	}
 	
-	private void placeLog(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, BlockPos.MutableBlockPos pos, TreeConfiguration config, BlockPos start, int offX, int offY, int offZ) {
+	private void placeLog(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, RandomSource rand, BlockPos.MutableBlockPos pos, TreeConfiguration config, BlockPos start, int offX, int offY, int offZ) {
 		pos.setWithOffset(start, offX, offY, offZ);
 		//place log
 		placeLog(world, placer, rand, pos, config);
 	}
 
-	public void genBranches(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Direction d1, Direction d2, Random rand, BlockPos branchStart, TreeConfiguration config, List<FoliagePlacer.FoliageAttachment> list) {
+	public void genBranches(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Direction d1, Direction d2, RandomSource rand, BlockPos branchStart, TreeConfiguration config, List<FoliagePlacer.FoliageAttachment> list) {
 		BlockPos temp = branchStart;
 		for(int length = 0; length <= 3 + rand.nextInt(4); length++) {
 			temp = temp.offset(d1.getNormal());
@@ -120,7 +121,7 @@ public class BaobabTrunkPlacer extends TrunkPlacer {
 		list.add(new FoliagePlacer.FoliageAttachment(temp, 0, true));
 	}
 	
-	private void placeRoot(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, BlockPos pos,TreeConfiguration config) {
+	private void placeRoot(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, RandomSource rand, BlockPos pos,TreeConfiguration config) {
 		int h = 2 + rand.nextInt(3);
 		BlockPos tempPos = pos.above(h);
 		for (int i = 0; i < 10; i++) {

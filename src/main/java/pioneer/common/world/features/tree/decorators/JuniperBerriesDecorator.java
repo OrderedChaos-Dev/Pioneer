@@ -7,6 +7,7 @@ import java.util.function.BiConsumer;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
@@ -27,10 +28,10 @@ public class JuniperBerriesDecorator extends TreeDecorator {
 	}
 
 	@Override
-	public void place(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> placer, Random rand, List<BlockPos> logs, List<BlockPos> leaves) {
-		leaves.forEach((pos) -> {
-			if(rand.nextFloat() <= 0.2F)
-				placer.accept(pos, PioneerBlocks.BERRIED_JUNIPER_LEAVES.get().defaultBlockState());
+	public void place(Context context) {
+		context.leaves().forEach((pos) -> {
+			if(context.random().nextFloat() <= 0.2F)
+				context.setBlock(pos, PioneerBlocks.BERRIED_JUNIPER_LEAVES.get().defaultBlockState());
 		});
 	}
 }

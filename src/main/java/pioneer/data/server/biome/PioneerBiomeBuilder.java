@@ -30,22 +30,143 @@ public class PioneerBiomeBuilder {
 	private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(0.03F, 0.3F);
 	private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
 	private final ResourceKey<Biome> VANILLA = BlueprintBiomes.ORIGINAL_SOURCE_MARKER.getKey();
+
 	private final ResourceKey<Biome>[][] OCEANS = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-	private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()}, {VANILLA, PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), VANILLA}, {PioneerBiomes.BLOSSOMING_FIELDS.getKey(), PioneerBiomes.PRAIRIE.getKey(), VANILLA, VANILLA, VANILLA}, {PioneerBiomes.PRAIRIE.getKey(), VANILLA, VANILLA, VANILLA, VANILLA}, {PioneerBiomes.DESERT_SHRUBLAND.getKey(), VANILLA, VANILLA, PioneerBiomes.VERDANT_SANDS.getKey(), PioneerBiomes.VERDANT_SANDS.getKey()}};
-	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()}, {null, PioneerBiomes.ASPEN_GROVE.getKey(), PioneerBiomes.CRYSTAL_LAKES.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey(), PioneerBiomes.REDWOODS.getKey()}, {PioneerBiomes.BAOBAB_FIELDS.getKey(), null, PioneerBiomes.FLOODED_FOREST.getKey(), VANILLA, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
-	private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, PioneerBiomes.BOREAL_FOREST.getKey(), VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
-	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()}, {null, null, VANILLA, PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()}, {null, null, VANILLA, VANILLA, null}, {null, null, null, PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey()}, {VANILLA, VANILLA, null, null, null}};
-	private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, PioneerBiomes.REDWOODS.getKey(), VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.REDWOODS.getKey()}, {null, null, null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()}, {null, null, null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()}};
+	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_1 = new ResourceKey[][]{
+		{PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.REDWOODS.getKey()},
+		{VANILLA, VANILLA, VANILLA, PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.REDWOODS.getKey()},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.VERDANT_SANDS.getKey(), PioneerBiomes.VERDANT_SANDS.getKey(), PioneerBiomes.VERDANT_SANDS.getKey(), PioneerBiomes.VERDANT_SANDS.getKey(), PioneerBiomes.VERDANT_SANDS.getKey()}};
+	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT_1 = new ResourceKey[][]{
+		{null, null, null, null, null},
+		{null, null, null, null, PioneerBiomes.REDWOODS.getKey()},
+		{VANILLA, null, null, PioneerBiomes.ASPEN_GROVE.getKey(), null},
+		{null, null, VANILLA, VANILLA, VANILLA},
+		{null, null, null, null, null}};
+	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_1 = new ResourceKey[][]{
+		{PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey()},
+		{PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), VANILLA, PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.REDWOODS.getKey()},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.RED_ROCK_CANYON.getKey(), VANILLA, VANILLA}};
+	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT_1 = new ResourceKey[][]{
+		{null, null, null, null, null},
+		{null, null, VANILLA, VANILLA, VANILLA},
+		{null, null, VANILLA, PioneerBiomes.ASPEN_GROVE.getKey(), null},
+		{null, null, null, null, null},
+		{VANILLA, PioneerBiomes.RED_ROCK_CANYON.getKey(), null, null, null}};
+	private final ResourceKey<Biome>[][] SHATTERED_BIOMES_1 = new ResourceKey[][]{
+		{PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.REDWOODS.getKey()},
+		{PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), VANILLA, VANILLA},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()},
+		{null, null, null, null, null}};
+
+	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_2 = new ResourceKey[][]{
+		{PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()},
+		{PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), VANILLA, PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()},
+		{PioneerBiomes.ASPEN_GROVE.getKey(), PioneerBiomes.ASPEN_GROVE.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.DESERT_SHRUBLAND.getKey(), PioneerBiomes.DESERT_SHRUBLAND.getKey(), PioneerBiomes.DESERT_SHRUBLAND.getKey(), PioneerBiomes.DESERT_SHRUBLAND.getKey(), VANILLA}};
+	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT_2 = new ResourceKey[][]{
+		{null, null, null, null, null},
+		{null, null, null, null, PioneerBiomes.CRYSTAL_LAKES.getKey()},
+		{PioneerBiomes.BLOSSOMING_FIELDS.getKey(), null, PioneerBiomes.ASPEN_GROVE.getKey(), PioneerBiomes.ASPEN_GROVE.getKey(), null},
+		{null, null,VANILLA, VANILLA, VANILLA},
+		{null, null, null, null, null}};
+	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_2 = new ResourceKey[][]{
+		{PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey()},
+		{PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), VANILLA, PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey(), VANILLA, VANILLA, VANILLA}, 
+		{PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.RED_ROCK_CANYON.getKey(), VANILLA, VANILLA}};
+	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT_2 = new ResourceKey[][]{
+		{null, null, null, null, null},
+		{null, null, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey()},
+		{null, null, VANILLA, PioneerBiomes.ASPEN_GROVE.getKey(), null},
+		{null, null, null, null, null},
+		{VANILLA, PioneerBiomes.RED_ROCK_CANYON.getKey(), null, null, null}};
+	private final ResourceKey<Biome>[][] SHATTERED_BIOMES_2 = new ResourceKey[][]{
+		{PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()},
+		{PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), VANILLA, VANILLA},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()},
+		{null, null, null, null, null}};
+
+	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_3 = new ResourceKey[][]{
+		{VANILLA, VANILLA, VANILLA, VANILLA, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()},
+		{VANILLA, PioneerBiomes.PRAIRIE.getKey(), PioneerBiomes.PRAIRIE.getKey(), PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.DESERT_SHRUBLAND.getKey(), PioneerBiomes.DESERT_SHRUBLAND.getKey(), PioneerBiomes.DESERT_SHRUBLAND.getKey(), PioneerBiomes.DESERT_SHRUBLAND.getKey(), VANILLA}};
+	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT_3 = new ResourceKey[][]{
+		{null, null, null, null, null},
+		{null, null, null, null, PioneerBiomes.CRYSTAL_LAKES.getKey()},
+		{PioneerBiomes.BLOSSOMING_FIELDS.getKey(), null, PioneerBiomes.FLOODED_FOREST.getKey(), PioneerBiomes.FLOODED_FOREST.getKey(), null},
+		{null, null, VANILLA, VANILLA, VANILLA},
+		{null, null, null, null, null}};
+	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_3 = new ResourceKey[][]{
+		{VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BLOSSOMING_FIELDS.getKey(), PioneerBiomes.BLOSSOMING_FIELDS.getKey(), VANILLA, PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()},
+		{PioneerBiomes.BLOSSOMING_FIELDS.getKey(), PioneerBiomes.BLOSSOMING_FIELDS.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey(), VANILLA, VANILLA, VANILLA},
+		{PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.RED_ROCK_CANYON.getKey(), PioneerBiomes.RED_ROCK_CANYON.getKey(), VANILLA, VANILLA}};
+	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT_3 = new ResourceKey[][]{
+		{null, null, null, null, null},
+		{null, null, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey()},
+		{null, null, VANILLA, PioneerBiomes.ASPEN_GROVE.getKey(), null}, {null, null, null, null, null},
+		{VANILLA, PioneerBiomes.RED_ROCK_CANYON.getKey(), null, null, null}};
+	private final ResourceKey<Biome>[][] SHATTERED_BIOMES_3 = new ResourceKey[][]{
+		{VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()},
+		{PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), PioneerBiomes.WINDSWEPT_CLIFFS.getKey(), VANILLA, VANILLA},
+		{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+		{null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()},
+		{null, null, null, null, null}};
 
 
-	public void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
-		if (SharedConstants.debugGenerateSquareTerrainWithoutNoise) {
-			TerrainProvider.overworld(false).addDebugBiomesToVisualizeSplinePoints(consumer);
-		} else {
-			this.addOffCoastBiomes(consumer);
-			this.addInlandBiomes(consumer);
-			this.addUndergroundBiomes(consumer);
+	//	private final ResourceKey<Biome>[][] OCEANS = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+//	private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{{VANILLA, PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()}, {VANILLA, PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.PINE_MEADOWS.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()}, {PioneerBiomes.BLOSSOMING_FIELDS.getKey(), PioneerBiomes.PRAIRIE.getKey(), VANILLA, VANILLA, VANILLA}, {PioneerBiomes.PRAIRIE.getKey(), VANILLA, VANILLA, VANILLA, VANILLA}, {PioneerBiomes.DESERT_SHRUBLAND.getKey(), VANILLA, VANILLA, PioneerBiomes.VERDANT_SANDS.getKey(), PioneerBiomes.VERDANT_SANDS.getKey()}};
+//	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, PioneerBiomes.SNOWY_REDWOODS.getKey(), PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()}, {null, PioneerBiomes.ASPEN_GROVE.getKey(), PioneerBiomes.CRYSTAL_LAKES.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey(), PioneerBiomes.REDWOODS.getKey()}, {PioneerBiomes.BAOBAB_FIELDS.getKey(), null, PioneerBiomes.FLOODED_FOREST.getKey(), VANILLA, null}, {null, null, VANILLA, VANILLA, VANILLA}, {null, null, null, null, null}};
+//	private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.BOREAL_FOREST.getKey()}, {VANILLA, VANILLA, VANILLA, PioneerBiomes.BOREAL_FOREST.getKey(), VANILLA}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()}, {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
+//	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{{VANILLA, null, null, PioneerBiomes.SNOWY_BOREAL_FOREST.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()}, {null, null, VANILLA, PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST.getKey()}, {null, null, VANILLA, VANILLA, null}, {null, null, null, PioneerBiomes.BAOBAB_FIELDS.getKey(), PioneerBiomes.BAOBAB_FIELDS.getKey()}, {VANILLA, VANILLA, null, null, null}};
+//	private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{{VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}, {VANILLA, VANILLA, PioneerBiomes.REDWOODS.getKey(), VANILLA, VANILLA}, {VANILLA, VANILLA, VANILLA, PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.REDWOODS.getKey()}, {null, null, null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()}, {null, null, null, PioneerBiomes.OVERGROWN_SPIRES.getKey(), PioneerBiomes.OVERGROWN_SPIRES.getKey()}};
+	private ResourceKey<Biome>[][] MIDDLE_BIOMES;
+	private ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT;
+	private ResourceKey<Biome>[][] PLATEAU_BIOMES;
+	private ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT;
+	private ResourceKey<Biome>[][] SHATTERED_BIOMES;
+
+	public PioneerBiomeBuilder(int index) {
+		switch (index) {
+			case 1:
+				MIDDLE_BIOMES = MIDDLE_BIOMES_1;
+				MIDDLE_BIOMES_VARIANT = MIDDLE_BIOMES_VARIANT_1;
+				PLATEAU_BIOMES = PLATEAU_BIOMES_1;
+				PLATEAU_BIOMES_VARIANT = PLATEAU_BIOMES_VARIANT_1;
+				SHATTERED_BIOMES = SHATTERED_BIOMES_1;
+				break;
+			case 2:
+				MIDDLE_BIOMES = MIDDLE_BIOMES_2;
+				MIDDLE_BIOMES_VARIANT = MIDDLE_BIOMES_VARIANT_2;
+				PLATEAU_BIOMES = PLATEAU_BIOMES_2;
+				PLATEAU_BIOMES_VARIANT = PLATEAU_BIOMES_VARIANT_2;
+				SHATTERED_BIOMES = SHATTERED_BIOMES_2;
+				break;
+			case 3:
+				MIDDLE_BIOMES = MIDDLE_BIOMES_3;
+				MIDDLE_BIOMES_VARIANT = MIDDLE_BIOMES_VARIANT_3;
+				PLATEAU_BIOMES = PLATEAU_BIOMES_3;
+				PLATEAU_BIOMES_VARIANT = PLATEAU_BIOMES_VARIANT_3;
+				SHATTERED_BIOMES = SHATTERED_BIOMES_3;
+				break;
 		}
+	}
+	
+	public void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
+		this.addOffCoastBiomes(consumer);
+		this.addInlandBiomes(consumer);
+		this.addUndergroundBiomes(consumer);
 	}
 
 	private void addOffCoastBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {

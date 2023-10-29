@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/door_bottom_right_open",
+    "render_type": "minecraft:cutout",
+    "textures": {
+        "bottom": "pioneer:block/joshua_door_bottom",
+        "top": "pioneer:block/joshua_door_top"
+    }
+}
