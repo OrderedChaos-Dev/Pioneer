@@ -34,6 +34,10 @@ public class PioneerBiomeFeatures {
     builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacements.OVERGROWN_SPIRES_TREES.getHolder().get());
   }
 
+  public static void addOvergrownSpiresPools(BiomeGenerationSettings.Builder builder) {
+    builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacements.OVERGROWN_SPIRES_POOL.getHolder().get());
+  }
+
   public static void addPrairieVegetation(BiomeGenerationSettings.Builder builder) {
     builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacements.PRAIRIE_TREES.getHolder().get());
     builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacements.PRAIRIE_GRASS.getHolder().get());

@@ -28,8 +28,9 @@ public class OvergrownSpiresBiome {
 		BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
 		BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);
 		BiomeDefaultFeatures.addJungleMelons(biomeGenSettings);
+		PioneerBiomeFeatures.addOvergrownSpiresPools(biomeGenSettings);
 		PioneerBiomeFeatures.addOvergrownSpiresTrees(biomeGenSettings);
-		
+
 		MobSpawnSettings.Builder mobSpawnSettings = new MobSpawnSettings.Builder();
 		mobSpawnSettings.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2));
 		mobSpawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));

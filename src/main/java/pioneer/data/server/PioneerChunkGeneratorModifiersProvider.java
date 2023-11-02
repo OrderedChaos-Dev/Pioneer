@@ -97,7 +97,7 @@ public class PioneerChunkGeneratorModifiersProvider extends ChunkGeneratorModifi
 																							ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, -2.0D), ifTrue(SurfaceRules.noiseCondition(Noises.SURFACE, -0.02D, 0.02D), DIORITE)), GRASS_DIRT_FLOOR));
 	
 	public static final SurfaceRules.RuleSource OVERGROWN_SPIRES = ifTrue(isBiome(PioneerBiomes.OVERGROWN_SPIRES.getKey()),
-																	sequence(ifTrue(surfaceNoiseAbove(1.75D), STONE_FLOOR), ifTrue(surfaceNoiseAbove(-0.5D), COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR));
+																	sequence(ifTrue(surfaceNoiseAbove(2.15D), STONE_FLOOR), ifTrue(surfaceNoiseAbove(0D), COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR));
 	
 	public static final SurfaceRules.RuleSource REDWOODS = ifTrue(isBiome(PioneerBiomes.REDWOODS.getKey(), PioneerBiomes.SNOWY_REDWOODS.getKey()),
 																	sequence(ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT_FLOOR), ifTrue(surfaceNoiseAbove(-0.90D), PODZOL_DIRT_FLOOR), GRASS_DIRT_FLOOR));

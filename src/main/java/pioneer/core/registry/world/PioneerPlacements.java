@@ -9,10 +9,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
@@ -51,17 +53,18 @@ public class PioneerPlacements {
 
 	public static final RegistryObject<PlacedFeature> CRYSTAL_POOL = register("crystal_pool", PioneerConfiguredFeatures.CRYSTAL_POOL, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final RegistryObject<PlacedFeature> AMETHYST_CRYSTALS = register("amethyst_crystals", PioneerConfiguredFeatures.AMETHYST_CRYSTALS, VegetationPlacements.worldSurfaceSquaredWithCount(3));
-	public static final RegistryObject<PlacedFeature> FLOOD_POOL = register("flood_pool", PioneerConfiguredFeatures.FLOOD_POOL, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+	public static final RegistryObject<PlacedFeature> FLOOD_POOL = register("flood_pool", PioneerConfiguredFeatures.FLOOD_POOL, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final RegistryObject<PlacedFeature> DRIPLEAF = register("dripleaf", PioneerConfiguredFeatures.DRIPLEAF, AquaticPlacements.seagrassPlacement(16));
-	public static final RegistryObject<PlacedFeature> WETLANDS_POOL = register("wetlands_pool", PioneerConfiguredFeatures.WETLANDS_POOL, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(2)), BiomeFilter.biome());
-	
+	public static final RegistryObject<PlacedFeature> WETLANDS_POOL = register("wetlands_pool", PioneerConfiguredFeatures.WETLANDS_POOL, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(2)), BiomeFilter.biome());
+	public static final RegistryObject<PlacedFeature> OVERGROWN_SPIRES_POOL = register("overgrown_spires_pool", PioneerConfiguredFeatures.OVERGROWN_SPIRES_POOL, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(2)), BiomeFilter.biome());
+
 	public static final RegistryObject<PlacedFeature> TREES_PALM = register("trees_palm", PioneerVegetationFeatures.TREES_PALM, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
 	public static final RegistryObject<PlacedFeature> TREES_JUNIPER = register("trees_juniper", PioneerVegetationFeatures.TREES_JUNIPER, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1)));
 	public static final RegistryObject<PlacedFeature> PINE_MEADOWS_TREES = register("pine_meadows_trees", PioneerVegetationFeatures.PINE_MEADOWS_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 2)));
 	public static final RegistryObject<PlacedFeature> AUTUMNAL_CONIFEROUS_TREES = register("autumnal_coniferous_trees", PioneerVegetationFeatures.AUTUMNAL_CONIFEROUS_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(7, 0.1F, 1)));
 	public static final RegistryObject<PlacedFeature> BOREAL_FOREST_TREES = register("boreal_forest_trees", PioneerVegetationFeatures.BOREAL_FOREST_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(7, 0.1F, 1)));
 	public static final RegistryObject<PlacedFeature> DESERT_SHRUBLAND_TREES = register("desert_shrubland_trees", PioneerVegetationFeatures.DESERT_SHRUBLAND_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.2F, 1)));
-	public static final RegistryObject<PlacedFeature> OVERGROWN_SPIRES_TREES = register("overgrown_spires_trees", PioneerVegetationFeatures.OVERGROWN_SPIRES_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+	public static final RegistryObject<PlacedFeature> OVERGROWN_SPIRES_TREES = register("overgrown_spires_trees", PioneerVegetationFeatures.OVERGROWN_SPIRES_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(13, 0.1F, 1)));
 	public static final RegistryObject<PlacedFeature> BAOBAB_FIELDS_TREES = register("baobab_field_trees", PioneerVegetationFeatures.BAOBAB_FIELDs_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.2F, 1)));
 	public static final RegistryObject<PlacedFeature> PRAIRIE_TREES = register("prairie_trees", PioneerVegetationFeatures.PRAIRIE_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
 	public static final RegistryObject<PlacedFeature> REDWOOD_FOREST_TREES = register("redwood_forest_trees", PioneerVegetationFeatures.REDWOOD_FOREST_TREES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.1F, 1)));

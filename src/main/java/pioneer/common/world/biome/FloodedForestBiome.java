@@ -1,6 +1,7 @@
 package pioneer.common.world.biome;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import pioneer.common.world.PioneerBiomeFeatures;
 
 public class FloodedForestBiome {
@@ -24,6 +26,8 @@ public class FloodedForestBiome {
     BiomeDefaultFeatures.addOtherBirchTrees(biomeGenSettings);
     BiomeDefaultFeatures.addDefaultFlowers(biomeGenSettings);
     BiomeDefaultFeatures.addForestGrass(biomeGenSettings);
+    biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_TALL_GRASS_2);
+    biomeGenSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_TALL_GRASS);
 
     BiomeDefaultFeatures.addDefaultMushrooms(biomeGenSettings);
     BiomeDefaultFeatures.addDefaultExtraVegetation(biomeGenSettings);

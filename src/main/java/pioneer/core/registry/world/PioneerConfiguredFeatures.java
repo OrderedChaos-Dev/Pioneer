@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import net.minecraft.core.*;
 import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
@@ -94,10 +95,10 @@ public class PioneerConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> RED_MAPLE_FALLEN_LEAVES = register("red_maple_fallen_leaves", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.RED_MAPLE_FALLEN_LEAVES.get().defaultBlockState())));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_MAPLE_FALLEN_LEAVES = register("orange_maple_fallen_leaves", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.ORANGE_MAPLE_FALLEN_LEAVES.get().defaultBlockState())));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PURPLE_MAPLE_FALLEN_LEAVES = register("purple_maple_fallen_leaves", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.PURPLE_MAPLE_FALLEN_LEAVES.get().defaultBlockState())));
-	
+
 	public static final RegistryObject<ConfiguredFeature<?, ?>> AMETHYST_CRYSTALS = register("amethyst_crystals", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, simpleRandomPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SMALL_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.LARGE_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.AMETHYST_CLUSTER.defaultBlockState(), 1)))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> DRIPLEAF = register("dripleaf", () -> new ConfiguredFeature<>(Feature.SIMPLE_RANDOM_SELECTOR, new SimpleRandomFeatureConfiguration(HolderSet.direct(makeSmallDripleaf(), makeDripleaf(Direction.EAST), makeDripleaf(Direction.WEST), makeDripleaf(Direction.SOUTH), makeDripleaf(Direction.NORTH)))));
-	
+
 	public static final RegistryObject<ConfiguredFeature<?, ?>> PALM_TREE = register("palm_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new PalmTrunkPlacer(7, 2, 2), new PalmFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.PALM_LOG.get(), PioneerBlocks.PALM_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2), List.of(new CoconutDecorator()))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> BIG_REDWOOD_TREE = register("big_redwood_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new RedwoodTrunkPlacer(31, 23, 17), new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(17, 24)), PioneerBlocks.REDWOOD_LOG.get(), PioneerBlocks.REDWOOD_LEAVES.get(), new TwoLayersFeatureSize(1, 1, 2))));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> SMALL_REDWOOD_TREE = register("small_redwood_tree", () -> new ConfiguredFeature<>(Feature.TREE, tree(new SmallRedwoodTrunkPlacer(7, 5, 0), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), PioneerBlocks.REDWOOD_LOG.get(), PioneerBlocks.REDWOOD_LEAVES.get(), new TwoLayersFeatureSize(2, 0, 2))));
@@ -137,7 +138,8 @@ public class PioneerConfiguredFeatures {
 	public static final RegistryObject<ConfiguredFeature<?, ?>> SEA_PICKLE = register("sea_pickle", () ->  new ConfiguredFeature<>(Feature.SEA_PICKLE, new CountConfiguration(3)));
 	public static final RegistryObject<ConfiguredFeature<?, ?>> WETLANDS_POOL = register("wetlands_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
 					BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(SEA_PICKLE.getHolder().get()), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.02F, UniformInt.of(4, 7), 0.7F)));
-
+	public static final RegistryObject<ConfiguredFeature<?, ?>> OVERGROWN_SPIRES_POOL = register("overgrown_spires_pool", () -> new ConfiguredFeature<>(Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
+		BlockTags.BASE_STONE_OVERWORLD, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(AquaticPlacements.SEAGRASS_WARM.get().feature()), CaveSurface.FLOOR, ConstantInt.of(1), 0.8F, 5, 0.8F, UniformInt.of(4, 7), 0.7F)));
 	
 	public static <FC extends FeatureConfiguration, F extends Feature<FC>> RegistryObject<ConfiguredFeature<?, ?>> register(String name, Supplier<ConfiguredFeature<?, ?>> configuredFeature) {
 		return CONFIGURED_FEATURES.register(name, configuredFeature);
