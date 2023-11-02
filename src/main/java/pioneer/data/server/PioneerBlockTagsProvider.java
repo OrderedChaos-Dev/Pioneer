@@ -39,6 +39,7 @@ public class PioneerBlockTagsProvider extends BlockTagsProvider {
     		if(name.endsWith("_log")) {
     			this.tag(BlockTags.LOGS).add(key);
     			this.tag(BlockTags.LOGS_THAT_BURN).add(key);
+					this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(key);
     			this.tag(BlockTags.MINEABLE_WITH_AXE).add(key).replace(false);
     		} else if(block.get() instanceof LeavesBlock) {
     			this.tag(BlockTags.LEAVES).add(key).replace(false);

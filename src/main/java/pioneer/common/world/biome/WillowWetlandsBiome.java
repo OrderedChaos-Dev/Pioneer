@@ -22,6 +22,7 @@ public class WillowWetlandsBiome {
 		MobSpawnSettings.Builder mobSpawnSettings = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.commonSpawns(mobSpawnSettings);
 		mobSpawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
+		mobSpawnSettings.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 10, 2, 5));
 
 		BiomeGenerationSettings.Builder biomeGenSettings = new BiomeGenerationSettings.Builder();
 		BiomeDefaultFeatures.addFossilDecoration(biomeGenSettings);

@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-02T00:09:23.1559455	Pioneer Block Tags
+// 1.19.2	2023-11-02T00:52:57.2204238	Pioneer Block Tags
 cc6e5182fd6d856b56ebd7997d7e25562344256e data/forge/tags/blocks/fences.json
 cc6e5182fd6d856b56ebd7997d7e25562344256e data/forge/tags/blocks/fences/wooden.json
 ad61bf59d8e35e6764cd5512c170aeb95c8399a6 data/forge/tags/blocks/fence_gates.json
@@ -12,6 +12,7 @@ fcb08a2c6f3e3d672cd3f4402eaa36370d897c39 data/minecraft/tags/blocks/leaves.json
 a8f9d6fd732db8d682bcea0787581af14e4b8ae1 data/minecraft/tags/blocks/logs.json
 a8f9d6fd732db8d682bcea0787581af14e4b8ae1 data/minecraft/tags/blocks/logs_that_burn.json
 7467d3906ca21bcba2964e71a9c1f5feb0d85163 data/minecraft/tags/blocks/mineable/axe.json
+a8f9d6fd732db8d682bcea0787581af14e4b8ae1 data/minecraft/tags/blocks/overworld_natural_logs.json
 795ced1ada12e85db1bb00dad9ce96857dc7c83d data/minecraft/tags/blocks/planks.json
 afc9899bc27b280769327853dbc5c44bb1bf9e1c data/minecraft/tags/blocks/pressure_plates.json
 9e2821f0a3e2c62309006c62b406461ffefe2cfc data/minecraft/tags/blocks/replaceable_plants.json
