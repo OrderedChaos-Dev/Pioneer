@@ -45,9 +45,11 @@ public abstract class SurfaceSystemMixin {
 													 SurfaceRules.Context surfacerulesContext, SurfaceRules.SurfaceRule surfaceRule, BlockPos.MutableBlockPos pos2,
 													 int k, int l, int i1, int j1, int k1, Holder<Biome> holder) {
 
-        if (holder.is(PioneerBiomes.RED_ROCK_CANYON.getKey()) || holder.is(PioneerBiomes.OVERGROWN_SPIRES.getKey())) {
+        if (holder.is(PioneerBiomes.OVERGROWN_SPIRES.getKey())) {
         	this.overgrownHeightsExtension(blockcolumn, i1, j1, k1, level);
-        }
+        } else if (holder.is(PioneerBiomes.RED_ROCK_CANYON.getKey())) {
+					this.erodedBadlandsExtension(blockcolumn, i1, j1, k1, level);
+				}
 
 	}
 	
