@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "pioneer:block/aspen_planks",
-        "top": "pioneer:block/aspen_planks",
-        "side": "pioneer:block/aspen_planks"
-    }
-}

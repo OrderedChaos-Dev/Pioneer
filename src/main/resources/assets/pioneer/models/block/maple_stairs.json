@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "pioneer:block/maple_planks",
-        "top": "pioneer:block/maple_planks",
-        "side": "pioneer:block/maple_planks"
-    }
-}

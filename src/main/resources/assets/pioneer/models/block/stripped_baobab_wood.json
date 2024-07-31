@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "pioneer:block/stripped_baobab_log",
-        "side": "pioneer:block/stripped_baobab_log"
-    }
-}

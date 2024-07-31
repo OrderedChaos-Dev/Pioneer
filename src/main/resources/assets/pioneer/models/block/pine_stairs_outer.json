@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "pioneer:block/pine_planks",
-        "top": "pioneer:block/pine_planks",
-        "side": "pioneer:block/pine_planks"
-    }
-}

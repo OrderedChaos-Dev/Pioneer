@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_top_rh",
-    "textures": {
-        "bottom": "pioneer:block/cottonwood_door_bottom",
-        "top": "pioneer:block/cottonwood_door_top"
-    }
-}

@@ -1,22 +1,18 @@
 {
-  "replace": false,
   "values": [
-    "pioneer:fir_sapling",
-    "pioneer:pine_sapling",
-    "pioneer:redwood_sapling",
     "pioneer:willow_sapling",
-    "pioneer:mangrove_sapling",
-    "pioneer:palm_sapling",
+    "pioneer:pine_sapling",
     "pioneer:cottonwood_sapling",
+    "pioneer:joshua_sapling",
+    "pioneer:baobab_sapling",
+    "pioneer:palm_sapling",
+    "pioneer:redwood_sapling",
+    "pioneer:maple_sapling",
+    "pioneer:tamarack_sapling",
     "pioneer:aspen_sapling",
     "pioneer:juniper_sapling",
-    "pioneer:baobab_sapling",
-    "pioneer:red_maple_sapling",
+    "pioneer:fir_sapling",
     "pioneer:orange_maple_sapling",
-    "pioneer:purple_maple_sapling",
-    "pioneer:pink_sakura_sapling",
-    "pioneer:white_sakura_sapling",
-    "pioneer:tamarack_sapling",
-    "pioneer:joshua_sapling"
+    "pioneer:purple_maple_sapling"
   ]
 }

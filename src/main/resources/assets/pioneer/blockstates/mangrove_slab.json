@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "pioneer:block/mangrove_slab" },
-        "type=top": { "model": "pioneer:block/mangrove_slab_top" },
-        "type=double": { "model": "pioneer:block/mangrove_planks" }
-    }
-}
