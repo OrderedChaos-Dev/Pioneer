@@ -1,12 +1,17 @@
 package dev.orderedchaos.pioneer.core.registry;
 
 import dev.orderedchaos.pioneer.core.Pioneer;
+import dev.orderedchaos.pioneer.core.registry.util.FeatureOrderUtil;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -18,18 +23,20 @@ import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Pioneer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PioneerBiomes {
 
   public static final ResourceKey<Biome> VERDANT_SANDS = createKey("verdant_sands");
-//  public static final ResourceKey<Biome> PINE_MEADOWS = createKey("pine_meadows", PineMeadowsBiome::pineMeadows);
-//  public static final ResourceKey<Biome> AUTUMNAL_CONIFEROUS_FOREST = createKey("autumnal_coniferous_forest", AutumnalConiferousForestBiome::autumnalConiferousForest);
-//  public static final ResourceKey<Biome> BOREAL_FOREST = createKey("boreal_forest", () -> BorealForestBiome.borealForest(false));
-//  public static final ResourceKey<Biome> SNOWY_BOREAL_FOREST = createKey("snowy_boreal_forest", () -> BorealForestBiome.borealForest(true));
+  public static final ResourceKey<Biome> PINE_MEADOWS = createKey("pine_meadows");
+  public static final ResourceKey<Biome> AUTUMNAL_CONIFEROUS_FOREST = createKey("autumnal_coniferous_forest");
+  public static final ResourceKey<Biome> BOREAL_FOREST = createKey("boreal_forest");
+  public static final ResourceKey<Biome> SNOWY_BOREAL_FOREST = createKey("snowy_boreal_forest");
 //  public static final ResourceKey<Biome> DESERT_SHRUBLAND = createKey("desert_shrubland", DesertShrublandBiome::desertShrubland);
 //  public static final ResourceKey<Biome> OVERGROWN_SPIRES = createKey("overgrown_spires", OvergrownSpiresBiome::overgrownSpires);
 //  public static final ResourceKey<Biome> REDWOODS = createKey("redwoods", () -> RedwoodsBiome.redwoods(false));
@@ -49,6 +56,11 @@ public class PioneerBiomes {
     HolderGetter<ConfiguredWorldCarver<?>> carvers = context.lookup(Registries.CONFIGURED_CARVER);
 
     context.register(VERDANT_SANDS, verdantSands(features, carvers));
+    context.register(PINE_MEADOWS, pineMeadows(features, carvers));
+    context.register(AUTUMNAL_CONIFEROUS_FOREST, autumnalConiferousForest(features, carvers));
+    context.register(BOREAL_FOREST, borealForest(features, carvers, false));
+    context.register(SNOWY_BOREAL_FOREST, borealForest(features, carvers, true));
+
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -61,20 +73,30 @@ public class PioneerBiomes {
     globalOverworldGeneration(biomeGenBuilder);
     BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
     BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
-    BiomeDefaultFeatures.addDefaultFlowers(biomeGenBuilder);
-    BiomeDefaultFeatures.addDefaultGrass(biomeGenBuilder);
-    BiomeDefaultFeatures.addDesertVegetation(biomeGenBuilder);
-    BiomeDefaultFeatures.addDefaultMushrooms(biomeGenBuilder);
-    BiomeDefaultFeatures.addDesertExtraVegetation(biomeGenBuilder);
-    BiomeDefaultFeatures.addDesertExtraDecoration(biomeGenBuilder);
-    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, features.getOrThrow(PioneerPlacedFeatures.TREES_VERDANT_SANDS));
+
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.PATCH_TALL_GRASS,
+      VegetationPlacements.FLOWER_SWAMP,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_GRASS_PLAIN,
+      VegetationPlacements.PATCH_DEAD_BUSH_2,
+      VegetationPlacements.PATCH_SUGAR_CANE_DESERT,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_CACTUS_DESERT,
+      AquaticPlacements.SEAGRASS_WARM
+    );
+
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.PATCH_MANY_CACTUS);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_VERDANT_SANDS);
 
     MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
     BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
-    BiomeDefaultFeatures.desertSpawns(mobSpawnBuilder);
     mobSpawnBuilder
       .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6))
       .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+    BiomeDefaultFeatures.desertSpawns(mobSpawnBuilder);
 
     return biome(true, 0.5F, 1.5F, biomeGenBuilder, mobSpawnBuilder)
       .specialEffects(new BiomeSpecialEffects.Builder()
@@ -83,6 +105,114 @@ public class PioneerBiomes {
         .waterFogColor(329011)
         .fogColor(12638463)
         .skyColor(calculateSkyColor(1.5F))
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome pineMeadows(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+
+    globalOverworldGeneration(biomeGenBuilder);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.PATCH_TALL_GRASS_2,
+      VegetationPlacements.PATCH_SUNFLOWER,
+      VegetationPlacements.FLOWER_PLAINS,
+      VegetationPlacements.PATCH_GRASS_PLAIN,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_PINE_MEADOWS);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.plainsSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.8F, 0.7F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0x59cf70)
+        .foliageColorOverride(0x69cf59)
+        .skyColor(calculateSkyColor(1.5F))
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome autumnalConiferousForest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.PATCH_BERRY_COMMON,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.BROWN_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.RED_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_LARGE_FERN,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_GRASS_TAIGA
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_AUTUMNAL_CONIFEROUS_FOREST);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.8F, 0.4F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0x76b53f)
+        .foliageColorOverride(0x76b53f)
+        .skyColor(calculateSkyColor(0.4F))
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome borealForest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers, boolean snowy) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      (snowy ? VegetationPlacements.PATCH_BERRY_RARE : VegetationPlacements.PATCH_BERRY_COMMON),
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.BROWN_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.RED_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_LARGE_FERN,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_GRASS_TAIGA
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_BOREAL_FOREST);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    float temperature = snowy ? -0.4F : 0.23F;
+    return biome(true, 0.8F, temperature, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0x00994d)
+        .foliageColorOverride(0x00994d)
+        .skyColor(calculateSkyColor(0.4F))
         .build()
       )
       .build();

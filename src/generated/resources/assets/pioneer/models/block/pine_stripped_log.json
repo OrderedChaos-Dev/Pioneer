@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pioneer:block/pine_stripped_log_top",
+    "side": "pioneer:block/pine_stripped_log"
+  }
+}

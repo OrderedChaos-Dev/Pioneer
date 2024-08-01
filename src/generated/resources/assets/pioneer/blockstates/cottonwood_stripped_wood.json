@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pioneer:block/cottonwood_stripped_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "pioneer:block/cottonwood_stripped_wood"
+    },
+    "axis=z": {
+      "model": "pioneer:block/cottonwood_stripped_wood_horizontal",
+      "x": 90
+    }
+  }
+}

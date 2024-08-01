@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "pioneer:spruce_bush_checked",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "pioneer:pine_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "minecraft:oak_bees_0002"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pioneer:block/fir_slab"
+    },
+    "type=double": {
+      "model": "pioneer:block/fir_planks"
+    },
+    "type=top": {
+      "model": "pioneer:block/fir_slab_top"
+    }
+  }
+}

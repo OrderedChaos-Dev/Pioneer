@@ -54,36 +54,36 @@ public class PioneerModdedBiomeSlices {
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+      {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
+      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-      {null, null, null, VANILLA, null},
+      {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
       {null, null, null, null, VANILLA},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
+      {VANILLA, null, null, VANILLA, null},
+      {null, null, VANILLA, VANILLA, VANILLA},
       {null, null, null, null, null}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+      {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
+      {VANILLA, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
       {null, null, null, null, null},
-      {null, null, null, VANILLA, null},
+      {null, null, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, null},
       {null, null, VANILLA, VANILLA, null},
       {null, null, null, null, null},
       {null, null, null, null, null}
     };
     private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+      {PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
+      {VANILLA, VANILLA, VANILLA, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {null, null, null, null, null},
       {null, null, null, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}

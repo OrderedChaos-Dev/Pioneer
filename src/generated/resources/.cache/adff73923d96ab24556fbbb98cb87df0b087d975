@@ -1,0 +1,16 @@
+// 1.20.1	2024-07-25T21:07:48.3146078	Tags for minecraft:item mod id pioneer
+ef73028b18023f49d3d566fa1422c41bab0afec8 data/forge/tags/items/fence_gates/wooden.json
+ef73028b18023f49d3d566fa1422c41bab0afec8 data/minecraft/tags/items/fence_gates.json
+613809e4272841e8036b0444f7443c4152c71ac0 data/minecraft/tags/items/hanging_signs.json
+11ae3fc3332e31db97dafda2f94246db4f17e2bc data/minecraft/tags/items/leaves.json
+56f2819523f39c6f4cc38a5f43f8585b83190146 data/minecraft/tags/items/logs_that_burn.json
+7caa0ba782ec63df0b1fc0f4cfa242f61012394d data/minecraft/tags/items/planks.json
+4d67962923022aa587745a1193a43b244ea02c2c data/minecraft/tags/items/saplings.json
+4d0440b82d57d3ffedf9d7a09fa24130cc64998e data/minecraft/tags/items/signs.json
+668195495f6390cf540734b456bea4102080b94c data/minecraft/tags/items/wooden_buttons.json
+9ab61566c696434a33ed37912005df0c279bbb41 data/minecraft/tags/items/wooden_doors.json
+9317fa2fd37b7419bb77de1707e91b4784be627e data/minecraft/tags/items/wooden_fences.json
+152cdfce46ec37a2ce7d714a2038c14663a8370f data/minecraft/tags/items/wooden_pressure_plates.json
+3d59ed8c7485be3ac80827f76b8964f24c731318 data/minecraft/tags/items/wooden_slabs.json
+181258305e458e41148fa0649db1d651008bea0c data/minecraft/tags/items/wooden_stairs.json
+1ff59c5f5dae23d3f4c9576275c074a4c83e31c7 data/minecraft/tags/items/wooden_trapdoors.json

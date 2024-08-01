@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pioneer:block/blooming_desert_agave_upper"
+  }
+}

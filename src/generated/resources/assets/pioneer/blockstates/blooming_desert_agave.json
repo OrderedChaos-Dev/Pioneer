@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "pioneer:block/blooming_desert_agave_lower"
+    },
+    "half=upper": {
+      "model": "pioneer:block/blooming_desert_agave_upper"
+    }
+  }
+}
