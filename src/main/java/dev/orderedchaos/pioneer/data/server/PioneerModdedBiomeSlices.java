@@ -66,7 +66,7 @@ public class PioneerModdedBiomeSlices {
       {PioneerBiomes.PRAIRIE, PioneerBiomes.PRAIRIE, null, PioneerBiomes.CRYSTAL_LAKES, PioneerBiomes.REDWOODS},
       {VANILLA, null, null, PioneerBiomes.ASPEN_GROVE, null},
       {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
-      {null, null, null, null, null}
+      {PioneerBiomes.DESERT_SHRUBLAND, PioneerBiomes.DESERT_SHRUBLAND, null, null, null}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},

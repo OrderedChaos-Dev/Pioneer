@@ -94,6 +94,10 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ifTrue(surfaceNoiseAbove(0.1D), GRASS_DIRT_FLOOR),
     ifTrue(surfaceNoiseAbove(-0.6D), SAND_SANDSTONE_FLOOR), SAND_SANDSTONE_FLOOR);
 
+  public static final SurfaceRules.RuleSource DESERT_SHRUBLAND = sequence(
+    ifTrue(surfaceNoiseAbove(2.1D), sequence(ifTrue(random(0.3F), GRASS_DIRT_FLOOR), COARSE_DIRT_FLOOR)),
+    ifTrue(surfaceNoiseAbove(-0.6D), SAND_SANDSTONE_FLOOR), SAND_SANDSTONE_FLOOR);
+
   public static final SurfaceRules.RuleSource PINE_MEADOWS = sequence(
     ifTrue(surfaceNoiseAbove(1.75D), GRASS_DIRT_FLOOR),
     ifTrue(noiseCondition(Noises.SURFACE, -0.02D, 0.02D), DIORITE),
@@ -202,6 +206,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ConditionSource isWindsweptCliffs = isBiome(PioneerBiomes.WINDSWEPT_CLIFFS);
     ConditionSource isOldGrowthBaobabFields = isBiome(PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS);
     ConditionSource isRedwoods = isBiome(PioneerBiomes.REDWOODS, PioneerBiomes.SNOWY_REDWOODS);
+    ConditionSource isDesertShrubland = isBiome(PioneerBiomes.DESERT_SHRUBLAND);
 
     this.entry("pioneer_surface_rule")
       .selects("minecraft:overworld")
@@ -212,7 +217,8 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedRockCanyon, RED_ROCK_CANYON)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWindsweptCliffs, WINDSWEPT_CLIFFS)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOldGrowthBaobabFields, OLD_GROWTH_BAOBAB_FIELDS)), false))
-      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedwoods, REDWOODS)), false));
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedwoods, REDWOODS)), false))
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isDesertShrubland, DESERT_SHRUBLAND)), false));
 
   }
 

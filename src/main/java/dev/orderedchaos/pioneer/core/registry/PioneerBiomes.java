@@ -35,7 +35,7 @@ public class PioneerBiomes {
   public static final ResourceKey<Biome> AUTUMNAL_CONIFEROUS_FOREST = createKey("autumnal_coniferous_forest");
   public static final ResourceKey<Biome> BOREAL_FOREST = createKey("boreal_forest");
   public static final ResourceKey<Biome> SNOWY_BOREAL_FOREST = createKey("snowy_boreal_forest");
-//  public static final ResourceKey<Biome> DESERT_SHRUBLAND = createKey("desert_shrubland", DesertShrublandBiome::desertShrubland);
+  public static final ResourceKey<Biome> DESERT_SHRUBLAND = createKey("desert_shrubland");
   public static final ResourceKey<Biome> OVERGROWN_SPIRES = createKey("overgrown_spires");
   public static final ResourceKey<Biome> REDWOODS = createKey("redwoods");
   public static final ResourceKey<Biome> SNOWY_REDWOODS = createKey("snowy_redwoods");
@@ -71,6 +71,7 @@ public class PioneerBiomes {
     context.register(SNOWY_REDWOODS, redwoods(features, carvers, true));
     context.register(PRAIRIE, prairie(features, carvers));
     context.register(CRYSTAL_LAKES, crystalLakes(features, carvers));
+    context.register(DESERT_SHRUBLAND, desertShrubland(features, carvers));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -575,6 +576,44 @@ public class PioneerBiomes {
         .grassColorOverride(0x5bbf39)
         .foliageColorOverride(0x00994d)
         .skyColor(calculateSkyColor(0.23F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome desertShrubland(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    BiomeDefaultFeatures.addFossilDecoration(biomeGenBuilder);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.PATCH_TALL_GRASS,
+      VegetationPlacements.PATCH_DEAD_BUSH_2,
+      VegetationPlacements.PATCH_SUGAR_CANE_DESERT,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_CACTUS_DESERT
+    );
+
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.DRY_GRASS);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.DESERT_AGAVE);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.DESERT_SAGE);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_DESERT_SHRUBLAND);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.desertSpawns(mobSpawnBuilder);
+
+    return biome(false, 0F, 2.0F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .skyColor(calculateSkyColor(2.0F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

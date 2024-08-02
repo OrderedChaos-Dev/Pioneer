@@ -1,5 +1,6 @@
 package dev.orderedchaos.pioneer.core.registry;
 
+import dev.orderedchaos.pioneer.common.blocks.DryGrassBlock;
 import dev.orderedchaos.pioneer.common.world.features.tree.decorators.CoconutDecorator;
 import dev.orderedchaos.pioneer.common.world.features.tree.decorators.JuniperBerriesDecorator;
 import dev.orderedchaos.pioneer.common.world.features.tree.foliageplacers.*;
@@ -34,6 +35,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.FeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RandomizedIntStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
@@ -59,6 +61,9 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> PRAIRIE_GRASS  = createKey("prairie_grass");
   public static final ResourceKey<ConfiguredFeature<?, ?>> AMETHYST_CRYSTALS  = createKey("amethyst_crystals");
   public static final ResourceKey<ConfiguredFeature<?, ?>> CRYSTAL_POOL  = createKey("crystal_pool");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> DRY_GRASS  = createKey("dry_grass");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> DESERT_SAGE  = createKey("desert_sage");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> DESERT_AGAVE  = createKey("desert_agave");
 
   public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_TREE  = createKey("palm_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_REDWOOD_TREE  = createKey("big_redwood_tree");
@@ -106,6 +111,7 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_REDWOODS  = createKey("trees_redwoods");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_PRAIRIE  = createKey("trees_prairie");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CRYSTAL_LAKES  = createKey("trees_crystal_lakes");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_DESERT_SHRUBLAND  = createKey("trees_desert_shrubland");
 
   public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
     HolderGetter<PlacedFeature> holderGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -150,6 +156,9 @@ public class PioneerConfiguredFeatures {
     register(context, AMETHYST_CRYSTALS, Feature.RANDOM_PATCH, simpleRandomPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SMALL_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.LARGE_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.AMETHYST_CLUSTER.defaultBlockState(), 1))));
     register(context, CRYSTAL_POOL, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
       BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.STONE), PlacementUtils.inlinePlaced(holderGetter2.getOrThrow(CaveFeatures.GLOW_LICHEN)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
+    register(context, DRY_GRASS, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new RandomizedIntStateProvider(BlockStateProvider.simple(PioneerBlocks.DRY_GRASS.get()), DryGrassBlock.MODEL, UniformInt.of(0, 1)))));
+    register(context, DESERT_SAGE, Feature.RANDOM_PATCH, createRandomPatchFeature(2, 7, 2, PioneerBlocks.DESERT_SAGE.get().defaultBlockState()));
+    register(context, DESERT_AGAVE, Feature.FLOWER, PioneerConfiguredFeatures.simpleRandomPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(PioneerBlocks.DESERT_AGAVE.get().defaultBlockState(), 2).add(PioneerBlocks.BLOOMING_DESERT_AGAVE.get().defaultBlockState(), 1))));
 
     register(context, TREES_VERDANT_SANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED), 0.25F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.2F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.2f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.2f)), holderGetter.getOrThrow(TreePlacements.OAK_CHECKED)));
     register(context, TREES_PINE_MEADOWS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PINE_CHECKED), 0.5F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.SPRUCE_BUSH_CHECKED)));
@@ -164,6 +173,7 @@ public class PioneerConfiguredFeatures {
     register(context, TREES_REDWOODS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.REDWOOD_CHECKED), 0.75F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.SMALL_REDWOOD_BEES_0002_CHECKED), 0.05F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.SMALL_REDWOOD_CHECKED), 0.2f)), holderGetter.getOrThrow(PioneerPlacedFeatures.SMALL_REDWOOD_CHECKED)));
     register(context, TREES_PRAIRIE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.COTTONWOOD_CHECKED), 0.55F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.COTTONWOOD_BEES_005_CHECKED), 0.4F)), holderGetter.getOrThrow(PioneerPlacedFeatures.COTTONWOOD_CHECKED)));
     register(context, TREES_CRYSTAL_LAKES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED), 0.75F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PINE_CHECKED), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED)));
+    register(context, TREES_DESERT_SHRUBLAND, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.JOSHUA_CHECKED), 0.8F)), holderGetter.getOrThrow(PioneerPlacedFeatures.JOSHUA_CHECKED)));
   }
 
   private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
