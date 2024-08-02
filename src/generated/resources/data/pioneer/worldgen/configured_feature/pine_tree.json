@@ -9,7 +9,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:spruce_foliage_placer",
+      "type": "pioneer:pioneer_pine_foliage_placer",
       "offset": {
         "type": "minecraft:uniform",
         "value": {

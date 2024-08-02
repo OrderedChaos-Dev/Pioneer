@@ -11,6 +11,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.dimension.LevelStem;
 
@@ -57,14 +58,14 @@ public class PioneerModdedBiomeSlices {
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
       {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
+      {VANILLA, VANILLA, VANILLA, VANILLA, PioneerBiomes.OVERGROWN_SPIRES},
       {PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
       {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
       {null, null, null, null, VANILLA},
       {VANILLA, null, null, VANILLA, null},
-      {null, null, VANILLA, VANILLA, VANILLA},
+      {null, null, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {null, null, null, null, null}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
@@ -72,20 +73,20 @@ public class PioneerModdedBiomeSlices {
       {VANILLA, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}
+      {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
       {null, null, null, null, null},
       {null, null, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, null},
       {null, null, VANILLA, VANILLA, null},
       {null, null, null, null, null},
-      {null, null, null, null, null}
+      {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
     };
     private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
       {PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {null, null, null, null, null},
+      {null, null, null, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {null, null, null, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
     };
 
@@ -191,7 +192,7 @@ public class PioneerModdedBiomeSlices {
 
     private void addMidSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> p_187218_, Climate.Parameter p_187219_) {
       this.addSurfaceBiome(p_187218_, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), p_187219_, 0.0F, VANILLA);
-      this.addSurfaceBiome(p_187218_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187219_, 0.0F, VANILLA);
+      this.addSurfaceBiome(p_187218_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187219_, 0.0F, PioneerBiomes.WILLOW_WETLANDS);
       this.addSurfaceBiome(p_187218_, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187219_, 0.0F, VANILLA);
 
       for(int i = 0; i < this.temperatures.length; ++i) {
@@ -242,7 +243,7 @@ public class PioneerModdedBiomeSlices {
 
     private void addLowSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> p_187229_, Climate.Parameter p_187230_) {
       this.addSurfaceBiome(p_187229_, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), p_187230_, 0.0F, VANILLA);
-      this.addSurfaceBiome(p_187229_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187230_, 0.0F, VANILLA);
+      this.addSurfaceBiome(p_187229_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187230_, 0.0F, PioneerBiomes.WILLOW_WETLANDS);
       this.addSurfaceBiome(p_187229_, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187230_, 0.0F, VANILLA);
 
       for(int i = 0; i < this.temperatures.length; ++i) {
@@ -283,7 +284,7 @@ public class PioneerModdedBiomeSlices {
       this.addSurfaceBiome(p_187238_, this.UNFROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[2], this.erosions[5]), p_187239_, 0.0F, VANILLA);
       this.addSurfaceBiome(p_187238_, this.FROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, this.erosions[6], p_187239_, 0.0F, VANILLA);
       this.addSurfaceBiome(p_187238_, this.UNFROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, this.erosions[6], p_187239_, 0.0F, VANILLA);
-      this.addSurfaceBiome(p_187238_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, VANILLA);
+      this.addSurfaceBiome(p_187238_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, PioneerBiomes.WILLOW_WETLANDS);
       this.addSurfaceBiome(p_187238_, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, VANILLA);
       this.addSurfaceBiome(p_187238_, this.FROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, VANILLA);
 
@@ -335,7 +336,11 @@ public class PioneerModdedBiomeSlices {
     }
 
     private ResourceKey<Biome> pickBadlandsBiome(int p_187173_, Climate.Parameter p_187174_) {
-      return VANILLA;
+      if (p_187173_ < 2) {
+        return PioneerBiomes.RED_ROCK_CANYON;
+      } else {
+        return PioneerBiomes.RED_ROCK_CLIFFS;
+      }
     }
 
     private ResourceKey<Biome> pickPlateauBiome(int p_187234_, int p_187235_, Climate.Parameter p_187236_) {

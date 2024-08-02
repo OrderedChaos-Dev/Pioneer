@@ -77,4 +77,9 @@ public class PioneerPineFoliagePlacer extends SpruceFoliagePlacer {
       }
     }
   }
+
+  @Override
+  protected FoliagePlacerType<?> type() {
+    return PioneerTreePlacers.Foliage.PINE_FOLIAGE_PLACER.get();
+  }
 }
