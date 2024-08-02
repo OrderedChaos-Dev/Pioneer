@@ -52,6 +52,9 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> FANCY_ORANGE_MAPLE_CHECKED = createKey("fancy_orange_maple_checked");
   public static final ResourceKey<PlacedFeature> FANCY_PURPLE_MAPLE_CHECKED = createKey("fancy_purple_maple_checked");
   public static final ResourceKey<PlacedFeature> TALL_BAOBAB_CHECKED = createKey("tall_baobab_checked");
+  public static final ResourceKey<PlacedFeature> REDWOOD_CHECKED = createKey("redwood_checked");
+  public static final ResourceKey<PlacedFeature> SMALL_REDWOOD_CHECKED = createKey("small_redwood_checked");
+  public static final ResourceKey<PlacedFeature> SMALL_REDWOOD_BEES_0002_CHECKED = createKey("small_redwood_bees_0002_checked");
   public static final ResourceKey<PlacedFeature> SPRUCE_BUSH_CHECKED = createKey("spruce_bush_checked");
   public static final ResourceKey<PlacedFeature> OAK_BUSH_CHECKED = createKey("oak_bush");
 
@@ -65,6 +68,7 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TREES_BAOBAB_FIELDS  = createKey("trees_baobab_fields");
   public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_BAOBAB_FIELDS  = createKey("trees_old_growth_baobab_fields");
   public static final ResourceKey<PlacedFeature> TREES_ASPEN_GROVE  = createKey("trees_aspen_grove");
+  public static final ResourceKey<PlacedFeature> TREES_REDWOODS  = createKey("trees_redwoods");
 
   public static void bootstrap(BootstapContext<PlacedFeature> context) {
     register(context, PATCH_MANY_CACTUS, VegetationFeatures.PATCH_CACTUS, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -92,6 +96,9 @@ public class PioneerPlacedFeatures {
     register(context, FANCY_RED_MAPLE_CHECKED, PioneerConfiguredFeatures.FANCY_RED_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
     register(context, FANCY_ORANGE_MAPLE_CHECKED, PioneerConfiguredFeatures.FANCY_ORANGE_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
     register(context, FANCY_PURPLE_MAPLE_CHECKED, PioneerConfiguredFeatures.FANCY_PURPLE_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
+    register(context, REDWOOD_CHECKED, PioneerConfiguredFeatures.BIG_REDWOOD_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.REDWOOD.sapling().get()));
+    register(context, SMALL_REDWOOD_BEES_0002_CHECKED, PioneerConfiguredFeatures.SMALL_REDWOOD_TREE_BEES_0002, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.REDWOOD.sapling().get()));
+    register(context, SMALL_REDWOOD_CHECKED, PioneerConfiguredFeatures.SMALL_REDWOOD_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.REDWOOD.sapling().get()));
     register(context, SPRUCE_BUSH_CHECKED, PioneerConfiguredFeatures.SPRUCE_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.SPRUCE_SAPLING));
     register(context, OAK_BUSH_CHECKED, PioneerConfiguredFeatures.OAK_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
@@ -105,6 +112,7 @@ public class PioneerPlacedFeatures {
     register(context, TREES_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2F, 1)));
     register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_OLD_GROWTH_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.2F, 1)));
     register(context, TREES_ASPEN_GROVE, PioneerConfiguredFeatures.TREES_ASPEN_GROVE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.2F, 1)));
+    register(context, TREES_REDWOODS, PioneerConfiguredFeatures.TREES_REDWOODS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.1F, 1)));
   }
 
   private static ResourceKey<PlacedFeature> createKey(String name) {

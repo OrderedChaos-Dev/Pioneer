@@ -4650,7 +4650,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -4677,7 +4677,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -7890,7 +7890,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7917,7 +7917,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -7944,7 +7944,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -7971,7 +7971,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -7998,7 +7998,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -8025,7 +8025,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -8052,7 +8052,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -8079,7 +8079,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -8106,7 +8106,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -8133,7 +8133,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -8160,7 +8160,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -8187,7 +8187,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -8214,7 +8214,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -8241,7 +8241,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -8251,33 +8251,6 @@
           "erosion": [
             -0.2225,
             0.05
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            -0.45,
-            -0.15
-          ],
-          "weirdness": [
-            -1.0,
-            -0.9333
-          ]
-        }
-      },
-      {
-        "biome": "blueprint:original_source_marker",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            -0.11
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.05,
-            0.45
           ],
           "humidity": [
             0.3,
@@ -8301,6 +8274,33 @@
             -0.19,
             -0.11
           ],
+          "depth": 0.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -0.45,
+            -0.15
+          ],
+          "weirdness": [
+            -1.0,
+            -0.9333
+          ]
+        }
+      },
+      {
+        "biome": "blueprint:original_source_marker",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            -0.11
+          ],
           "depth": 1.0,
           "erosion": [
             0.05,
@@ -8322,7 +8322,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -8349,7 +8349,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -8430,7 +8430,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -8457,7 +8457,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -23334,7 +23334,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -23361,7 +23361,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -26250,7 +26250,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26277,7 +26277,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26412,7 +26412,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -26439,7 +26439,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -26520,7 +26520,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26547,7 +26547,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26574,7 +26574,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -26601,7 +26601,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -26628,7 +26628,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -26655,7 +26655,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -26682,7 +26682,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -26709,7 +26709,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -26736,7 +26736,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26763,7 +26763,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26790,7 +26790,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26817,7 +26817,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26898,7 +26898,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -26925,7 +26925,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -40290,7 +40290,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -40317,7 +40317,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -40344,7 +40344,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -40371,7 +40371,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -42882,7 +42882,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -42909,40 +42909,13 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
             0.03
           ],
           "depth": 1.0,
-          "erosion": [
-            -0.7799,
-            -0.375
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            -0.45,
-            -0.15
-          ],
-          "weirdness": [
-            -0.7666,
-            -0.5666
-          ]
-        }
-      },
-      {
-        "biome": "pioneer:windswept_cliffs",
-        "parameters": {
-          "continentalness": [
-            0.03,
-            1.0
-          ],
-          "depth": 0.0,
           "erosion": [
             -0.7799,
             -0.375
@@ -42969,6 +42942,33 @@
             0.03,
             1.0
           ],
+          "depth": 0.0,
+          "erosion": [
+            -0.7799,
+            -0.375
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -0.45,
+            -0.15
+          ],
+          "weirdness": [
+            -0.7666,
+            -0.5666
+          ]
+        }
+      },
+      {
+        "biome": "pioneer:windswept_cliffs",
+        "parameters": {
+          "continentalness": [
+            0.03,
+            1.0
+          ],
           "depth": 1.0,
           "erosion": [
             -0.7799,
@@ -42990,7 +42990,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -43017,7 +43017,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -43044,7 +43044,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -43071,7 +43071,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -43098,7 +43098,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -43125,7 +43125,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -43152,7 +43152,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -43179,7 +43179,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -43206,7 +43206,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -43233,7 +43233,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -43368,7 +43368,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -43395,7 +43395,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -55734,7 +55734,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -55761,7 +55761,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -58650,7 +58650,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58677,7 +58677,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58812,7 +58812,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -58839,7 +58839,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -58920,7 +58920,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58947,7 +58947,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -58974,7 +58974,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -59001,7 +59001,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -59028,7 +59028,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -59055,7 +59055,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -59082,7 +59082,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -59109,7 +59109,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -59136,7 +59136,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -59163,7 +59163,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -59190,7 +59190,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -59217,7 +59217,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -59298,7 +59298,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -59325,7 +59325,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -73932,7 +73932,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -73959,7 +73959,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -77172,7 +77172,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77199,7 +77199,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77226,7 +77226,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -77253,7 +77253,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -77280,7 +77280,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77307,7 +77307,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77334,7 +77334,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -77361,7 +77361,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -77388,7 +77388,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -77415,7 +77415,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -77442,7 +77442,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -77469,7 +77469,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -77496,7 +77496,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -77523,7 +77523,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -77533,33 +77533,6 @@
           "erosion": [
             -0.2225,
             0.05
-          ],
-          "humidity": [
-            0.3,
-            1.0
-          ],
-          "offset": 0.0,
-          "temperature": [
-            -0.45,
-            -0.15
-          ],
-          "weirdness": [
-            -0.4,
-            -0.2666
-          ]
-        }
-      },
-      {
-        "biome": "blueprint:original_source_marker",
-        "parameters": {
-          "continentalness": [
-            -0.19,
-            -0.11
-          ],
-          "depth": 0.0,
-          "erosion": [
-            0.05,
-            0.45
           ],
           "humidity": [
             0.3,
@@ -77583,6 +77556,33 @@
             -0.19,
             -0.11
           ],
+          "depth": 0.0,
+          "erosion": [
+            0.05,
+            0.45
+          ],
+          "humidity": [
+            0.3,
+            1.0
+          ],
+          "offset": 0.0,
+          "temperature": [
+            -0.45,
+            -0.15
+          ],
+          "weirdness": [
+            -0.4,
+            -0.2666
+          ]
+        }
+      },
+      {
+        "biome": "blueprint:original_source_marker",
+        "parameters": {
+          "continentalness": [
+            -0.19,
+            -0.11
+          ],
           "depth": 1.0,
           "erosion": [
             0.05,
@@ -77604,7 +77604,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77631,7 +77631,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77712,7 +77712,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -77739,7 +77739,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94506,7 +94506,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94533,7 +94533,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94560,7 +94560,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94587,7 +94587,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94614,7 +94614,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94641,7 +94641,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94668,7 +94668,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94695,7 +94695,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94776,7 +94776,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94803,7 +94803,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94884,7 +94884,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94911,7 +94911,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -94938,7 +94938,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -94965,7 +94965,7 @@
         }
       },
       {
-        "biome": "pioneer:boreal_forest",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -103902,7 +103902,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -103929,7 +103929,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104226,7 +104226,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -104253,7 +104253,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -107034,7 +107034,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107061,7 +107061,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107142,7 +107142,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107169,7 +107169,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107196,7 +107196,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -107223,7 +107223,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -107304,7 +107304,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107331,7 +107331,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107358,7 +107358,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -107385,7 +107385,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -107412,7 +107412,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107439,7 +107439,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107466,7 +107466,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -107493,7 +107493,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -107574,7 +107574,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -107601,7 +107601,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110382,7 +110382,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110409,7 +110409,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110436,7 +110436,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110463,7 +110463,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110490,7 +110490,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110517,7 +110517,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110544,7 +110544,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110571,7 +110571,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110652,7 +110652,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110679,7 +110679,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110706,7 +110706,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110733,7 +110733,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -110760,7 +110760,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110787,7 +110787,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -110814,7 +110814,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -110841,7 +110841,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121614,7 +121614,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -121641,7 +121641,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -121668,7 +121668,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121695,7 +121695,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121722,7 +121722,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -121749,7 +121749,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -121776,7 +121776,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121803,7 +121803,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121830,7 +121830,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121857,7 +121857,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -121884,7 +121884,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121911,7 +121911,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121938,7 +121938,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121965,7 +121965,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -121992,7 +121992,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -122019,7 +122019,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -122100,7 +122100,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -122127,7 +122127,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -122154,7 +122154,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -122181,7 +122181,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -122478,7 +122478,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -122505,7 +122505,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -122802,7 +122802,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -122829,7 +122829,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -125826,7 +125826,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125853,7 +125853,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125880,7 +125880,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125907,7 +125907,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -125934,7 +125934,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125961,7 +125961,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -125988,7 +125988,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126015,7 +126015,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126042,7 +126042,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126069,7 +126069,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -126096,7 +126096,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126123,7 +126123,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126150,7 +126150,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126177,7 +126177,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -126204,7 +126204,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126231,7 +126231,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126258,7 +126258,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126285,7 +126285,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126312,7 +126312,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -126339,7 +126339,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -126420,7 +126420,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -126447,7 +126447,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139110,7 +139110,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139137,7 +139137,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139380,7 +139380,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139407,7 +139407,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139434,7 +139434,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -139461,7 +139461,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -139488,7 +139488,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -139515,7 +139515,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -139542,7 +139542,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -139569,7 +139569,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -139596,7 +139596,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139623,7 +139623,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139650,7 +139650,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139677,7 +139677,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139758,7 +139758,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -139785,7 +139785,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -140136,7 +140136,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140163,7 +140163,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140244,7 +140244,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -140271,7 +140271,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -140406,7 +140406,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -140433,7 +140433,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143322,7 +143322,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143349,7 +143349,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143484,7 +143484,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -143511,7 +143511,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -143592,7 +143592,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143619,7 +143619,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143646,7 +143646,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143673,7 +143673,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143700,7 +143700,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143727,7 +143727,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -143754,7 +143754,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -143781,7 +143781,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -143808,7 +143808,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143835,7 +143835,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143862,7 +143862,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143889,7 +143889,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143970,7 +143970,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -143997,7 +143997,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156498,7 +156498,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156525,7 +156525,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156552,7 +156552,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -156579,7 +156579,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -156606,7 +156606,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -156633,7 +156633,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -156660,7 +156660,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -156687,7 +156687,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -156714,7 +156714,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156741,7 +156741,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156876,7 +156876,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -156903,7 +156903,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -157146,7 +157146,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157173,7 +157173,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157254,7 +157254,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -157281,7 +157281,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -157362,7 +157362,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -157389,7 +157389,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -157416,7 +157416,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -157443,7 +157443,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -159954,7 +159954,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -159981,7 +159981,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160062,7 +160062,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160089,7 +160089,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160116,7 +160116,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160143,7 +160143,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160170,7 +160170,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160197,7 +160197,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -160224,7 +160224,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160251,7 +160251,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -160278,7 +160278,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160305,7 +160305,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160440,7 +160440,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -160467,7 +160467,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171510,7 +171510,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171537,7 +171537,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171780,7 +171780,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171807,7 +171807,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -171834,7 +171834,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -171861,7 +171861,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -171888,7 +171888,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -171915,7 +171915,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -171942,7 +171942,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -171969,7 +171969,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -171996,7 +171996,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172023,7 +172023,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172050,7 +172050,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172077,7 +172077,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172158,7 +172158,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172185,7 +172185,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -172536,7 +172536,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -172563,7 +172563,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -172644,7 +172644,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -172671,7 +172671,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -172806,7 +172806,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -172833,7 +172833,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -175722,7 +175722,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175749,7 +175749,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -175884,7 +175884,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -175911,7 +175911,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -175992,7 +175992,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176019,7 +176019,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176046,7 +176046,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176073,7 +176073,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176100,7 +176100,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176127,7 +176127,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -176154,7 +176154,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -176181,7 +176181,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -176208,7 +176208,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176235,7 +176235,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176262,7 +176262,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176289,7 +176289,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176370,7 +176370,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -176397,7 +176397,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189546,7 +189546,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189573,7 +189573,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189600,7 +189600,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189627,7 +189627,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189654,7 +189654,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -189681,7 +189681,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -189708,7 +189708,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189735,7 +189735,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189762,7 +189762,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189789,7 +189789,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -189816,7 +189816,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189843,7 +189843,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189870,7 +189870,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189897,7 +189897,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -189924,7 +189924,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -189951,7 +189951,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -190032,7 +190032,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -190059,7 +190059,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -190086,7 +190086,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -190113,7 +190113,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -190410,7 +190410,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -190437,7 +190437,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -190734,7 +190734,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -190761,7 +190761,7 @@
         }
       },
       {
-        "biome": "pioneer:snowy_boreal_forest",
+        "biome": "pioneer:snowy_redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193758,7 +193758,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193785,7 +193785,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193812,7 +193812,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193839,7 +193839,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -193866,7 +193866,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193893,7 +193893,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -193920,7 +193920,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193947,7 +193947,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -193974,7 +193974,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194001,7 +194001,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.3,
@@ -194028,7 +194028,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194055,7 +194055,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194082,7 +194082,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -194109,7 +194109,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             0.03,
@@ -194136,7 +194136,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194163,7 +194163,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194190,7 +194190,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194217,7 +194217,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194244,7 +194244,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -194271,7 +194271,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.11,
@@ -194352,7 +194352,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -194379,7 +194379,7 @@
         }
       },
       {
-        "biome": "blueprint:original_source_marker",
+        "biome": "pioneer:redwoods",
         "parameters": {
           "continentalness": [
             -0.19,
@@ -205024,5 +205024,5 @@
       }
     ]
   },
-  "weight": 20
+  "weight": 40
 }

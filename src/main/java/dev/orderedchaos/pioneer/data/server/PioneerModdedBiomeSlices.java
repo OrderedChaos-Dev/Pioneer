@@ -56,34 +56,34 @@ public class PioneerModdedBiomeSlices {
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
-      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
+      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.REDWOODS},
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.ASPEN_GROVE, PioneerBiomes.ASPEN_GROVE},
       {PioneerBiomes.BAOBAB_FIELDS, PioneerBiomes.BAOBAB_FIELDS, VANILLA, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-      {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
-      {null, null, null, null, VANILLA},
+      {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_REDWOODS, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
+      {null, null, null, null, PioneerBiomes.REDWOODS},
       {VANILLA, null, null, PioneerBiomes.ASPEN_GROVE, null},
       {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {null, null, null, null, null}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
-      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, VANILLA},
+      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.REDWOODS},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {PioneerBiomes.BAOBAB_FIELDS, PioneerBiomes.BAOBAB_FIELDS, VANILLA, VANILLA, VANILLA},
       {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
-      {null, null, null, null, null},
+      {null, null, null, PioneerBiomes.SNOWY_REDWOODS, PioneerBiomes.SNOWY_REDWOODS},
       {null, null, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, null},
       {null, null, VANILLA, VANILLA, null},
       {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, null, null, null},
       {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
     };
     private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
-      {PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
+      {PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_REDWOODS},
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {null, null, null, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},

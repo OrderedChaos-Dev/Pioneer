@@ -37,8 +37,8 @@ public class PioneerBiomes {
   public static final ResourceKey<Biome> SNOWY_BOREAL_FOREST = createKey("snowy_boreal_forest");
 //  public static final ResourceKey<Biome> DESERT_SHRUBLAND = createKey("desert_shrubland", DesertShrublandBiome::desertShrubland);
   public static final ResourceKey<Biome> OVERGROWN_SPIRES = createKey("overgrown_spires");
-//  public static final ResourceKey<Biome> REDWOODS = createKey("redwoods", () -> RedwoodsBiome.redwoods(false));
-//  public static final ResourceKey<Biome> SNOWY_REDWOODS = createKey("snowy_redwoods", () -> RedwoodsBiome.redwoods(true));
+  public static final ResourceKey<Biome> REDWOODS = createKey("redwoods");
+  public static final ResourceKey<Biome> SNOWY_REDWOODS = createKey("snowy_redwoods");
   public static final ResourceKey<Biome> ASPEN_GROVE = createKey("aspen_grove");
   public static final ResourceKey<Biome> BAOBAB_FIELDS = createKey("baobab_fields");
   public static final ResourceKey<Biome> OLD_GROWTH_BAOBAB_FIELDS = createKey("old_growth_baobab_fields");
@@ -67,6 +67,8 @@ public class PioneerBiomes {
     context.register(BAOBAB_FIELDS, baobabFields(features, carvers, false));
     context.register(OLD_GROWTH_BAOBAB_FIELDS, baobabFields(features, carvers, true));
     context.register(ASPEN_GROVE, aspenGrove(features, carvers));
+    context.register(REDWOODS, redwoods(features, carvers, false));
+    context.register(SNOWY_REDWOODS, redwoods(features, carvers, true));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -231,7 +233,7 @@ public class PioneerBiomes {
         .fogColor(12638463)
         .grassColorOverride(0x00994d)
         .foliageColorOverride(0x00994d)
-        .skyColor(calculateSkyColor(0.4F))
+        .skyColor(calculateSkyColor(temperature))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )
@@ -446,6 +448,49 @@ public class PioneerBiomes {
         .grassColorOverride(0xF4D342)
         .foliageColorOverride(0xB8E83E)
         .skyColor(calculateSkyColor(0.4F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome redwoods(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers, boolean snowy) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      (snowy ? VegetationPlacements.PATCH_BERRY_RARE : VegetationPlacements.PATCH_BERRY_COMMON),
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.BROWN_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.RED_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_LARGE_FERN,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_GRASS_TAIGA
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_REDWOODS);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    float temperature = snowy ? -0.4F : 0.23F;
+    return biome(true, 0.8F, temperature, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0x379332)
+        .foliageColorOverride(0x379C32)
+        .skyColor(calculateSkyColor(temperature))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

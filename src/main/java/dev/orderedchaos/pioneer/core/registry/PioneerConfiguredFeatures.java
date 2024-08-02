@@ -96,6 +96,7 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_BAOBAB_FIELDS  = createKey("trees_baobab_fields");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_OLD_GROWTH_BAOBAB_FIELDS  = createKey("trees_old_growth_baobab_fields");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_ASPEN_GROVE  = createKey("trees_aspen_grove");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_REDWOODS  = createKey("trees_redwoods");
 
   public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
     HolderGetter<PlacedFeature> holderGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -147,6 +148,7 @@ public class PioneerConfiguredFeatures {
     register(context, TREES_BAOBAB_FIELDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.BAOBAB_CHECKED), 0.9F)), holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED)));
     register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.BAOBAB_CHECKED), 0.4F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.TALL_BAOBAB_CHECKED), 0.45F)), holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED)));
     register(context, TREES_ASPEN_GROVE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.ASPEN_BEES_0002_CHECKED), 0.05F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.ASPEN_CHECKED), 0.2F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.RED_MAPLE_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.ORANGE_MAPLE_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PURPLE_MAPLE_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FANCY_RED_MAPLE_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FANCY_ORANGE_MAPLE_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FANCY_PURPLE_MAPLE_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.1f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.05f)), holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED)));
+    register(context, TREES_REDWOODS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.REDWOOD_CHECKED), 0.75F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.SMALL_REDWOOD_BEES_0002_CHECKED), 0.05F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.SMALL_REDWOOD_CHECKED), 0.2f)), holderGetter.getOrThrow(PioneerPlacedFeatures.SMALL_REDWOOD_CHECKED)));
   }
 
   private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {

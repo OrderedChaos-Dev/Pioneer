@@ -21,6 +21,7 @@ import java.util.concurrent.CompletableFuture;
 public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifierProvider {
 
   private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+  private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
   private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
   private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
   private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
@@ -72,6 +73,10 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
           sequence(ifTrue(ON_CEILING, SANDSTONE), SAND)),
           sequence((ifTrue(DEEP_UNDER_FLOOR, SANDSTONE)), ifTrue(VERY_DEEP_UNDER_FLOOR, SANDSTONE))))
   ));
+  private static final SurfaceRules.RuleSource PODZOL_DIRT_FLOOR = sequence(
+    ifTrue(ON_FLOOR, sequence(ifTrue(waterBlockCheck(0, 0), PODZOL), DIRT)),
+    ifTrue(UNDER_FLOOR, DIRT)
+  );
 
   private static final SurfaceRules.RuleSource COARSE_DIRT_FLOOR = sequence(
     ifTrue(ON_FLOOR, sequence(ifTrue(waterBlockCheck(0, 0), COARSE_DIRT), COARSE_DIRT)),
@@ -90,7 +95,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     GRASS_DIRT_FLOOR);
 
   public static final SurfaceRules.RuleSource OLD_GROWTH_BAOBAB_FIELDS = sequence(
-    ifTrue(surfaceNoiseAbove(0.9D), COARSE_DIRT),
+    ifTrue(surfaceNoiseAbove(0.9D), COARSE_DIRT_FLOOR),
     GRASS_DIRT_FLOOR);
 
   private static final SurfaceRules.RuleSource RED_ROCK_CANYON = sequence(
@@ -99,16 +104,16 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
       sequence(
         ifTrue(Y_97,
           sequence(
-            ifTrue(NOISE_SURFACE_1, COARSE_DIRT),
-            ifTrue(NOISE_SURFACE_2, COARSE_DIRT),
-            ifTrue(NOISE_SURFACE_3, COARSE_DIRT), GRASS_DIRT_FLOOR)),
+            ifTrue(NOISE_SURFACE_1, COARSE_DIRT_FLOOR),
+            ifTrue(NOISE_SURFACE_2, COARSE_DIRT_FLOOR),
+            ifTrue(NOISE_SURFACE_3, COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR)),
         ifTrue(Y_76,
           ifTrue(
             not(Y_80),
             sequence(
-              ifTrue(NOISE_SURFACE_1, COARSE_DIRT),
-              ifTrue(NOISE_SURFACE_2, COARSE_DIRT),
-              ifTrue(NOISE_SURFACE_3, COARSE_DIRT), GRASS_DIRT_FLOOR)))
+              ifTrue(NOISE_SURFACE_1, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_2, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_3, COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR)))
       )
     ),
     ifTrue(
@@ -136,11 +141,17 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
             not(BADLANDS_Y_START_CHECK_2), ORANGE_TERRACOTTA)), bandlands())),
     ifTrue(UNDER_FLOOR, ifTrue(BADLANDS_WATER_CHECK_2, WHITE_TERRACOTTA)));
 
-  public static final SurfaceRules.RuleSource WILLOW_WETLANDS = sequence(ifTrue(ON_FLOOR, ifTrue(Y_62, ifTrue(not(Y_63), ifTrue(noiseCondition(Noises.SWAMP, 0.0D), WATER)))));
+  public static final SurfaceRules.RuleSource WILLOW_WETLANDS = sequence(
+    ifTrue(ON_FLOOR,
+      ifTrue(Y_62,
+        ifTrue(not(Y_63),
+          ifTrue(noiseCondition(Noises.SWAMP, 0.0D),
+            WATER)))));
 
   public static final SurfaceRules.RuleSource OVERGROWN_SPIRES = sequence(
     ifTrue(surfaceNoiseAbove(2.15D), STONE),
-    ifTrue(surfaceNoiseAbove(0D), COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR);
+    ifTrue(surfaceNoiseAbove(0D), COARSE_DIRT_FLOOR),
+    GRASS_DIRT_FLOOR);
 
   private static final SurfaceRules.RuleSource WINDSWEPT_CLIFFS = sequence(
     ifTrue(random(0.15F), STONE),
@@ -150,6 +161,11 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ifTrue(random(0.6F), ANDESITE),
     ifTrue(random(0.75F), MOSSY_COBBLESTONE),
     COBBLESTONE);
+
+  public static final SurfaceRules.RuleSource REDWOODS = sequence(
+    ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT_FLOOR),
+    ifTrue(surfaceNoiseAbove(-0.90D), PODZOL_DIRT_FLOOR),
+    GRASS_DIRT_FLOOR);
 
   public PioneerChunkGeneratorModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
     super(Pioneer.MOD_ID, output, lookupProvider);
@@ -164,6 +180,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ConditionSource isRedRockCanyon = isBiome(PioneerBiomes.RED_ROCK_CANYON, PioneerBiomes.RED_ROCK_CLIFFS);
     ConditionSource isWindsweptCliffs = isBiome(PioneerBiomes.WINDSWEPT_CLIFFS);
     ConditionSource isOldGrowthBaobabFields = isBiome(PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS);
+    ConditionSource isRedwoods = isBiome(PioneerBiomes.REDWOODS, PioneerBiomes.SNOWY_REDWOODS);
 
     this.entry("pioneer_surface_rule")
       .selects("minecraft:overworld")
@@ -173,7 +190,8 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOvergrownSpires, OVERGROWN_SPIRES)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedRockCanyon, RED_ROCK_CANYON)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWindsweptCliffs, WINDSWEPT_CLIFFS)), false))
-      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOldGrowthBaobabFields, OLD_GROWTH_BAOBAB_FIELDS)), false));
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOldGrowthBaobabFields, OLD_GROWTH_BAOBAB_FIELDS)), false))
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedwoods, REDWOODS)), false));
 
   }
 

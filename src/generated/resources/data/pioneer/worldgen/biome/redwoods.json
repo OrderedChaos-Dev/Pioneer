@@ -9,8 +9,8 @@
   "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 39245,
-    "grass_color": 39245,
+    "foliage_color": 3644466,
+    "grass_color": 3642162,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -21,7 +21,7 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.forest"
+      "sound": "minecraft:music.overworld.old_growth_taiga"
     },
     "sky_color": 8233983,
     "water_color": 4159204,
@@ -90,7 +90,7 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:patch_berry_common",
-      "pioneer:trees_boreal_forest"
+      "pioneer:trees_redwoods"
     ],
     [
       "minecraft:freeze_top_layer"
