@@ -43,7 +43,7 @@ public class PioneerBiomes {
   public static final ResourceKey<Biome> BAOBAB_FIELDS = createKey("baobab_fields");
   public static final ResourceKey<Biome> OLD_GROWTH_BAOBAB_FIELDS = createKey("old_growth_baobab_fields");
   public static final ResourceKey<Biome> PRAIRIE = createKey("prairie");
-//  public static final ResourceKey<Biome> CRYSTAL_LAKES = createKey("crystal_lakes", CrystalLakesBiome::crystalLakes);
+  public static final ResourceKey<Biome> CRYSTAL_LAKES = createKey("crystal_lakes");
   public static final ResourceKey<Biome> RED_ROCK_CANYON = createKey("red_rock_canyon");
   public static final ResourceKey<Biome> RED_ROCK_CLIFFS = createKey("red_rock_cliffs");
 //  public static final ResourceKey<Biome> FLOODED_FOREST = createKey("flooded_forest", FloodedForestBiome::floodedForest);
@@ -70,6 +70,7 @@ public class PioneerBiomes {
     context.register(REDWOODS, redwoods(features, carvers, false));
     context.register(SNOWY_REDWOODS, redwoods(features, carvers, true));
     context.register(PRAIRIE, prairie(features, carvers));
+    context.register(CRYSTAL_LAKES, crystalLakes(features, carvers));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -530,6 +531,50 @@ public class PioneerBiomes {
         .grassColorOverride(0xe2fc6d)
         .foliageColorOverride(0xa7cc5c)
         .skyColor(calculateSkyColor(0.4F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome crystalLakes(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.PATCH_BERRY_COMMON,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.BROWN_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.RED_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_LARGE_FERN,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_GRASS_TAIGA
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_CRYSTAL_LAKES);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.CRYSTAL_POOL);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.AMETHYST_CRYSTALS);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.8F, 0.23F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+        .waterColor(4445678)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0x5bbf39)
+        .foliageColorOverride(0x00994d)
+        .skyColor(calculateSkyColor(0.23F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

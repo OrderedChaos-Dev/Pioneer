@@ -63,7 +63,7 @@ public class PioneerModdedBiomeSlices {
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
       {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_REDWOODS, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
-      {PioneerBiomes.PRAIRIE, PioneerBiomes.PRAIRIE, null, null, PioneerBiomes.REDWOODS},
+      {PioneerBiomes.PRAIRIE, PioneerBiomes.PRAIRIE, null, PioneerBiomes.CRYSTAL_LAKES, PioneerBiomes.REDWOODS},
       {VANILLA, null, null, PioneerBiomes.ASPEN_GROVE, null},
       {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {null, null, null, null, null}
