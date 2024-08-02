@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "pioneer:cottonwood_checked",
+    "features": [
+      {
+        "chance": 0.55,
+        "feature": "pioneer:cottonwood_checked"
+      },
+      {
+        "chance": 0.4,
+        "feature": "pioneer:cottonwood_bees_005_checked"
+      }
+    ]
+  }
+}

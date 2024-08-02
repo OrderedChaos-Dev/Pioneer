@@ -42,7 +42,7 @@ public class PioneerBiomes {
   public static final ResourceKey<Biome> ASPEN_GROVE = createKey("aspen_grove");
   public static final ResourceKey<Biome> BAOBAB_FIELDS = createKey("baobab_fields");
   public static final ResourceKey<Biome> OLD_GROWTH_BAOBAB_FIELDS = createKey("old_growth_baobab_fields");
-//  public static final ResourceKey<Biome> PRAIRIE = createKey("prairie", PrairieBiome::prairie);
+  public static final ResourceKey<Biome> PRAIRIE = createKey("prairie");
 //  public static final ResourceKey<Biome> CRYSTAL_LAKES = createKey("crystal_lakes", CrystalLakesBiome::crystalLakes);
   public static final ResourceKey<Biome> RED_ROCK_CANYON = createKey("red_rock_canyon");
   public static final ResourceKey<Biome> RED_ROCK_CLIFFS = createKey("red_rock_cliffs");
@@ -69,6 +69,7 @@ public class PioneerBiomes {
     context.register(ASPEN_GROVE, aspenGrove(features, carvers));
     context.register(REDWOODS, redwoods(features, carvers, false));
     context.register(SNOWY_REDWOODS, redwoods(features, carvers, true));
+    context.register(PRAIRIE, prairie(features, carvers));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -420,7 +421,6 @@ public class PioneerBiomes {
       VegetationPlacements.BROWN_MUSHROOM_NORMAL,
       VegetationPlacements.RED_MUSHROOM_NORMAL,
       VegetationPlacements.PATCH_GRASS_TAIGA,
-      VegetationPlacements.RED_MUSHROOM_OLD_GROWTH,
       VegetationPlacements.FLOWER_DEFAULT,
       VegetationPlacements.PATCH_SUGAR_CANE,
       VegetationPlacements.PATCH_PUMPKIN,
@@ -491,6 +491,45 @@ public class PioneerBiomes {
         .grassColorOverride(0x379332)
         .foliageColorOverride(0x379C32)
         .skyColor(calculateSkyColor(temperature))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome prairie(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.FLOWER_PLAINS,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_SUNFLOWER
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_PRAIRIE);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.PRAIRIE_GRASS);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    mobSpawnBuilder
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+    BiomeDefaultFeatures.desertSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.8F, 0.6F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0xe2fc6d)
+        .foliageColorOverride(0xa7cc5c)
+        .skyColor(calculateSkyColor(0.4F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

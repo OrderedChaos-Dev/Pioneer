@@ -28,7 +28,7 @@ public class PioneerModdedBiomeSlices {
     (new PioneerBiomeBuilder()).addBiomes(entries::add);
 
     ModdedBiomeSlice pioneerSlice = new ModdedBiomeSlice(
-      40,
+      80,
       BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach).onlyMapFromAreas(false).build(),
       LevelStem.OVERWORLD);
     context.register(PIONEER, pioneerSlice);
@@ -57,13 +57,13 @@ public class PioneerModdedBiomeSlices {
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
       {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.REDWOODS},
-      {VANILLA, VANILLA, VANILLA, PioneerBiomes.ASPEN_GROVE, PioneerBiomes.ASPEN_GROVE},
+      {PioneerBiomes.PRAIRIE, VANILLA, VANILLA, PioneerBiomes.ASPEN_GROVE, PioneerBiomes.ASPEN_GROVE},
       {PioneerBiomes.BAOBAB_FIELDS, PioneerBiomes.BAOBAB_FIELDS, VANILLA, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
       {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_REDWOODS, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
-      {null, null, null, null, PioneerBiomes.REDWOODS},
+      {PioneerBiomes.PRAIRIE, PioneerBiomes.PRAIRIE, null, null, PioneerBiomes.REDWOODS},
       {VANILLA, null, null, PioneerBiomes.ASPEN_GROVE, null},
       {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
       {null, null, null, null, null}

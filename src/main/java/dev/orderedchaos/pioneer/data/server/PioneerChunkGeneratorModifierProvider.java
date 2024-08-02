@@ -53,6 +53,11 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
 
   private static final SurfaceRules.RuleSource STONE_CEILING = sequence(ifTrue(ON_CEILING, STONE), GRAVEL);
 
+  private static final SurfaceRules.ConditionSource Y_132 = yBlockCheck(VerticalAnchor.absolute(126), 2);
+  private static final SurfaceRules.ConditionSource Y_126 = yBlockCheck(VerticalAnchor.absolute(126), 2);
+  private static final SurfaceRules.ConditionSource Y_120 = yBlockCheck(VerticalAnchor.absolute(120), 2);
+  private static final SurfaceRules.ConditionSource Y_112 = yBlockCheck(VerticalAnchor.absolute(112), 2);
+  private static final SurfaceRules.ConditionSource Y_104 = yBlockCheck(VerticalAnchor.absolute(104), 2);
   private static final SurfaceRules.ConditionSource Y_97 = yBlockCheck(VerticalAnchor.absolute(97), 2);
   private static final SurfaceRules.ConditionSource Y_80 = yBlockCheck(VerticalAnchor.absolute(80), 0);
   private static final SurfaceRules.ConditionSource Y_76 = yBlockCheck(VerticalAnchor.absolute(76), 0);
@@ -102,11 +107,27 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ifTrue(
       isBiome(PioneerBiomes.RED_ROCK_CLIFFS),
       sequence(
+        ifTrue(Y_126,
+          ifTrue(
+            not(Y_132),
+            sequence(
+              ifTrue(NOISE_SURFACE_1, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_2, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_3, COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR))),
+        ifTrue(Y_112,
+          ifTrue(
+            not(Y_120),
+            sequence(
+              ifTrue(NOISE_SURFACE_1, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_2, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_3, COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR))),
         ifTrue(Y_97,
-          sequence(
-            ifTrue(NOISE_SURFACE_1, COARSE_DIRT_FLOOR),
-            ifTrue(NOISE_SURFACE_2, COARSE_DIRT_FLOOR),
-            ifTrue(NOISE_SURFACE_3, COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR)),
+          ifTrue(
+            not(Y_104),
+            sequence(
+              ifTrue(NOISE_SURFACE_1, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_2, COARSE_DIRT_FLOOR),
+              ifTrue(NOISE_SURFACE_3, COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR))),
         ifTrue(Y_76,
           ifTrue(
             not(Y_80),

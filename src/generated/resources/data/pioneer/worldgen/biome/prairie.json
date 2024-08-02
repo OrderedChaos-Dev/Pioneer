@@ -9,8 +9,8 @@
   "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 12118078,
-    "grass_color": 16044866,
+    "foliage_color": 10996828,
+    "grass_color": 14875757,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -79,19 +79,14 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_large_fern",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_taiga",
+      "minecraft:patch_sunflower",
+      "minecraft:flower_plains",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_rare",
-      "pioneer:trees_aspen_grove",
-      "pioneer:aspen_fallen_leaves",
-      "pioneer:red_maple_fallen_leaves",
-      "pioneer:orange_maple_fallen_leaves",
-      "pioneer:purple_fallen_leaves"
+      "pioneer:trees_prairie",
+      "pioneer:prairie_grass"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -135,22 +130,22 @@
         "weight": 8
       },
       {
-        "type": "minecraft:wolf",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
+        "type": "minecraft:horse",
+        "maxCount": 6,
+        "minCount": 2,
+        "weight": 1
+      },
+      {
+        "type": "minecraft:donkey",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 1
       },
       {
         "type": "minecraft:rabbit",
         "maxCount": 3,
         "minCount": 2,
         "weight": 4
-      },
-      {
-        "type": "minecraft:fox",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 8
       }
     ],
     "misc": [],
@@ -165,13 +160,13 @@
         "type": "minecraft:zombie",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 95
+        "weight": 19
       },
       {
         "type": "minecraft:zombie_villager",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 5
+        "weight": 1
       },
       {
         "type": "minecraft:skeleton",
@@ -202,6 +197,12 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
+      },
+      {
+        "type": "minecraft:husk",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 80
       }
     ],
     "underground_water_creature": [
@@ -215,5 +216,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 0.6
 }
