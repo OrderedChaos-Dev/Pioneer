@@ -58,6 +58,7 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_TREE  = createKey("pine_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> WILLOW_TREE = createKey("willow_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> BAOBAB_TREE  = createKey("baobab_tree");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_BAOBAB_TREE  = createKey("tall_baobab_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> JUNIPER_TREE  = createKey("juniper_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> COTTONWOOD_TREE  = createKey("cottonwood_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> COTTONWOOD_TREE_BEES_005  = createKey("cottonwood_tree_bees_005");
@@ -84,6 +85,8 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WILLOW_WETLANDS  = createKey("trees_willow_wetlands");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_OVERGROWN_SPIRES  = createKey("trees_overgrown_spires");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WINDSWEPT_CLIFFS  = createKey("trees_windswept_cliffs");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_BAOBAB_FIELDS  = createKey("trees_baobab_fields");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_OLD_GROWTH_BAOBAB_FIELDS  = createKey("trees_old_growth_baobab_fields");
 
   public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
     HolderGetter<PlacedFeature> holderGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -98,6 +101,7 @@ public class PioneerConfiguredFeatures {
     register(context, PINE_TREE, Feature.TREE, TreeFeatureConfigs.PINE);
     register(context, WILLOW_TREE, Feature.TREE, TreeFeatureConfigs.WILLOW);
     register(context, BAOBAB_TREE, Feature.TREE, TreeFeatureConfigs.BAOBAB);
+    register(context, TALL_BAOBAB_TREE, Feature.TREE, TreeFeatureConfigs.TALL_BAOBAB);
     register(context, JUNIPER_TREE, Feature.TREE, TreeFeatureConfigs.JUNIPER);
     register(context, COTTONWOOD_TREE, Feature.TREE, TreeFeatureConfigs.COTTONWOOD);
     register(context, COTTONWOOD_TREE_BEES_005, Feature.TREE, TreeFeatureConfigs.COTTONWOOD_BEES_005);
@@ -127,6 +131,8 @@ public class PioneerConfiguredFeatures {
     register(context, TREES_WILLOW_WETLANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.WILLOW_CHECKED), 0.8F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.MANGROVE_CHECKED), 0.1F)), holderGetter.getOrThrow(TreePlacements.TALL_MANGROVE_CHECKED)));
     register(context, TREES_OVERGROWN_SPIRES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.1F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.35F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 0.5f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.DARK_OAK_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.35f)), holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED)));
     register(context, TREES_WINDSWEPT_CLIFFS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.6F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.05F)), holderGetter.getOrThrow(PioneerPlacedFeatures.OAK_BUSH_CHECKED)));
+    register(context, TREES_BAOBAB_FIELDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.BAOBAB_CHECKED), 0.9F)), holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED)));
+    register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.BAOBAB_CHECKED), 0.4F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.TALL_BAOBAB_CHECKED), 0.45F)), holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED)));
   }
 
   private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
@@ -150,6 +156,7 @@ public class PioneerConfiguredFeatures {
     public static final TreeConfiguration PINE = tree(new StraightTrunkPlacer(9, 2, 2), new PioneerPineFoliagePlacer(UniformInt.of(3, 3), UniformInt.of(1, 1), UniformInt.of(2, 3)), PioneerBlocks.PINE.log().get(), PioneerBlocks.PINE.leaves().get(), new TwoLayersFeatureSize(2, 0, 2));
     public static final TreeConfiguration WILLOW = tree(new WillowTrunkPlacer(6, 3, 3), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), PioneerBlocks.WILLOW.log().get(), PioneerBlocks.WILLOW.leaves().get(), new TwoLayersFeatureSize(1, 0, 1), List.of(new LeaveVineDecorator(0.3F)));
     public static final TreeConfiguration BAOBAB = tree(new BaobabTrunkPlacer(20, 5, 2), new BaobabFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.BAOBAB.log().get(), PioneerBlocks.BAOBAB.leaves().get(), new TwoLayersFeatureSize(1, 1, 2));
+    public static final TreeConfiguration TALL_BAOBAB = tree(new BaobabTrunkPlacer(24, 10, 7), new BaobabFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.BAOBAB.log().get(), PioneerBlocks.BAOBAB.leaves().get(), new TwoLayersFeatureSize(1, 1, 2));
     public static final TreeConfiguration JUNIPER = tree(new DesertJuniperTrunkPlacer(7, 2, 1), new DesertJuniperFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.JUNIPER.log().get(), PioneerBlocks.JUNIPER.leaves().get(), new TwoLayersFeatureSize(2, 0, 2), List.of(new JuniperBerriesDecorator()));
     public static final TreeConfiguration COTTONWOOD = tree(new FancyTrunkPlacer(15, 4, 3), new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 4), PioneerBlocks.COTTONWOOD.log().get(), PioneerBlocks.COTTONWOOD.leaves().get(), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)));
     public static final TreeConfiguration COTTONWOOD_BEES_005 = tree(new FancyTrunkPlacer(15, 4, 3), new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 4), PioneerBlocks.COTTONWOOD.log().get(), PioneerBlocks.COTTONWOOD.leaves().get(), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)), List.of(BEEHIVE_005));

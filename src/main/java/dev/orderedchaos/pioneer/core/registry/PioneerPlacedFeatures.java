@@ -38,6 +38,8 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TAMARACK_CHECKED = createKey("tamarack_checked");
   public static final ResourceKey<PlacedFeature> TAMARACK_BEES_0002_CHECKED = createKey("tamarack_bees_0002_checked");
   public static final ResourceKey<PlacedFeature> WILLOW_CHECKED = createKey("willow_checked");
+  public static final ResourceKey<PlacedFeature> BAOBAB_CHECKED = createKey("baobab_checked");
+  public static final ResourceKey<PlacedFeature> TALL_BAOBAB_CHECKED = createKey("tall_baobab_checked");
   public static final ResourceKey<PlacedFeature> SPRUCE_BUSH_CHECKED = createKey("spruce_bush_checked");
   public static final ResourceKey<PlacedFeature> OAK_BUSH_CHECKED = createKey("oak_bush");
 
@@ -48,6 +50,8 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TREES_WILLOW_WETLANDS  = createKey("trees_willow_wetlands");
   public static final ResourceKey<PlacedFeature> TREES_OVERGROWN_SPIRES  = createKey("trees_overgrown_spires");
   public static final ResourceKey<PlacedFeature> TREES_WINDSWEPT_CLIFFS  = createKey("trees_windswept_cliffs");
+  public static final ResourceKey<PlacedFeature> TREES_BAOBAB_FIELDS  = createKey("trees_baobab_fields");
+  public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_BAOBAB_FIELDS  = createKey("trees_old_growth_baobab_fields");
 
   public static void bootstrap(BootstapContext<PlacedFeature> context) {
     register(context, PATCH_MANY_CACTUS, VegetationFeatures.PATCH_CACTUS, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -61,6 +65,8 @@ public class PioneerPlacedFeatures {
     register(context, TAMARACK_CHECKED, PioneerConfiguredFeatures.TAMARACK_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.TAMARACK.sapling().get()));
     register(context, TAMARACK_BEES_0002_CHECKED, PioneerConfiguredFeatures.TAMARACK_TREE_BEES_0002, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.TAMARACK.sapling().get()));
     register(context, WILLOW_CHECKED, PioneerConfiguredFeatures.WILLOW_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.WILLOW.sapling().get()));
+    register(context, BAOBAB_CHECKED, PioneerConfiguredFeatures.BAOBAB_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.BAOBAB.sapling().get()));
+    register(context, TALL_BAOBAB_CHECKED, PioneerConfiguredFeatures.TALL_BAOBAB_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.BAOBAB.sapling().get()));
     register(context, SPRUCE_BUSH_CHECKED, PioneerConfiguredFeatures.SPRUCE_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.SPRUCE_SAPLING));
     register(context, OAK_BUSH_CHECKED, PioneerConfiguredFeatures.OAK_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
@@ -71,6 +77,8 @@ public class PioneerPlacedFeatures {
     register(context, TREES_WILLOW_WETLANDS, PioneerConfiguredFeatures.TREES_WILLOW_WETLANDS,PlacementUtils.countExtra(4, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(4), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(PioneerBlocks.WILLOW.sapling().get().defaultBlockState(), BlockPos.ZERO)));
     register(context, TREES_OVERGROWN_SPIRES, PioneerConfiguredFeatures.TREES_OVERGROWN_SPIRES, treePlacement(PlacementUtils.countExtra(18, 0.1F, 1)));
     register(context, TREES_WINDSWEPT_CLIFFS, PioneerConfiguredFeatures.TREES_WINDSWEPT_CLIFFS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)));
+    register(context, TREES_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2F, 1)));
+    register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_OLD_GROWTH_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.2F, 1)));
   }
 
   private static ResourceKey<PlacedFeature> createKey(String name) {

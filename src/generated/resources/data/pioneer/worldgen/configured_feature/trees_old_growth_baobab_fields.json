@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:acacia_checked",
+    "features": [
+      {
+        "chance": 0.4,
+        "feature": "pioneer:baobab_checked"
+      },
+      {
+        "chance": 0.45,
+        "feature": "pioneer:tall_baobab_checked"
+      }
+    ]
+  }
+}

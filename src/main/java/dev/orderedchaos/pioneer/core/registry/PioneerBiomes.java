@@ -64,6 +64,8 @@ public class PioneerBiomes {
     context.register(RED_ROCK_CANYON, verdantSands(features, carvers));
     context.register(RED_ROCK_CLIFFS, verdantSands(features, carvers));
     context.register(WINDSWEPT_CLIFFS, windsweptCliffs(features, carvers));
+    context.register(BAOBAB_FIELDS, baobabFields(features, carvers, false));
+    context.register(OLD_GROWTH_BAOBAB_FIELDS, baobabFields(features, carvers, true));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -354,6 +356,50 @@ public class PioneerBiomes {
         .fogColor(12638463)
         .skyColor(calculateSkyColor(0.25F))
         .ambientParticle(new AmbientParticleSettings(ParticleTypes.WHITE_ASH, 0.05F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome baobabFields(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers, boolean oldGrowth) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+    BiomeDefaultFeatures.addExtraEmeralds(biomeGenBuilder);
+    BiomeDefaultFeatures.addInfestedStone(biomeGenBuilder);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.PATCH_GRASS_SAVANNA,
+      VegetationPlacements.FLOWER_WARM,
+      VegetationPlacements.PATCH_TALL_GRASS,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN
+    );
+    if (oldGrowth) {
+      biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_OLD_GROWTH_BAOBAB_FIELDS);
+    } else {
+      biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_BAOBAB_FIELDS);
+    }
+
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    mobSpawnBuilder
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.0F, 1.2F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+        .waterColor(4159204)
+        .waterFogColor(4159204)
+        .fogColor(12638463)
+        .grassColorOverride(0x8aab32)
+        .foliageColorOverride(0xa6c918)
+        .skyColor(calculateSkyColor(0.95F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

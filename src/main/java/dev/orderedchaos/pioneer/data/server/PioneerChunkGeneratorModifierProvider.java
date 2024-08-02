@@ -84,8 +84,13 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ifTrue(surfaceNoiseAbove(0.1D), GRASS_DIRT_FLOOR),
     ifTrue(surfaceNoiseAbove(-0.6D), SAND_SANDSTONE_FLOOR), SAND_SANDSTONE_FLOOR);
 
-  public static final SurfaceRules.RuleSource PINE_MEADOWS = sequence(ifTrue(surfaceNoiseAbove(1.75D), GRASS_DIRT_FLOOR),
+  public static final SurfaceRules.RuleSource PINE_MEADOWS = sequence(
+    ifTrue(surfaceNoiseAbove(1.75D), GRASS_DIRT_FLOOR),
     ifTrue(noiseCondition(Noises.SURFACE, -0.02D, 0.02D), DIORITE),
+    GRASS_DIRT_FLOOR);
+
+  public static final SurfaceRules.RuleSource OLD_GROWTH_BAOBAB_FIELDS = sequence(
+    ifTrue(surfaceNoiseAbove(0.9D), COARSE_DIRT),
     GRASS_DIRT_FLOOR);
 
   private static final SurfaceRules.RuleSource RED_ROCK_CANYON = sequence(
@@ -158,6 +163,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ConditionSource isOvergrownSpires = isBiome(PioneerBiomes.OVERGROWN_SPIRES);
     ConditionSource isRedRockCanyon = isBiome(PioneerBiomes.RED_ROCK_CANYON, PioneerBiomes.RED_ROCK_CLIFFS);
     ConditionSource isWindsweptCliffs = isBiome(PioneerBiomes.WINDSWEPT_CLIFFS);
+    ConditionSource isOldGrowthBaobabFields = isBiome(PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS);
 
     this.entry("pioneer_surface_rule")
       .selects("minecraft:overworld")
@@ -166,7 +172,8 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWillowWetlands, WILLOW_WETLANDS)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOvergrownSpires, OVERGROWN_SPIRES)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedRockCanyon, RED_ROCK_CANYON)), false))
-      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWindsweptCliffs, WINDSWEPT_CLIFFS)), false));
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWindsweptCliffs, WINDSWEPT_CLIFFS)), false))
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOldGrowthBaobabFields, OLD_GROWTH_BAOBAB_FIELDS)), false));
 
   }
 
