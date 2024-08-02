@@ -46,7 +46,7 @@ public class PioneerBiomes {
   public static final ResourceKey<Biome> CRYSTAL_LAKES = createKey("crystal_lakes");
   public static final ResourceKey<Biome> RED_ROCK_CANYON = createKey("red_rock_canyon");
   public static final ResourceKey<Biome> RED_ROCK_CLIFFS = createKey("red_rock_cliffs");
-//  public static final ResourceKey<Biome> FLOODED_FOREST = createKey("flooded_forest", FloodedForestBiome::floodedForest);
+  public static final ResourceKey<Biome> FLOODED_FOREST = createKey("flooded_forest");
   public static final ResourceKey<Biome> WINDSWEPT_CLIFFS = createKey("windswept_cliffs");
   public static final ResourceKey<Biome> WILLOW_WETLANDS = createKey("willow_wetlands");
 
@@ -72,6 +72,7 @@ public class PioneerBiomes {
     context.register(PRAIRIE, prairie(features, carvers));
     context.register(CRYSTAL_LAKES, crystalLakes(features, carvers));
     context.register(DESERT_SHRUBLAND, desertShrubland(features, carvers));
+    context.register(FLOODED_FOREST, floodedForest(features, carvers));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -614,6 +615,47 @@ public class PioneerBiomes {
         .waterFogColor(329011)
         .fogColor(12638463)
         .skyColor(calculateSkyColor(2.0F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome floodedForest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.FOREST_FLOWERS,
+      VegetationPlacements.PATCH_SUGAR_CANE_SWAMP,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_TALL_GRASS,
+      AquaticPlacements.SEAGRASS_WARM,
+      VegetationPlacements.PATCH_WATERLILY,
+      VegetationPlacements.TREES_WATER
+    );
+
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, PioneerPlacedFeatures.FLOOD_POOL);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_FLOODED_FOREST);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.DRIPLEAF);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.FLOODED_FOREST_GRASS);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
+
+    return biome(false, 0.82F, 0.7F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .skyColor(calculateSkyColor(0.7F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

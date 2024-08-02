@@ -6,8 +6,7 @@ import dev.orderedchaos.pioneer.common.world.features.tree.decorators.JuniperBer
 import dev.orderedchaos.pioneer.common.world.features.tree.foliageplacers.*;
 import dev.orderedchaos.pioneer.common.world.features.tree.trunkplacers.*;
 import dev.orderedchaos.pioneer.core.Pioneer;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderGetter;
+import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.AquaticFeatures;
@@ -22,10 +21,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SmallDripleafBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -64,6 +67,8 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> DRY_GRASS  = createKey("dry_grass");
   public static final ResourceKey<ConfiguredFeature<?, ?>> DESERT_SAGE  = createKey("desert_sage");
   public static final ResourceKey<ConfiguredFeature<?, ?>> DESERT_AGAVE  = createKey("desert_agave");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> FLOOD_POOL  = createKey("flood_pool");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> DRIPLEAF  = createKey("dripleaf");
 
   public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_TREE  = createKey("palm_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_REDWOOD_TREE  = createKey("big_redwood_tree");
@@ -159,6 +164,9 @@ public class PioneerConfiguredFeatures {
     register(context, DRY_GRASS, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new RandomizedIntStateProvider(BlockStateProvider.simple(PioneerBlocks.DRY_GRASS.get()), DryGrassBlock.MODEL, UniformInt.of(0, 1)))));
     register(context, DESERT_SAGE, Feature.RANDOM_PATCH, createRandomPatchFeature(2, 7, 2, PioneerBlocks.DESERT_SAGE.get().defaultBlockState()));
     register(context, DESERT_AGAVE, Feature.FLOWER, PioneerConfiguredFeatures.simpleRandomPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(PioneerBlocks.DESERT_AGAVE.get().defaultBlockState(), 2).add(PioneerBlocks.BLOOMING_DESERT_AGAVE.get().defaultBlockState(), 1))));
+    register(context, FLOOD_POOL, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
+      BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(holderGetter2.getOrThrow(CaveFeatures.DRIPLEAF)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
+    register(context, DRIPLEAF, Feature.SIMPLE_RANDOM_SELECTOR, new SimpleRandomFeatureConfiguration(HolderSet.direct(makeSmallDripleaf(), makeDripleaf(Direction.EAST), makeDripleaf(Direction.WEST), makeDripleaf(Direction.SOUTH), makeDripleaf(Direction.NORTH))));
 
     register(context, TREES_VERDANT_SANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED), 0.25F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.2F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.2f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.2f)), holderGetter.getOrThrow(TreePlacements.OAK_CHECKED)));
     register(context, TREES_PINE_MEADOWS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PINE_CHECKED), 0.5F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.SPRUCE_BUSH_CHECKED)));
@@ -194,6 +202,33 @@ public class PioneerConfiguredFeatures {
 
   public static RandomPatchConfiguration simpleRandomPatch(BlockStateProvider provider) {
     return FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(provider));
+  }
+
+  private static Holder<PlacedFeature> makeDripleaf(Direction p_206468_) {
+    return PlacementUtils.inlinePlaced(Feature.BLOCK_COLUMN,
+      new BlockColumnConfiguration(
+        List.of(BlockColumnConfiguration.layer(
+            new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder()
+              .add(UniformInt.of(0, 4), 2).add(ConstantInt.of(0), 1).build()),
+            BlockStateProvider.simple(Blocks.BIG_DRIPLEAF_STEM.defaultBlockState()
+              .setValue(BlockStateProperties.HORIZONTAL_FACING, p_206468_))),
+          BlockColumnConfiguration.layer(ConstantInt.of(1),
+            BlockStateProvider.simple(Blocks.BIG_DRIPLEAF.defaultBlockState()
+              .setValue(BlockStateProperties.HORIZONTAL_FACING, p_206468_)))),
+        Direction.UP, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+  }
+
+  private static Holder<PlacedFeature> makeSmallDripleaf() {
+    return PlacementUtils.inlinePlaced(Feature.SIMPLE_BLOCK,
+      new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        .add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+          Direction.EAST), 1)
+        .add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+          Direction.WEST), 1)
+        .add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+          Direction.NORTH), 1)
+        .add(Blocks.SMALL_DRIPLEAF.defaultBlockState().setValue(SmallDripleafBlock.FACING,
+          Direction.SOUTH), 1))));
   }
 
   private static class TreeFeatureConfigs {

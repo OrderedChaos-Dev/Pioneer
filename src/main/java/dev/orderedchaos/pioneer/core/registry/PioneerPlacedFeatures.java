@@ -8,8 +8,11 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.AquaticFeatures;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -42,6 +45,9 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> DRY_GRASS = createKey("dry_grass");
   public static final ResourceKey<PlacedFeature> DESERT_SAGE = createKey("desert_sage");
   public static final ResourceKey<PlacedFeature> DESERT_AGAVE = createKey("desert_agave");
+  public static final ResourceKey<PlacedFeature> FLOOD_POOL = createKey("flood_pool");
+  public static final ResourceKey<PlacedFeature> DRIPLEAF = createKey("dripleaf");
+  public static final ResourceKey<PlacedFeature> FLOODED_FOREST_GRASS  = createKey("flooded_forest_grass");
 
   public static final ResourceKey<PlacedFeature> PINE_CHECKED = createKey("pine_checked");
   public static final ResourceKey<PlacedFeature> FIR_CHECKED = createKey("fir_checked");
@@ -81,6 +87,7 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TREES_PRAIRIE  = createKey("trees_prairie");
   public static final ResourceKey<PlacedFeature> TREES_CRYSTAL_LAKES  = createKey("trees_crystal_lakes");
   public static final ResourceKey<PlacedFeature> TREES_DESERT_SHRUBLAND = createKey("trees_desert_shrubland");
+  public static final ResourceKey<PlacedFeature> TREES_FLOODED_FOREST = createKey("trees_flooded_forest");
 
   public static void bootstrap(BootstapContext<PlacedFeature> context) {
     register(context, PATCH_MANY_CACTUS, VegetationFeatures.PATCH_CACTUS, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -98,6 +105,9 @@ public class PioneerPlacedFeatures {
     register(context, DRY_GRASS, PioneerConfiguredFeatures.DRY_GRASS, VegetationPlacements.worldSurfaceSquaredWithCount(10));
     register(context, DESERT_SAGE, PioneerConfiguredFeatures.DESERT_SAGE, VegetationPlacements.worldSurfaceSquaredWithCount(3));
     register(context, DESERT_AGAVE, PioneerConfiguredFeatures.DESERT_AGAVE, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    register(context, FLOOD_POOL, PioneerConfiguredFeatures.FLOOD_POOL, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+    register(context, DRIPLEAF, PioneerConfiguredFeatures.DRIPLEAF, seagrassPlacement(16));
+    register(context, FLOODED_FOREST_GRASS, VegetationFeatures.PATCH_GRASS, VegetationPlacements.worldSurfaceSquaredWithCount(15));
 
     register(context, PINE_CHECKED, PioneerConfiguredFeatures.PINE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.PINE.sapling().get()));
     register(context, FIR_CHECKED, PioneerConfiguredFeatures.FIR_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.FIR.sapling().get()));
@@ -137,6 +147,7 @@ public class PioneerPlacedFeatures {
     register(context, TREES_PRAIRIE, PioneerConfiguredFeatures.TREES_PRAIRIE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
     register(context, TREES_CRYSTAL_LAKES, PioneerConfiguredFeatures.TREES_CRYSTAL_LAKES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.1F, 1)));
     register(context, TREES_DESERT_SHRUBLAND, PioneerConfiguredFeatures.TREES_DESERT_SHRUBLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.2F, 1)));
+    register(context, TREES_FLOODED_FOREST, VegetationFeatures.TREES_BIRCH_AND_OAK,PlacementUtils.countExtra(10, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(4), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)));
   }
 
   private static ResourceKey<PlacedFeature> createKey(String name) {
@@ -151,5 +162,9 @@ public class PioneerPlacedFeatures {
   private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers) {
     HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
     PlacementUtils.register(context, key, holderGetter.getOrThrow(configuredFeature), modifiers);
+  }
+
+  private static List<PlacementModifier> seagrassPlacement(int count) {
+    return List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, CountPlacement.of(count), BiomeFilter.biome());
   }
 }

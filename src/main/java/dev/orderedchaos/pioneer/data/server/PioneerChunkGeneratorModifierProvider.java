@@ -173,6 +173,13 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
           ifTrue(noiseCondition(Noises.SWAMP, 0.0D),
             WATER)))));
 
+  public static final SurfaceRules.RuleSource FLOODED_FOREST = sequence(
+    ifTrue(ON_FLOOR,
+      ifTrue(Y_62,
+        ifTrue(not(Y_63),
+          ifTrue(noiseCondition(Noises.SWAMP, 0.0D),
+            WATER)))));
+
   public static final SurfaceRules.RuleSource OVERGROWN_SPIRES = sequence(
     ifTrue(surfaceNoiseAbove(2.15D), STONE),
     ifTrue(surfaceNoiseAbove(0D), COARSE_DIRT_FLOOR),
@@ -207,6 +214,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ConditionSource isOldGrowthBaobabFields = isBiome(PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS);
     ConditionSource isRedwoods = isBiome(PioneerBiomes.REDWOODS, PioneerBiomes.SNOWY_REDWOODS);
     ConditionSource isDesertShrubland = isBiome(PioneerBiomes.DESERT_SHRUBLAND);
+    ConditionSource isFloodedForest = isBiome(PioneerBiomes.FLOODED_FOREST);
 
     this.entry("pioneer_surface_rule")
       .selects("minecraft:overworld")
@@ -218,8 +226,8 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWindsweptCliffs, WINDSWEPT_CLIFFS)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOldGrowthBaobabFields, OLD_GROWTH_BAOBAB_FIELDS)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedwoods, REDWOODS)), false))
-      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isDesertShrubland, DESERT_SHRUBLAND)), false));
-
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isDesertShrubland, DESERT_SHRUBLAND)), false))
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isFloodedForest, FLOODED_FOREST)), false));
   }
 
   private static SurfaceRules.RuleSource makeStateRule(Block block) {
