@@ -70,7 +70,7 @@ public class PioneerModdedBiomeSlices {
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
       {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
-      {VANILLA, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, VANILLA},
+      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
       {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
@@ -356,9 +356,9 @@ public class PioneerModdedBiomeSlices {
 
     private ResourceKey<Biome> pickPeakBiome(int p_187241_, int p_187242_, Climate.Parameter p_187243_) {
       if (p_187241_ <= 2) {
-        return VANILLA;
+        return p_187243_.max() < 0L ? PioneerBiomes.WINDSWEPT_CLIFFS : VANILLA;
       } else {
-        return p_187241_ == 3 ? VANILLA : this.pickBadlandsBiome(p_187242_, p_187243_);
+        return p_187241_ == 3 ? PioneerBiomes.WINDSWEPT_CLIFFS : this.pickBadlandsBiome(p_187242_, p_187243_);
       }
     }
 

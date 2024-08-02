@@ -3,6 +3,7 @@ package dev.orderedchaos.pioneer.core.registry;
 import dev.orderedchaos.pioneer.core.Pioneer;
 import dev.orderedchaos.pioneer.core.registry.util.FeatureOrderUtil;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -39,13 +40,14 @@ public class PioneerBiomes {
 //  public static final ResourceKey<Biome> REDWOODS = createKey("redwoods", () -> RedwoodsBiome.redwoods(false));
 //  public static final ResourceKey<Biome> SNOWY_REDWOODS = createKey("snowy_redwoods", () -> RedwoodsBiome.redwoods(true));
 //  public static final ResourceKey<Biome> ASPEN_GROVE = createKey("aspen_grove", AspenGroveBiome::aspenGrove);
-//  public static final ResourceKey<Biome> BAOBAB_FIELDS = createKey("baobab_fields", BaobabFieldsBiome::baobabFields);
+  public static final ResourceKey<Biome> BAOBAB_FIELDS = createKey("baobab_fields");
+  public static final ResourceKey<Biome> OLD_GROWTH_BAOBAB_FIELDS = createKey("old_growth_baobab_fields");
 //  public static final ResourceKey<Biome> PRAIRIE = createKey("prairie", PrairieBiome::prairie);
 //  public static final ResourceKey<Biome> CRYSTAL_LAKES = createKey("crystal_lakes", CrystalLakesBiome::crystalLakes);
   public static final ResourceKey<Biome> RED_ROCK_CANYON = createKey("red_rock_canyon");
   public static final ResourceKey<Biome> RED_ROCK_CLIFFS = createKey("red_rock_cliffs");
 //  public static final ResourceKey<Biome> FLOODED_FOREST = createKey("flooded_forest", FloodedForestBiome::floodedForest);
-//  public static final ResourceKey<Biome> WINDSWEPT_CLIFFS = createKey("windswept_cliffs", WindsweptCliffsBiome::windsweptCliffs);
+  public static final ResourceKey<Biome> WINDSWEPT_CLIFFS = createKey("windswept_cliffs");
   public static final ResourceKey<Biome> WILLOW_WETLANDS = createKey("willow_wetlands");
 
   public static void bootstrap(BootstapContext<Biome> context) {
@@ -61,6 +63,7 @@ public class PioneerBiomes {
     context.register(OVERGROWN_SPIRES, overgrownSpires(features, carvers));
     context.register(RED_ROCK_CANYON, verdantSands(features, carvers));
     context.register(RED_ROCK_CLIFFS, verdantSands(features, carvers));
+    context.register(WINDSWEPT_CLIFFS, windsweptCliffs(features, carvers));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -311,6 +314,46 @@ public class PioneerBiomes {
         .waterFogColor(329011)
         .fogColor(12638463)
         .skyColor(calculateSkyColor(0.95F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome windsweptCliffs(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+    BiomeDefaultFeatures.addExtraEmeralds(biomeGenBuilder);
+    BiomeDefaultFeatures.addInfestedStone(biomeGenBuilder);
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.PATCH_GRASS_FOREST,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_TALL_GRASS,
+      VegetationPlacements.PATCH_WATERLILY,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_WINDSWEPT_CLIFFS);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.WINDSWEPT_SPIKE);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 5, 1, 3));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.3F, 0.5F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_STONY_PEAKS))
+        .waterColor(4150204)
+        .waterFogColor(329011)
+        .grassColorOverride(0x98d957)
+        .foliageColorOverride(0x98d957)
+        .fogColor(12638463)
+        .skyColor(calculateSkyColor(0.25F))
+        .ambientParticle(new AmbientParticleSettings(ParticleTypes.WHITE_ASH, 0.05F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )

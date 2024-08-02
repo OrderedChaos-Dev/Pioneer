@@ -4,7 +4,7 @@
     "default": "minecraft:jungle_tree",
     "features": [
       {
-        "chance": 0.0,
+        "chance": 0.1,
         "feature": "minecraft:fancy_oak_checked"
       },
       {
@@ -12,7 +12,7 @@
         "feature": "minecraft:jungle_bush"
       },
       {
-        "chance": 0.3,
+        "chance": 0.5,
         "feature": "minecraft:mega_jungle_tree_checked"
       },
       {
@@ -24,7 +24,7 @@
         "feature": "minecraft:oak_checked"
       },
       {
-        "chance": 0.2,
+        "chance": 0.35,
         "feature": "minecraft:jungle_tree"
       }
     ]

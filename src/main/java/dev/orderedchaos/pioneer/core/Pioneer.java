@@ -4,10 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import dev.orderedchaos.pioneer.Config;
-import dev.orderedchaos.pioneer.core.registry.PioneerBiomes;
-import dev.orderedchaos.pioneer.core.registry.PioneerConfiguredFeatures;
-import dev.orderedchaos.pioneer.core.registry.PioneerPlacedFeatures;
-import dev.orderedchaos.pioneer.core.registry.PioneerTreePlacers;
+import dev.orderedchaos.pioneer.core.registry.*;
 import dev.orderedchaos.pioneer.data.client.PioneerBlockStateProvider;
 import dev.orderedchaos.pioneer.data.client.PioneerItemModelProvider;
 import dev.orderedchaos.pioneer.data.server.*;
@@ -56,6 +53,8 @@ public class Pioneer {
     REGISTRY_HELPER.register(modEventBus);
     CREATIVE_MODE_TABS.register(modEventBus);
 
+    PioneerFeatures.FEATURES.register(modEventBus);
+    PioneerSurfaceRules.CONDITIONS.register(modEventBus);
     PioneerTreePlacers.Trunk.TRUNK_PLACERS.register(modEventBus);
     PioneerTreePlacers.Foliage.FOLIAGE_PLACERS.register(modEventBus);
     PioneerTreePlacers.Decorator.DECORATORS.register(modEventBus);

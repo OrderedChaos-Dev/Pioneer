@@ -2,6 +2,7 @@ package dev.orderedchaos.pioneer.data.server;
 
 import com.teamabnormals.blueprint.common.world.modification.chunk.ChunkGeneratorModifierProvider;
 import com.teamabnormals.blueprint.common.world.modification.chunk.modifiers.SurfaceRuleModifier;
+import dev.orderedchaos.pioneer.common.world.surfacerules.RandomThresholdConditionSource;
 import dev.orderedchaos.pioneer.core.Pioneer;
 import dev.orderedchaos.pioneer.core.registry.PioneerBiomes;
 import net.minecraft.core.HolderLookup;
@@ -33,6 +34,10 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
   private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
   private static final SurfaceRules.RuleSource RED_SANDSTONE = makeStateRule(Blocks.RED_SANDSTONE);
   private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+  private static final SurfaceRules.RuleSource COBBLESTONE = makeStateRule(Blocks.COBBLESTONE);
+  private static final SurfaceRules.RuleSource MOSSY_COBBLESTONE = makeStateRule(Blocks.MOSSY_COBBLESTONE);
+  private static final SurfaceRules.RuleSource ANDESITE = makeStateRule(Blocks.ANDESITE);
+  private static final SurfaceRules.RuleSource MOSS_BLOCK = makeStateRule(Blocks.MOSS_BLOCK);
 
   private static final SurfaceRules.ConditionSource BADLANDS_Y_BLOCK_CHECK_1 = yBlockCheck(VerticalAnchor.absolute(256), 0);
   private static final SurfaceRules.ConditionSource BADLANDS_Y_BLOCK_CHECK_2 = yBlockCheck(VerticalAnchor.absolute(63), 0);
@@ -132,6 +137,15 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ifTrue(surfaceNoiseAbove(2.15D), STONE),
     ifTrue(surfaceNoiseAbove(0D), COARSE_DIRT_FLOOR), GRASS_DIRT_FLOOR);
 
+  private static final SurfaceRules.RuleSource WINDSWEPT_CLIFFS = sequence(
+    ifTrue(random(0.15F), STONE),
+    ifTrue(random(0.30F), GRAVEL),
+    ifTrue(random(0.35F), GRASS_DIRT_FLOOR),
+    ifTrue(random(0.1F), MOSS_BLOCK),
+    ifTrue(random(0.6F), ANDESITE),
+    ifTrue(random(0.75F), MOSSY_COBBLESTONE),
+    COBBLESTONE);
+
   public PioneerChunkGeneratorModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
     super(Pioneer.MOD_ID, output, lookupProvider);
   }
@@ -143,6 +157,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ConditionSource isWillowWetlands = isBiome(PioneerBiomes.WILLOW_WETLANDS);
     ConditionSource isOvergrownSpires = isBiome(PioneerBiomes.OVERGROWN_SPIRES);
     ConditionSource isRedRockCanyon = isBiome(PioneerBiomes.RED_ROCK_CANYON, PioneerBiomes.RED_ROCK_CLIFFS);
+    ConditionSource isWindsweptCliffs = isBiome(PioneerBiomes.WINDSWEPT_CLIFFS);
 
     this.entry("pioneer_surface_rule")
       .selects("minecraft:overworld")
@@ -150,7 +165,8 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isPineMeadows, PINE_MEADOWS)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWillowWetlands, WILLOW_WETLANDS)), false))
       .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isOvergrownSpires, OVERGROWN_SPIRES)), false))
-      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedRockCanyon, RED_ROCK_CANYON)), false));
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isRedRockCanyon, RED_ROCK_CANYON)), false))
+      .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWindsweptCliffs, WINDSWEPT_CLIFFS)), false));
 
   }
 
@@ -160,5 +176,9 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
 
   private static SurfaceRules.ConditionSource surfaceNoiseAbove(double noise) {
     return noiseCondition(Noises.SURFACE, noise / 8.25D, Double.MAX_VALUE);
+  }
+
+  private static RandomThresholdConditionSource random(float threshold) {
+    return new RandomThresholdConditionSource(threshold);
   }
 }

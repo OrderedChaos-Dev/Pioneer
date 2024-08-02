@@ -23,10 +23,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.FeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
@@ -50,6 +47,7 @@ public class PioneerConfiguredFeatures {
   public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, Pioneer.MOD_ID);
 
   public static final ResourceKey<ConfiguredFeature<?, ?>> OVERGROWN_SPIRES_POOL  = createKey("overgrown_spires_pool");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> WINDSWEPT_SPIKE  = createKey("windswept_spike");
 
   public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_TREE  = createKey("palm_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_REDWOOD_TREE  = createKey("big_redwood_tree");
@@ -77,6 +75,7 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_ORANGE_MAPLE_TREE  = createKey("fancy_orange_maple_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_PURPLE_MAPLE_TREE  = createKey("fancy_purple_maple_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> SPRUCE_BUSH  = createKey("spruce_bush");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_BUSH = createKey("oak_bush");
 
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_VERDANT_SANDS  = createKey("trees_verdant_sands");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_PINE_MEADOWS  = createKey("trees_pine_meadows");
@@ -84,6 +83,7 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_BOREAL_FOREST  = createKey("trees_boreal_forest");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WILLOW_WETLANDS  = createKey("trees_willow_wetlands");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_OVERGROWN_SPIRES  = createKey("trees_overgrown_spires");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WINDSWEPT_CLIFFS  = createKey("trees_windswept_cliffs");
 
   public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
     HolderGetter<PlacedFeature> holderGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -115,15 +115,18 @@ public class PioneerConfiguredFeatures {
     register(context, FANCY_PURPLE_MAPLE_TREE, Feature.TREE, TreeFeatureConfigs.FANCY_PURPLE_MAPLE);
     register(context, JOSHUA_TREE, Feature.TREE, TreeFeatureConfigs.JOSHUA);
     register(context, SPRUCE_BUSH, Feature.TREE, TreeFeatureConfigs.SPRUCE_BUSH);
+    register(context, OAK_BUSH, Feature.TREE, TreeFeatureConfigs.OAK_BUSH);
 
     register(context, OVERGROWN_SPIRES_POOL, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.BASE_STONE_OVERWORLD, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(holderGetter2.getOrThrow(AquaticFeatures.SEAGRASS_SIMPLE)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.6F, UniformInt.of(1, 2), 0.75F));
+    register(context, WINDSWEPT_SPIKE, PioneerFeatures.WINDSWEPT_SPIKE.get(), NoneFeatureConfiguration.INSTANCE);
 
     register(context, TREES_VERDANT_SANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED), 0.25F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.2F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.2f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.2f)), holderGetter.getOrThrow(TreePlacements.OAK_CHECKED)));
     register(context, TREES_PINE_MEADOWS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PINE_CHECKED), 0.5F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.SPRUCE_BUSH_CHECKED)));
     register(context, TREES_AUTUMNAL_CONIFEROUS_FOREST, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.TAMARACK_CHECKED), 0.3F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.TAMARACK_BEES_0002_CHECKED), 0.05F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED), 0.55F)), holderGetter.getOrThrow(TreePlacements.SPRUCE_CHECKED)));
     register(context, TREES_BOREAL_FOREST, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED), 0.75F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.PINE_CHECKED), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED)));
     register(context, TREES_WILLOW_WETLANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.WILLOW_CHECKED), 0.8F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.MANGROVE_CHECKED), 0.1F)), holderGetter.getOrThrow(TreePlacements.TALL_MANGROVE_CHECKED)));
-    register(context, TREES_OVERGROWN_SPIRES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.0F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.35F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 0.3f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.DARK_OAK_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.2f)), holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED)));
+    register(context, TREES_OVERGROWN_SPIRES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.1F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.35F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 0.5f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.DARK_OAK_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.35f)), holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED)));
+    register(context, TREES_WINDSWEPT_CLIFFS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.6F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.05F)), holderGetter.getOrThrow(PioneerPlacedFeatures.OAK_BUSH_CHECKED)));
   }
 
   private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
@@ -164,6 +167,7 @@ public class PioneerConfiguredFeatures {
     public static final TreeConfiguration TAMARACK_BEES_005 = tree(new StraightTrunkPlacer(15, 3, 4), new SpruceFoliagePlacer(UniformInt.of(2, 4), UniformInt.of(1, 1), UniformInt.of(2, 4)), PioneerBlocks.TAMARACK.log().get(), PioneerBlocks.TAMARACK.leaves().get(), new TwoLayersFeatureSize(2, 0, 2), List.of(BEEHIVE_005));
     public static final TreeConfiguration JOSHUA = tree(new FancyTrunkPlacer(8, 8, 0), new DesertJuniperFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), PioneerBlocks.JOSHUA.log().get(), PioneerBlocks.JOSHUA.leaves().get(), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)));
     public static final TreeConfiguration SPRUCE_BUSH = tree(new StraightTrunkPlacer(1, 0, 0), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), Blocks.SPRUCE_LOG, Blocks.SPRUCE_LEAVES, new TwoLayersFeatureSize(0, 0, 0));
+    public static final TreeConfiguration OAK_BUSH = tree(new StraightTrunkPlacer(1, 0, 0), new BushFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 2), Blocks.OAK_LOG, Blocks.OAK_LEAVES, new TwoLayersFeatureSize(0, 0, 0));
 
     private static TreeConfiguration tree(TrunkPlacer trunkPlacer, FoliagePlacer foliagePlacer, Block log, Block leaves, FeatureSize featureSize, List<TreeDecorator> decorators) {
       return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log), trunkPlacer,
