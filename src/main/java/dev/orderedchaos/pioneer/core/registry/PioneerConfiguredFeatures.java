@@ -5,6 +5,7 @@ import dev.orderedchaos.pioneer.common.world.features.tree.decorators.JuniperBer
 import dev.orderedchaos.pioneer.common.world.features.tree.foliageplacers.*;
 import dev.orderedchaos.pioneer.common.world.features.tree.trunkplacers.*;
 import dev.orderedchaos.pioneer.core.Pioneer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -20,6 +21,8 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
@@ -36,6 +39,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -77,6 +81,10 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_PURPLE_MAPLE_TREE  = createKey("fancy_purple_maple_tree");
   public static final ResourceKey<ConfiguredFeature<?, ?>> SPRUCE_BUSH  = createKey("spruce_bush");
   public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_BUSH = createKey("oak_bush");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> ASPEN_FALLEN_LEAVES = createKey("aspen_fallen_leaves");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> RED_MAPLE_FALLEN_LEAVES = createKey("red_maple_fallen_leaves");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> ORANGE_MAPLE_FALLEN_LEAVES = createKey("orange_maple_fallen_leaves");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_MAPLE_FALLEN_LEAVES = createKey("purple_fallen_leaves");
 
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_VERDANT_SANDS  = createKey("trees_verdant_sands");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_PINE_MEADOWS  = createKey("trees_pine_meadows");
@@ -87,6 +95,7 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WINDSWEPT_CLIFFS  = createKey("trees_windswept_cliffs");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_BAOBAB_FIELDS  = createKey("trees_baobab_fields");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_OLD_GROWTH_BAOBAB_FIELDS  = createKey("trees_old_growth_baobab_fields");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_ASPEN_GROVE  = createKey("trees_aspen_grove");
 
   public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
     HolderGetter<PlacedFeature> holderGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -123,6 +132,10 @@ public class PioneerConfiguredFeatures {
 
     register(context, OVERGROWN_SPIRES_POOL, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.BASE_STONE_OVERWORLD, BlockStateProvider.simple(Blocks.GRASS_BLOCK), PlacementUtils.inlinePlaced(holderGetter2.getOrThrow(AquaticFeatures.SEAGRASS_SIMPLE)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.6F, UniformInt.of(1, 2), 0.75F));
     register(context, WINDSWEPT_SPIKE, PioneerFeatures.WINDSWEPT_SPIKE.get(), NoneFeatureConfiguration.INSTANCE);
+    register(context, ASPEN_FALLEN_LEAVES, Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.ASPEN_FALLEN_LEAVES.get().defaultBlockState()));
+    register(context, RED_MAPLE_FALLEN_LEAVES, Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.RED_MAPLE_FALLEN_LEAVES.get().defaultBlockState()));
+    register(context, ORANGE_MAPLE_FALLEN_LEAVES, Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.ORANGE_MAPLE_FALLEN_LEAVES.get().defaultBlockState()));
+    register(context, PURPLE_MAPLE_FALLEN_LEAVES, Feature.RANDOM_PATCH, createRandomPatchFeature(4, 7, 3, PioneerBlocks.PURPLE_MAPLE_FALLEN_LEAVES.get().defaultBlockState()));
 
     register(context, TREES_VERDANT_SANDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED), 0.25F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 0.2F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.JUNGLE_BUSH), 0.2f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED), 0.2f)), holderGetter.getOrThrow(TreePlacements.OAK_CHECKED)));
     register(context, TREES_PINE_MEADOWS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PINE_CHECKED), 0.5F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.SPRUCE_BUSH_CHECKED)));
@@ -133,10 +146,19 @@ public class PioneerConfiguredFeatures {
     register(context, TREES_WINDSWEPT_CLIFFS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.6F), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.05F)), holderGetter.getOrThrow(PioneerPlacedFeatures.OAK_BUSH_CHECKED)));
     register(context, TREES_BAOBAB_FIELDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.BAOBAB_CHECKED), 0.9F)), holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED)));
     register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.BAOBAB_CHECKED), 0.4F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.TALL_BAOBAB_CHECKED), 0.45F)), holderGetter.getOrThrow(TreePlacements.ACACIA_CHECKED)));
+    register(context, TREES_ASPEN_GROVE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.ASPEN_BEES_0002_CHECKED), 0.05F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.ASPEN_CHECKED), 0.2F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.RED_MAPLE_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.ORANGE_MAPLE_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PURPLE_MAPLE_CHECKED), 0.15f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FANCY_RED_MAPLE_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FANCY_ORANGE_MAPLE_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FANCY_PURPLE_MAPLE_CHECKED), 0.05f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_BEES_0002), 0.1f), new WeightedPlacedFeature(holderGetter.getOrThrow(TreePlacements.OAK_CHECKED), 0.05f)), holderGetter.getOrThrow(TreePlacements.FANCY_OAK_CHECKED)));
   }
 
   private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
     return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Pioneer.MOD_ID, name));
+  }
+
+  private static RandomPatchConfiguration createRandomPatchFeature(int tries, int xzSpread, int ySpread, BlockState block) {
+    return new RandomPatchConfiguration(tries, xzSpread, ySpread, PlacementUtils.filtered(Feature.SIMPLE_BLOCK,
+      new SimpleBlockConfiguration(BlockStateProvider.simple(block)), BlockPredicate.allOf(BlockPredicate.replaceable(), BlockPredicate.not(BlockPredicate.matchesBlocks(new BlockPos(0, -1, 0), Blocks.ICE)),
+        BlockPredicate.not(BlockPredicate.matchesBlocks(new BlockPos(0, 0, 0), Blocks.SNOW)),
+        BlockPredicate.not(BlockPredicate.matchesFluids(new BlockPos(0, 0, 0), Fluids.WATER)))));
+
   }
 
   private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC config) {

@@ -32,6 +32,10 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> WILLOW_WETLANDS_SEA_PICKLE  = createKey("willow_wetlands_sea_pickle");
   public static final ResourceKey<PlacedFeature> OVERGROWN_SPIRES_POOL  = createKey("overgrown_spires_pool");
   public static final ResourceKey<PlacedFeature> WINDSWEPT_SPIKE = createKey("windswept_spike");
+  public static final ResourceKey<PlacedFeature> ASPEN_FALLEN_LEAVES = createKey("aspen_fallen_leaves");
+  public static final ResourceKey<PlacedFeature> RED_MAPLE_FALLEN_LEAVES = createKey("red_maple_fallen_leaves");
+  public static final ResourceKey<PlacedFeature> ORANGE_MAPLE_FALLEN_LEAVES = createKey("orange_maple_fallen_leaves");
+  public static final ResourceKey<PlacedFeature> PURPLE_MAPLE_FALLEN_LEAVES = createKey("purple_fallen_leaves");
 
   public static final ResourceKey<PlacedFeature> PINE_CHECKED = createKey("pine_checked");
   public static final ResourceKey<PlacedFeature> FIR_CHECKED = createKey("fir_checked");
@@ -39,6 +43,14 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TAMARACK_BEES_0002_CHECKED = createKey("tamarack_bees_0002_checked");
   public static final ResourceKey<PlacedFeature> WILLOW_CHECKED = createKey("willow_checked");
   public static final ResourceKey<PlacedFeature> BAOBAB_CHECKED = createKey("baobab_checked");
+  public static final ResourceKey<PlacedFeature> ASPEN_CHECKED = createKey("aspen_checked");
+  public static final ResourceKey<PlacedFeature> ASPEN_BEES_0002_CHECKED = createKey("aspen_bees_0002_checked");
+  public static final ResourceKey<PlacedFeature> RED_MAPLE_CHECKED = createKey("red_maple_checked");
+  public static final ResourceKey<PlacedFeature> ORANGE_MAPLE_CHECKED = createKey("orange_maple_checked");
+  public static final ResourceKey<PlacedFeature> PURPLE_MAPLE_CHECKED = createKey("purple_maple_checked");
+  public static final ResourceKey<PlacedFeature> FANCY_RED_MAPLE_CHECKED = createKey("fancy_red_maple_checked");
+  public static final ResourceKey<PlacedFeature> FANCY_ORANGE_MAPLE_CHECKED = createKey("fancy_orange_maple_checked");
+  public static final ResourceKey<PlacedFeature> FANCY_PURPLE_MAPLE_CHECKED = createKey("fancy_purple_maple_checked");
   public static final ResourceKey<PlacedFeature> TALL_BAOBAB_CHECKED = createKey("tall_baobab_checked");
   public static final ResourceKey<PlacedFeature> SPRUCE_BUSH_CHECKED = createKey("spruce_bush_checked");
   public static final ResourceKey<PlacedFeature> OAK_BUSH_CHECKED = createKey("oak_bush");
@@ -52,6 +64,7 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TREES_WINDSWEPT_CLIFFS  = createKey("trees_windswept_cliffs");
   public static final ResourceKey<PlacedFeature> TREES_BAOBAB_FIELDS  = createKey("trees_baobab_fields");
   public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_BAOBAB_FIELDS  = createKey("trees_old_growth_baobab_fields");
+  public static final ResourceKey<PlacedFeature> TREES_ASPEN_GROVE  = createKey("trees_aspen_grove");
 
   public static void bootstrap(BootstapContext<PlacedFeature> context) {
     register(context, PATCH_MANY_CACTUS, VegetationFeatures.PATCH_CACTUS, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -59,6 +72,10 @@ public class PioneerPlacedFeatures {
     register(context, WILLOW_WETLANDS_SEA_PICKLE, AquaticFeatures.SEA_PICKLE, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
     register(context, OVERGROWN_SPIRES_POOL, PioneerConfiguredFeatures.OVERGROWN_SPIRES_POOL, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(2)), BiomeFilter.biome());
     register(context, WINDSWEPT_SPIKE, PioneerConfiguredFeatures.WINDSWEPT_SPIKE, VegetationPlacements.worldSurfaceSquaredWithCount(2));
+    register(context, ASPEN_FALLEN_LEAVES, PioneerConfiguredFeatures.ASPEN_FALLEN_LEAVES, VegetationPlacements.worldSurfaceSquaredWithCount(3));
+    register(context, RED_MAPLE_FALLEN_LEAVES, PioneerConfiguredFeatures.RED_MAPLE_FALLEN_LEAVES, VegetationPlacements.worldSurfaceSquaredWithCount(3));
+    register(context, ORANGE_MAPLE_FALLEN_LEAVES, PioneerConfiguredFeatures.ORANGE_MAPLE_FALLEN_LEAVES, VegetationPlacements.worldSurfaceSquaredWithCount(3));
+    register(context, PURPLE_MAPLE_FALLEN_LEAVES, PioneerConfiguredFeatures.PURPLE_MAPLE_FALLEN_LEAVES, VegetationPlacements.worldSurfaceSquaredWithCount(3));
 
     register(context, PINE_CHECKED, PioneerConfiguredFeatures.PINE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.PINE.sapling().get()));
     register(context, FIR_CHECKED, PioneerConfiguredFeatures.FIR_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.FIR.sapling().get()));
@@ -67,6 +84,14 @@ public class PioneerPlacedFeatures {
     register(context, WILLOW_CHECKED, PioneerConfiguredFeatures.WILLOW_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.WILLOW.sapling().get()));
     register(context, BAOBAB_CHECKED, PioneerConfiguredFeatures.BAOBAB_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.BAOBAB.sapling().get()));
     register(context, TALL_BAOBAB_CHECKED, PioneerConfiguredFeatures.TALL_BAOBAB_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.BAOBAB.sapling().get()));
+    register(context, ASPEN_CHECKED, PioneerConfiguredFeatures.ASPEN_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.ASPEN.sapling().get()));
+    register(context, ASPEN_BEES_0002_CHECKED, PioneerConfiguredFeatures.ASPEN_TREE_BEES_0002, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.ASPEN.sapling().get()));
+    register(context, RED_MAPLE_CHECKED, PioneerConfiguredFeatures.RED_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
+    register(context, ORANGE_MAPLE_CHECKED, PioneerConfiguredFeatures.ORANGE_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
+    register(context, PURPLE_MAPLE_CHECKED, PioneerConfiguredFeatures.PURPLE_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
+    register(context, FANCY_RED_MAPLE_CHECKED, PioneerConfiguredFeatures.FANCY_RED_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
+    register(context, FANCY_ORANGE_MAPLE_CHECKED, PioneerConfiguredFeatures.FANCY_ORANGE_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
+    register(context, FANCY_PURPLE_MAPLE_CHECKED, PioneerConfiguredFeatures.FANCY_PURPLE_MAPLE_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.MAPLE.sapling().get()));
     register(context, SPRUCE_BUSH_CHECKED, PioneerConfiguredFeatures.SPRUCE_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.SPRUCE_SAPLING));
     register(context, OAK_BUSH_CHECKED, PioneerConfiguredFeatures.OAK_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
@@ -79,6 +104,7 @@ public class PioneerPlacedFeatures {
     register(context, TREES_WINDSWEPT_CLIFFS, PioneerConfiguredFeatures.TREES_WINDSWEPT_CLIFFS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)));
     register(context, TREES_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2F, 1)));
     register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_OLD_GROWTH_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.2F, 1)));
+    register(context, TREES_ASPEN_GROVE, PioneerConfiguredFeatures.TREES_ASPEN_GROVE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.2F, 1)));
   }
 
   private static ResourceKey<PlacedFeature> createKey(String name) {

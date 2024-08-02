@@ -39,7 +39,7 @@ public class PioneerBiomes {
   public static final ResourceKey<Biome> OVERGROWN_SPIRES = createKey("overgrown_spires");
 //  public static final ResourceKey<Biome> REDWOODS = createKey("redwoods", () -> RedwoodsBiome.redwoods(false));
 //  public static final ResourceKey<Biome> SNOWY_REDWOODS = createKey("snowy_redwoods", () -> RedwoodsBiome.redwoods(true));
-//  public static final ResourceKey<Biome> ASPEN_GROVE = createKey("aspen_grove", AspenGroveBiome::aspenGrove);
+  public static final ResourceKey<Biome> ASPEN_GROVE = createKey("aspen_grove");
   public static final ResourceKey<Biome> BAOBAB_FIELDS = createKey("baobab_fields");
   public static final ResourceKey<Biome> OLD_GROWTH_BAOBAB_FIELDS = createKey("old_growth_baobab_fields");
 //  public static final ResourceKey<Biome> PRAIRIE = createKey("prairie", PrairieBiome::prairie);
@@ -66,6 +66,7 @@ public class PioneerBiomes {
     context.register(WINDSWEPT_CLIFFS, windsweptCliffs(features, carvers));
     context.register(BAOBAB_FIELDS, baobabFields(features, carvers, false));
     context.register(OLD_GROWTH_BAOBAB_FIELDS, baobabFields(features, carvers, true));
+    context.register(ASPEN_GROVE, aspenGrove(features, carvers));
   }
 
   private static ResourceKey<Biome> createKey(String name) {
@@ -391,7 +392,7 @@ public class PioneerBiomes {
       .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
     BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
 
-    return biome(true, 0.0F, 1.2F, biomeGenBuilder, mobSpawnBuilder)
+    return biome(false, 0.0F, 1.2F, biomeGenBuilder, mobSpawnBuilder)
       .specialEffects(new BiomeSpecialEffects.Builder()
         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
         .waterColor(4159204)
@@ -400,6 +401,51 @@ public class PioneerBiomes {
         .grassColorOverride(0x8aab32)
         .foliageColorOverride(0xa6c918)
         .skyColor(calculateSkyColor(0.95F))
+        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        .build()
+      )
+      .build();
+  }
+
+  private static Biome aspenGrove(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    BiomeGenerationSettings.Builder biomeGenBuilder = new BiomeGenerationSettings.Builder(features, carvers);
+    globalOverworldGeneration(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultOres(biomeGenBuilder);
+    BiomeDefaultFeatures.addDefaultSoftDisks(biomeGenBuilder);
+
+    FeatureOrderUtil.addFeatures(biomeGenBuilder,
+      VegetationPlacements.PATCH_LARGE_FERN,
+      VegetationPlacements.BROWN_MUSHROOM_NORMAL,
+      VegetationPlacements.RED_MUSHROOM_NORMAL,
+      VegetationPlacements.PATCH_GRASS_TAIGA,
+      VegetationPlacements.RED_MUSHROOM_OLD_GROWTH,
+      VegetationPlacements.FLOWER_DEFAULT,
+      VegetationPlacements.PATCH_SUGAR_CANE,
+      VegetationPlacements.PATCH_PUMPKIN,
+      VegetationPlacements.PATCH_BERRY_RARE
+    );
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_ASPEN_GROVE);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.ASPEN_FALLEN_LEAVES);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.RED_MAPLE_FALLEN_LEAVES);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.ORANGE_MAPLE_FALLEN_LEAVES);
+    biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.PURPLE_MAPLE_FALLEN_LEAVES);
+
+    MobSpawnSettings.Builder mobSpawnBuilder = new MobSpawnSettings.Builder();
+    BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
+    mobSpawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+    BiomeDefaultFeatures.commonSpawns(mobSpawnBuilder);
+
+    return biome(true, 0.8F, 0.7F, biomeGenBuilder, mobSpawnBuilder)
+      .specialEffects(new BiomeSpecialEffects.Builder()
+        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+        .waterColor(4159204)
+        .waterFogColor(329011)
+        .fogColor(12638463)
+        .grassColorOverride(0xF4D342)
+        .foliageColorOverride(0xB8E83E)
+        .skyColor(calculateSkyColor(0.4F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         .build()
       )
