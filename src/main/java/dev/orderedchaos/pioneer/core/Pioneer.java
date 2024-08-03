@@ -83,11 +83,14 @@ public class Pioneer {
 
     boolean server = event.includeServer();
     generator.addProvider(server, new LootTableProvider(packOutput, Set.of(), List.of(new LootTableProvider.SubProviderEntry(PioneerBlockLoot::new, LootContextParamSets.BLOCK))));
-    generator.addProvider(server, new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, BUILDER, Set.of(Pioneer.MOD_ID)));
+
+    DatapackBuiltinEntriesProvider datapackBuiltinEntriesProvider = new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, BUILDER, Set.of(Pioneer.MOD_ID));
+    generator.addProvider(server, datapackBuiltinEntriesProvider);
     PioneerBlockTagsProvider blockTagsProvider =  new PioneerBlockTagsProvider(packOutput, lookupProvider, fileHelper);
     generator.addProvider(server, blockTagsProvider);
     generator.addProvider(server, new PioneerItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), fileHelper));
     generator.addProvider(server, new PioneerChunkGeneratorModifierProvider(packOutput, lookupProvider));
+    generator.addProvider(server, new PioneerBiomeTagsProvider(packOutput, datapackBuiltinEntriesProvider.getRegistryProvider(), fileHelper));
 
     boolean client = event.includeClient();
     generator.addProvider(client, new PioneerBlockStateProvider(packOutput, fileHelper));
