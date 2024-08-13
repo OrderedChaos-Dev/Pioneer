@@ -10,6 +10,10 @@
       {
         "chance": 0.45,
         "feature": "pioneer:tall_baobab_checked"
+      },
+      {
+        "chance": 0.2,
+        "feature": "minecraft:acacia_checked"
       }
     ]
   }

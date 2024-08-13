@@ -70,6 +70,8 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> COTTONWOOD_CHECKED = createKey("cottonwood_checked");
   public static final ResourceKey<PlacedFeature> COTTONWOOD_BEES_005_CHECKED = createKey("cottonwood_bees_005_checked");
   public static final ResourceKey<PlacedFeature> SPRUCE_BUSH_CHECKED = createKey("spruce_bush_checked");
+  public static final ResourceKey<PlacedFeature> PALM_CHECKED = createKey("palm_checked");
+  public static final ResourceKey<PlacedFeature> JUNIPER_CHECKED = createKey("juniper_checked");
   public static final ResourceKey<PlacedFeature> JOSHUA_CHECKED = createKey("joshua_checked");
   public static final ResourceKey<PlacedFeature> OAK_BUSH_CHECKED = createKey("oak_bush");
 
@@ -132,6 +134,8 @@ public class PioneerPlacedFeatures {
     register(context, COTTONWOOD_BEES_005_CHECKED, PioneerConfiguredFeatures.COTTONWOOD_TREE_BEES_005, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.COTTONWOOD.sapling().get()));
     register(context, JOSHUA_CHECKED, PioneerConfiguredFeatures.JOSHUA_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.JOSHUA.sapling().get()));
     register(context, OAK_BUSH_CHECKED, PioneerConfiguredFeatures.OAK_BUSH, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING));
+    register(context, PALM_CHECKED, PioneerConfiguredFeatures.PALM_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.PALM.sapling().get()));
+    register(context, JUNIPER_CHECKED, PioneerConfiguredFeatures.JUNIPER_TREE, PlacementUtils.filteredByBlockSurvival(PioneerBlocks.JUNIPER.sapling().get()));
 
     register(context, TREES_VERDANT_SANDS, PioneerConfiguredFeatures.TREES_VERDANT_SANDS, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
     register(context, TREES_PINE_MEADOWS, PioneerConfiguredFeatures.TREES_PINE_MEADOWS, treePlacement(PlacementUtils.countExtra(1, 0.2F, 2)));
@@ -141,7 +145,7 @@ public class PioneerPlacedFeatures {
     register(context, TREES_OVERGROWN_SPIRES, PioneerConfiguredFeatures.TREES_OVERGROWN_SPIRES, treePlacement(PlacementUtils.countExtra(18, 0.1F, 1)));
     register(context, TREES_WINDSWEPT_CLIFFS, PioneerConfiguredFeatures.TREES_WINDSWEPT_CLIFFS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)));
     register(context, TREES_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2F, 1)));
-    register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_OLD_GROWTH_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.2F, 1)));
+    register(context, TREES_OLD_GROWTH_BAOBAB_FIELDS, PioneerConfiguredFeatures.TREES_OLD_GROWTH_BAOBAB_FIELDS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(14, 0.2F, 1)));
     register(context, TREES_ASPEN_GROVE, PioneerConfiguredFeatures.TREES_ASPEN_GROVE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.2F, 1)));
     register(context, TREES_REDWOODS, PioneerConfiguredFeatures.TREES_REDWOODS, VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.1F, 1)));
     register(context, TREES_PRAIRIE, PioneerConfiguredFeatures.TREES_PRAIRIE, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));

@@ -511,8 +511,7 @@ public class PioneerBiomes {
       VegetationPlacements.BROWN_MUSHROOM_NORMAL,
       VegetationPlacements.RED_MUSHROOM_NORMAL,
       VegetationPlacements.PATCH_SUGAR_CANE,
-      VegetationPlacements.PATCH_PUMPKIN,
-      VegetationPlacements.PATCH_SUNFLOWER
+      VegetationPlacements.PATCH_PUMPKIN
     );
     biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.TREES_PRAIRIE);
     biomeGenBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PioneerPlacedFeatures.PRAIRIE_GRASS);
@@ -521,7 +520,8 @@ public class PioneerBiomes {
     BiomeDefaultFeatures.farmAnimals(mobSpawnBuilder);
     mobSpawnBuilder
       .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.HORSE, 1, 2, 6))
-      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1))
+      .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
     BiomeDefaultFeatures.desertSpawns(mobSpawnBuilder);
 
     return biome(true, 0.8F, 0.6F, biomeGenBuilder, mobSpawnBuilder)
@@ -530,7 +530,7 @@ public class PioneerBiomes {
         .waterColor(4159204)
         .waterFogColor(329011)
         .fogColor(12638463)
-        .grassColorOverride(0xe2fc6d)
+        .grassColorOverride(0xe0f056)
         .foliageColorOverride(0xa7cc5c)
         .skyColor(calculateSkyColor(0.4F))
         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)

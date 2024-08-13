@@ -7,7 +7,6 @@ import dev.orderedchaos.pioneer.core.Pioneer;
 import dev.orderedchaos.pioneer.core.registry.PioneerBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
@@ -94,9 +93,7 @@ public class PioneerChunkGeneratorModifierProvider extends ChunkGeneratorModifie
     ifTrue(surfaceNoiseAbove(0.1D), GRASS_DIRT_FLOOR),
     ifTrue(surfaceNoiseAbove(-0.6D), SAND_SANDSTONE_FLOOR), SAND_SANDSTONE_FLOOR);
 
-  public static final SurfaceRules.RuleSource DESERT_SHRUBLAND = sequence(
-    ifTrue(surfaceNoiseAbove(2.1D), sequence(ifTrue(random(0.3F), GRASS_DIRT_FLOOR), COARSE_DIRT_FLOOR)),
-    ifTrue(surfaceNoiseAbove(-0.6D), SAND_SANDSTONE_FLOOR), SAND_SANDSTONE_FLOOR);
+  public static final SurfaceRules.RuleSource DESERT_SHRUBLAND = sequence(SAND_SANDSTONE_FLOOR);
 
   public static final SurfaceRules.RuleSource PINE_MEADOWS = sequence(
     ifTrue(surfaceNoiseAbove(1.75D), GRASS_DIRT_FLOOR),
