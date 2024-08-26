@@ -22,6 +22,7 @@ public class PioneerBlockTagsProvider extends BlueprintBlockTagsProvider {
   protected void addTags(HolderLookup.Provider provider) {
     WoodTypeUtil.WOOD_BLOCK_SETS.forEach((name, blockSet) -> {
       this.tag(BlockTags.LOGS_THAT_BURN).add(blockSet.log().get(), blockSet.wood().get(), blockSet.strippedLog().get(), blockSet.strippedWood().get());
+      this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(blockSet.log().get());
       this.tag(BlockTags.LEAVES).add(blockSet.leaves().get());
       this.tag(BlockTags.SAPLINGS).add(blockSet.sapling().get());
       this.tag(BlockTags.PLANKS).add(blockSet.planks().get());
@@ -40,6 +41,8 @@ public class PioneerBlockTagsProvider extends BlueprintBlockTagsProvider {
       this.tag(BlockTags.CEILING_HANGING_SIGNS).add(blockSet.hangingSigns().getFirst().get());
       this.tag(BlockTags.WALL_HANGING_SIGNS).add(blockSet.hangingSigns().getSecond().get());
       this.tag(BlockTags.FLOWER_POTS).add(blockSet.pottedSapling().get());
+
+      this.tag(blockSet.logTags().getFirst()).add(blockSet.log().get(), blockSet.wood().get(), blockSet.strippedLog().get(), blockSet.strippedWood().get());
     });
 
     this.tag(BlockTags.LEAVES).add(PioneerBlocks.ORANGE_MAPLE_LEAVES.get(), PioneerBlocks.PURPLE_MAPLE_LEAVES.get(), PioneerBlocks.BERRIED_JUNIPER_LEAVES.get());

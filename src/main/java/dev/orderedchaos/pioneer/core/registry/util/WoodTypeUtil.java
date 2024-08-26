@@ -7,8 +7,13 @@ import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallHangingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
+import com.teamabnormals.blueprint.core.util.TagUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import dev.orderedchaos.pioneer.core.Pioneer;
+import net.minecraft.data.BlockFamilies;
+import net.minecraft.data.BlockFamily;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.grower.OakTreeGrower;
@@ -20,6 +25,7 @@ import org.apache.commons.lang3.function.TriFunction;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
@@ -46,6 +52,7 @@ public class WoodTypeUtil {
     Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> signs,
     Pair<RegistryObject<BlueprintCeilingHangingSignBlock>, RegistryObject<BlueprintWallHangingSignBlock>> hangingSigns,
     RegistryObject<Block> pottedSapling,
+    Pair<TagKey<Block>, TagKey<Item>> logTags,
     float[] saplingChances
   ) {};
 
@@ -72,7 +79,10 @@ public class WoodTypeUtil {
     final Pair<RegistryObject<BlueprintCeilingHangingSignBlock>, RegistryObject<BlueprintWallHangingSignBlock>> HANGING_SIGNS = BLOCK_HELPER.createHangingSignBlock(name, woodType, woodSetProperties.sign());
     final RegistryObject<Block> POTTED_SAPLING = BLOCK_HELPER.createBlockNoItem("potted_" + name + "_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 
-    StandardWoodBlockSet wood = new StandardWoodBlockSet(STRIPPED_LOG, STRIPPED_WOOD, LOG, WOOD, LEAVES, SAPLING, PLANKS, SLAB, STAIRS, FENCE, FENCE_GATE, PRESSURE_PLATE, BUTTON, DOOR, TRAPDOOR, SIGNS, HANGING_SIGNS, POTTED_SAPLING, saplingChances);
+    final TagKey<Block> LOGS_BLOCK_TAG = blockTag(name + "_logs");
+    final TagKey<Item> LOGS_ITEM_TAG = itemTag(name + "_logs");
+
+    StandardWoodBlockSet wood = new StandardWoodBlockSet(STRIPPED_LOG, STRIPPED_WOOD, LOG, WOOD, LEAVES, SAPLING, PLANKS, SLAB, STAIRS, FENCE, FENCE_GATE, PRESSURE_PLATE, BUTTON, DOOR, TRAPDOOR, SIGNS, HANGING_SIGNS, POTTED_SAPLING, Pair.of(LOGS_BLOCK_TAG, LOGS_ITEM_TAG), saplingChances);
     WOOD_BLOCK_SETS.put(name, wood);
 
     return wood;
@@ -80,5 +90,37 @@ public class WoodTypeUtil {
 
   public static StandardWoodBlockSet registerStandardWood(String name, WoodType woodType, BlockSetType blockSetType, PropertyUtil.WoodSetProperties woodSetProperties, AbstractTreeGrower treeGrower, float[] saplingChances) {
     return registerStandardWood(name, woodType, blockSetType, woodSetProperties, treeGrower, saplingChances, null);
+  }
+
+  private static final HashMap<StandardWoodBlockSet, BlockFamily> BLOCK_FAMILIES = new HashMap<>();
+
+  public static BlockFamily getBlockFamily(StandardWoodBlockSet standardWoodBlockSet) {
+    if (BLOCK_FAMILIES.containsKey(standardWoodBlockSet)) {
+      return BLOCK_FAMILIES.get(standardWoodBlockSet);
+    }
+
+    final BlockFamily BLOCK_FAMILY = new BlockFamily.Builder(standardWoodBlockSet.planks().get())
+      .button(standardWoodBlockSet.button().get())
+      .sign(standardWoodBlockSet.signs().getFirst().get(), standardWoodBlockSet.signs().getSecond().get())
+      .fence(standardWoodBlockSet.fence().get())
+      .fenceGate(standardWoodBlockSet.fenceGate.get())
+      .slab(standardWoodBlockSet.slab().get())
+      .stairs(standardWoodBlockSet.stairs().get())
+      .pressurePlate(standardWoodBlockSet.pressurePlate().get())
+      .door(standardWoodBlockSet.door().get())
+      .trapdoor(standardWoodBlockSet.trapdoor().get())
+      .recipeUnlockedBy("has_planks")
+      .getFamily();
+
+    BLOCK_FAMILIES.put(standardWoodBlockSet, BLOCK_FAMILY);
+    return BLOCK_FAMILY;
+  }
+
+  private static TagKey<Block> blockTag(String name) {
+    return TagUtil.blockTag(Pioneer.MOD_ID, name);
+  }
+
+  private static TagKey<Item> itemTag(String name) {
+    return TagUtil.itemTag(Pioneer.MOD_ID, name);
   }
 }

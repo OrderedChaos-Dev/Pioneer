@@ -2,6 +2,7 @@ package dev.orderedchaos.pioneer.data.server;
 
 import com.teamabnormals.blueprint.core.data.server.tags.BlueprintItemTagsProvider;
 import dev.orderedchaos.pioneer.core.Pioneer;
+import dev.orderedchaos.pioneer.core.registry.util.WoodTypeUtil;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -23,5 +24,8 @@ public class PioneerItemTagsProvider extends BlueprintItemTagsProvider {
     this.copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
     this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
     this.copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
+    WoodTypeUtil.WOOD_BLOCK_SETS.forEach((name, blockSet) -> {
+      this.copy(blockSet.logTags().getFirst(), blockSet.logTags().getSecond());
+    });
   }
 }

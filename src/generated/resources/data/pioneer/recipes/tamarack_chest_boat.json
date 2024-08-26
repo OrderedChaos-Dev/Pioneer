@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "pioneer:tamarack_planks"
+    }
+  ],
+  "result": {
+    "item": "pioneer:tamarack_chest_boat"
+  }
+}

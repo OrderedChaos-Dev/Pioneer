@@ -93,6 +93,7 @@ public class Pioneer {
     generator.addProvider(server, new PioneerItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), fileHelper));
     generator.addProvider(server, new PioneerChunkGeneratorModifierProvider(packOutput, lookupProvider));
     generator.addProvider(server, new PioneerBiomeTagsProvider(packOutput, datapackBuiltinEntriesProvider.getRegistryProvider(), fileHelper));
+    generator.addProvider(server, new PioneerRecipeProvider(packOutput));
 
     boolean client = event.includeClient();
     generator.addProvider(client, new PioneerBlockStateProvider(packOutput, fileHelper));

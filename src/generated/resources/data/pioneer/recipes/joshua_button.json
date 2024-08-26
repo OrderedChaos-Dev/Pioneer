@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "pioneer:joshua_planks"
+    }
+  ],
+  "result": {
+    "item": "pioneer:joshua_button"
+  }
+}

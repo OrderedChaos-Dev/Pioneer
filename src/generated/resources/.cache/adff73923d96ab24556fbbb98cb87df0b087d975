@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-25T21:07:48.3146078	Tags for minecraft:item mod id pioneer
+// 1.20.1	2024-08-25T20:44:52.6048862	Tags for minecraft:item mod id pioneer
 ef73028b18023f49d3d566fa1422c41bab0afec8 data/forge/tags/items/fence_gates/wooden.json
 ef73028b18023f49d3d566fa1422c41bab0afec8 data/minecraft/tags/items/fence_gates.json
 613809e4272841e8036b0444f7443c4152c71ac0 data/minecraft/tags/items/hanging_signs.json
@@ -14,3 +14,15 @@ ef73028b18023f49d3d566fa1422c41bab0afec8 data/minecraft/tags/items/fence_gates.j
 3d59ed8c7485be3ac80827f76b8964f24c731318 data/minecraft/tags/items/wooden_slabs.json
 181258305e458e41148fa0649db1d651008bea0c data/minecraft/tags/items/wooden_stairs.json
 1ff59c5f5dae23d3f4c9576275c074a4c83e31c7 data/minecraft/tags/items/wooden_trapdoors.json
+7d52cd94b1b10ba66c1ee93f92f31b9715268d81 data/pioneer/tags/items/aspen_logs.json
+450c5c0d3ceaeff18cc7ca27ee065bde3f056eb4 data/pioneer/tags/items/baobab_logs.json
+69bdaed500c8a5171b46175cd006437ddc2a3b7b data/pioneer/tags/items/cottonwood_logs.json
+5b7d8bce560349066f9fac5109422958f58f302e data/pioneer/tags/items/fir_logs.json
+082eec14a4fef5e17bf537c8d2970e6ebeaa8d57 data/pioneer/tags/items/joshua_logs.json
+8aaf1d6a8391e49ab7da5f605d578aa36684a93b data/pioneer/tags/items/juniper_logs.json
+ce078dcf56601daf6ed5d4dec8405040e2c4703f data/pioneer/tags/items/maple_logs.json
+ea21e07ed2620c8d23fbd86289bc9eba045729d0 data/pioneer/tags/items/palm_logs.json
+362faff71fcca1f97fbf427e5d0bd5c8d63c5f48 data/pioneer/tags/items/pine_logs.json
+74770cb3be502c3cf09c5141031cd27d5844511e data/pioneer/tags/items/redwood_logs.json
+12fb9a37e12e6347d3ccccd1a630ff230547624a data/pioneer/tags/items/tamarack_logs.json
+8c8744fb2061f6cb97c335e65415dd91a6d04ec4 data/pioneer/tags/items/willow_logs.json

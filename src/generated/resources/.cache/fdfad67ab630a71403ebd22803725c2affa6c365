@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-25T21:07:48.3136091	Tags for minecraft:block mod id pioneer
+// 1.20.1	2024-08-25T20:44:52.603383	Tags for minecraft:block mod id pioneer
 9317fa2fd37b7419bb77de1707e91b4784be627e data/forge/tags/blocks/fences/wooden.json
 ef73028b18023f49d3d566fa1422c41bab0afec8 data/forge/tags/blocks/fence_gates/wooden.json
 613809e4272841e8036b0444f7443c4152c71ac0 data/minecraft/tags/blocks/ceiling_hanging_signs.json
@@ -6,6 +6,7 @@ ef73028b18023f49d3d566fa1422c41bab0afec8 data/minecraft/tags/blocks/fence_gates.
 d1161144b2831899823629fcf77760485f501faf data/minecraft/tags/blocks/flower_pots.json
 11ae3fc3332e31db97dafda2f94246db4f17e2bc data/minecraft/tags/blocks/leaves.json
 56f2819523f39c6f4cc38a5f43f8585b83190146 data/minecraft/tags/blocks/logs_that_burn.json
+5a9f22d6ebd99fbc94e7ba37204dc9921fb2c0f4 data/minecraft/tags/blocks/overworld_natural_logs.json
 7caa0ba782ec63df0b1fc0f4cfa242f61012394d data/minecraft/tags/blocks/planks.json
 4d67962923022aa587745a1193a43b244ea02c2c data/minecraft/tags/blocks/saplings.json
 4d0440b82d57d3ffedf9d7a09fa24130cc64998e data/minecraft/tags/blocks/standing_signs.json
@@ -18,3 +19,15 @@ fe363b2a297fbbd5b953ffdfc2b23f734bc1c1f3 data/minecraft/tags/blocks/wall_signs.j
 3d59ed8c7485be3ac80827f76b8964f24c731318 data/minecraft/tags/blocks/wooden_slabs.json
 181258305e458e41148fa0649db1d651008bea0c data/minecraft/tags/blocks/wooden_stairs.json
 1ff59c5f5dae23d3f4c9576275c074a4c83e31c7 data/minecraft/tags/blocks/wooden_trapdoors.json
+7d52cd94b1b10ba66c1ee93f92f31b9715268d81 data/pioneer/tags/blocks/aspen_logs.json
+450c5c0d3ceaeff18cc7ca27ee065bde3f056eb4 data/pioneer/tags/blocks/baobab_logs.json
+69bdaed500c8a5171b46175cd006437ddc2a3b7b data/pioneer/tags/blocks/cottonwood_logs.json
+5b7d8bce560349066f9fac5109422958f58f302e data/pioneer/tags/blocks/fir_logs.json
+082eec14a4fef5e17bf537c8d2970e6ebeaa8d57 data/pioneer/tags/blocks/joshua_logs.json
+8aaf1d6a8391e49ab7da5f605d578aa36684a93b data/pioneer/tags/blocks/juniper_logs.json
+ce078dcf56601daf6ed5d4dec8405040e2c4703f data/pioneer/tags/blocks/maple_logs.json
+ea21e07ed2620c8d23fbd86289bc9eba045729d0 data/pioneer/tags/blocks/palm_logs.json
+362faff71fcca1f97fbf427e5d0bd5c8d63c5f48 data/pioneer/tags/blocks/pine_logs.json
+74770cb3be502c3cf09c5141031cd27d5844511e data/pioneer/tags/blocks/redwood_logs.json
+12fb9a37e12e6347d3ccccd1a630ff230547624a data/pioneer/tags/blocks/tamarack_logs.json
+8c8744fb2061f6cb97c335e65415dd91a6d04ec4 data/pioneer/tags/blocks/willow_logs.json
