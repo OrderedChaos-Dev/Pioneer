@@ -23,13 +23,54 @@ public class PioneerModdedBiomeSlices {
 
   public static final ResourceKey<ModdedBiomeSlice> PIONEER = ResourceKey.create(BlueprintDataPackRegistries.MODDED_BIOME_SLICES, new ResourceLocation(Pioneer.MOD_ID, "pioneer"));
 
+  public static final ResourceKey<Biome> VERDANT_SANDS_AREA = PioneerBiomes.createKey("verdant_sands_area");
+  public static final ResourceKey<Biome> PINE_MEADOWS_AREA = PioneerBiomes.createKey("pine_meadows_area");
+  public static final ResourceKey<Biome> AUTUMNAL_CONIFEROUS_FOREST_AREA = PioneerBiomes.createKey("autumnal_coniferous_forest_area");
+  public static final ResourceKey<Biome> BOREAL_FOREST_AREA = PioneerBiomes.createKey("boreal_forest_area");
+  public static final ResourceKey<Biome> SNOWY_BOREAL_FOREST_AREA = PioneerBiomes.createKey("snowy_boreal_forest_area");
+  public static final ResourceKey<Biome> DESERT_SHRUBLAND_AREA = PioneerBiomes.createKey("desert_shrubland_area");
+  public static final ResourceKey<Biome> OVERGROWN_SPIRES_AREA = PioneerBiomes.createKey("overgrown_spires_area");
+  public static final ResourceKey<Biome> REDWOODS_AREA = PioneerBiomes.createKey("redwoods_area");
+  public static final ResourceKey<Biome> SNOWY_REDWOODS_AREA = PioneerBiomes.createKey("snowy_redwoods_area");
+  public static final ResourceKey<Biome> ASPEN_GROVE_AREA = PioneerBiomes.createKey("aspen_grove_area");
+  public static final ResourceKey<Biome> BAOBAB_FIELDS_AREA = PioneerBiomes.createKey("baobab_fields_area");
+  public static final ResourceKey<Biome> OLD_GROWTH_BAOBAB_FIELDS_AREA = PioneerBiomes.createKey("old_growth_baobab_fields_area");
+  public static final ResourceKey<Biome> PRAIRIE_AREA = PioneerBiomes.createKey("prairie_area");
+  public static final ResourceKey<Biome> CRYSTAL_LAKES_AREA = PioneerBiomes.createKey("crystal_lakes_area");
+  public static final ResourceKey<Biome> RED_ROCK_CANYON_AREA = PioneerBiomes.createKey("red_rock_canyon_area");
+  public static final ResourceKey<Biome> RED_ROCK_CLIFFS_AREA = PioneerBiomes.createKey("red_rock_cliffs_area");
+  public static final ResourceKey<Biome> FLOODED_FOREST_AREA = PioneerBiomes.createKey("flooded_forest_area");
+  public static final ResourceKey<Biome> WINDSWEPT_CLIFFS_AREA = PioneerBiomes.createKey("windswept_cliffs_area");
+  public static final ResourceKey<Biome> WILLOW_WETLANDS_AREA = PioneerBiomes.createKey("willow_wetlands_area");
+
   public static void bootstrap(BootstapContext<ModdedBiomeSlice> context) {
     List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
     (new PioneerBiomeBuilder()).addBiomes(entries::add);
 
     ModdedBiomeSlice pioneerSlice = new ModdedBiomeSlice(
       80,
-      BiomeUtil.MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach).onlyMapFromAreas(false).build(),
+      BiomeUtil.MultiNoiseModdedBiomeProvider.builder()
+        .biomes(entries::forEach)
+        .area(VERDANT_SANDS_AREA, PioneerBiomes.VERDANT_SANDS)
+        .area(PINE_MEADOWS_AREA, PioneerBiomes.PINE_MEADOWS)
+        .area(AUTUMNAL_CONIFEROUS_FOREST_AREA, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST)
+        .area(BOREAL_FOREST_AREA, PioneerBiomes.BOREAL_FOREST)
+        .area(SNOWY_BOREAL_FOREST_AREA, PioneerBiomes.SNOWY_BOREAL_FOREST)
+        .area(DESERT_SHRUBLAND_AREA, PioneerBiomes.DESERT_SHRUBLAND)
+        .area(OVERGROWN_SPIRES_AREA, PioneerBiomes.OVERGROWN_SPIRES)
+        .area(REDWOODS_AREA, PioneerBiomes.REDWOODS)
+        .area(SNOWY_REDWOODS_AREA, PioneerBiomes.SNOWY_REDWOODS)
+        .area(ASPEN_GROVE_AREA, PioneerBiomes.ASPEN_GROVE)
+        .area(BAOBAB_FIELDS_AREA, PioneerBiomes.BAOBAB_FIELDS)
+        .area(OLD_GROWTH_BAOBAB_FIELDS_AREA, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS)
+        .area(PRAIRIE_AREA, PioneerBiomes.PRAIRIE)
+        .area(CRYSTAL_LAKES_AREA, PioneerBiomes.CRYSTAL_LAKES)
+        .area(RED_ROCK_CANYON_AREA, PioneerBiomes.RED_ROCK_CANYON)
+        .area(RED_ROCK_CLIFFS_AREA, PioneerBiomes.RED_ROCK_CLIFFS)
+        .area(FLOODED_FOREST_AREA, PioneerBiomes.FLOODED_FOREST)
+        .area(WINDSWEPT_CLIFFS_AREA, PioneerBiomes.WINDSWEPT_CLIFFS)
+        .area(WILLOW_WETLANDS_AREA, PioneerBiomes.WILLOW_WETLANDS)
+        .build(),
       LevelStem.OVERWORLD);
     context.register(PIONEER, pioneerSlice);
   }
@@ -55,39 +96,39 @@ public class PioneerModdedBiomeSlices {
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
-      {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.BOREAL_FOREST},
-      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.REDWOODS},
-      {PioneerBiomes.PRAIRIE, VANILLA, PioneerBiomes.FLOODED_FOREST, PioneerBiomes.ASPEN_GROVE, PioneerBiomes.ASPEN_GROVE},
-      {PioneerBiomes.BAOBAB_FIELDS, PioneerBiomes.BAOBAB_FIELDS, PioneerBiomes.FLOODED_FOREST, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
-      {PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
+      {VANILLA, VANILLA, VANILLA, SNOWY_BOREAL_FOREST_AREA, BOREAL_FOREST_AREA},
+      {PINE_MEADOWS_AREA, PINE_MEADOWS_AREA, VANILLA, BOREAL_FOREST_AREA, REDWOODS_AREA},
+      {PRAIRIE_AREA, VANILLA, FLOODED_FOREST_AREA, ASPEN_GROVE_AREA, ASPEN_GROVE_AREA},
+      {BAOBAB_FIELDS_AREA, BAOBAB_FIELDS_AREA, FLOODED_FOREST_AREA, OVERGROWN_SPIRES_AREA, OVERGROWN_SPIRES_AREA},
+      {VERDANT_SANDS_AREA, VERDANT_SANDS_AREA, VERDANT_SANDS_AREA, VERDANT_SANDS_AREA, VERDANT_SANDS_AREA}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-      {VANILLA, null, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_REDWOODS, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST},
-      {PioneerBiomes.PRAIRIE, PioneerBiomes.PRAIRIE, null, PioneerBiomes.CRYSTAL_LAKES, PioneerBiomes.REDWOODS},
-      {VANILLA, null, null, PioneerBiomes.ASPEN_GROVE, null},
-      {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
-      {PioneerBiomes.DESERT_SHRUBLAND, PioneerBiomes.DESERT_SHRUBLAND, null, null, null}
+      {VANILLA, null, SNOWY_BOREAL_FOREST_AREA, SNOWY_REDWOODS_AREA, AUTUMNAL_CONIFEROUS_FOREST_AREA},
+      {PRAIRIE_AREA, PRAIRIE_AREA, null, CRYSTAL_LAKES_AREA, REDWOODS_AREA},
+      {VANILLA, null, null, ASPEN_GROVE_AREA, null},
+      {OLD_GROWTH_BAOBAB_FIELDS_AREA, OLD_GROWTH_BAOBAB_FIELDS_AREA, OVERGROWN_SPIRES_AREA, OVERGROWN_SPIRES_AREA, OVERGROWN_SPIRES_AREA},
+      {DESERT_SHRUBLAND_AREA, DESERT_SHRUBLAND_AREA, null, null, null}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
-      {VANILLA, VANILLA, VANILLA, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST},
-      {PioneerBiomes.PINE_MEADOWS, PioneerBiomes.PINE_MEADOWS, VANILLA, PioneerBiomes.BOREAL_FOREST, PioneerBiomes.REDWOODS},
+      {VANILLA, VANILLA, VANILLA, SNOWY_BOREAL_FOREST_AREA, SNOWY_BOREAL_FOREST_AREA},
+      {PINE_MEADOWS_AREA, PINE_MEADOWS_AREA, VANILLA, BOREAL_FOREST_AREA, REDWOODS_AREA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {PioneerBiomes.BAOBAB_FIELDS, PioneerBiomes.BAOBAB_FIELDS, VANILLA, VANILLA, VANILLA},
-      {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
+      {BAOBAB_FIELDS_AREA, BAOBAB_FIELDS_AREA, VANILLA, VANILLA, VANILLA},
+      {RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
-      {null, null, null, PioneerBiomes.SNOWY_REDWOODS, PioneerBiomes.SNOWY_REDWOODS},
-      {null, null, null, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, null},
+      {null, null, null, SNOWY_REDWOODS_AREA, SNOWY_REDWOODS_AREA},
+      {null, null, null, AUTUMNAL_CONIFEROUS_FOREST_AREA, null},
       {null, null, VANILLA, VANILLA, null},
-      {PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, PioneerBiomes.OLD_GROWTH_BAOBAB_FIELDS, null, null, null},
-      {PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS, PioneerBiomes.RED_ROCK_CLIFFS}
+      {OLD_GROWTH_BAOBAB_FIELDS_AREA, OLD_GROWTH_BAOBAB_FIELDS_AREA, null, null, null},
+      {RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA, RED_ROCK_CLIFFS_AREA}
     };
     private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
-      {PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_BOREAL_FOREST, PioneerBiomes.SNOWY_REDWOODS},
-      {VANILLA, VANILLA, VANILLA, PioneerBiomes.AUTUMNAL_CONIFEROUS_FOREST, VANILLA},
+      {SNOWY_BOREAL_FOREST_AREA, SNOWY_BOREAL_FOREST_AREA, SNOWY_BOREAL_FOREST_AREA, SNOWY_BOREAL_FOREST_AREA, SNOWY_REDWOODS_AREA},
+      {VANILLA, VANILLA, VANILLA, AUTUMNAL_CONIFEROUS_FOREST_AREA, VANILLA},
       {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-      {null, null, null, PioneerBiomes.OVERGROWN_SPIRES, PioneerBiomes.OVERGROWN_SPIRES},
-      {null, null, null, PioneerBiomes.VERDANT_SANDS, PioneerBiomes.VERDANT_SANDS}
+      {null, null, null, OVERGROWN_SPIRES_AREA, OVERGROWN_SPIRES_AREA},
+      {null, null, null, VERDANT_SANDS_AREA, VERDANT_SANDS_AREA}
     };
 
     public List<Climate.ParameterPoint> spawnTarget() {
@@ -192,7 +233,7 @@ public class PioneerModdedBiomeSlices {
 
     private void addMidSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> p_187218_, Climate.Parameter p_187219_) {
       this.addSurfaceBiome(p_187218_, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), p_187219_, 0.0F, VANILLA);
-      this.addSurfaceBiome(p_187218_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187219_, 0.0F, PioneerBiomes.WILLOW_WETLANDS);
+      this.addSurfaceBiome(p_187218_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187219_, 0.0F, WILLOW_WETLANDS_AREA);
       this.addSurfaceBiome(p_187218_, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187219_, 0.0F, VANILLA);
 
       for(int i = 0; i < this.temperatures.length; ++i) {
@@ -243,7 +284,7 @@ public class PioneerModdedBiomeSlices {
 
     private void addLowSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> p_187229_, Climate.Parameter p_187230_) {
       this.addSurfaceBiome(p_187229_, this.FULL_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), p_187230_, 0.0F, VANILLA);
-      this.addSurfaceBiome(p_187229_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187230_, 0.0F, PioneerBiomes.WILLOW_WETLANDS);
+      this.addSurfaceBiome(p_187229_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187230_, 0.0F, WILLOW_WETLANDS_AREA);
       this.addSurfaceBiome(p_187229_, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187230_, 0.0F, VANILLA);
 
       for(int i = 0; i < this.temperatures.length; ++i) {
@@ -284,7 +325,7 @@ public class PioneerModdedBiomeSlices {
       this.addSurfaceBiome(p_187238_, this.UNFROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[2], this.erosions[5]), p_187239_, 0.0F, VANILLA);
       this.addSurfaceBiome(p_187238_, this.FROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, this.erosions[6], p_187239_, 0.0F, VANILLA);
       this.addSurfaceBiome(p_187238_, this.UNFROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, this.erosions[6], p_187239_, 0.0F, VANILLA);
-      this.addSurfaceBiome(p_187238_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, PioneerBiomes.WILLOW_WETLANDS);
+      this.addSurfaceBiome(p_187238_, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, WILLOW_WETLANDS_AREA);
       this.addSurfaceBiome(p_187238_, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, VANILLA);
       this.addSurfaceBiome(p_187238_, this.FROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], p_187239_, 0.0F, VANILLA);
 
@@ -337,9 +378,9 @@ public class PioneerModdedBiomeSlices {
 
     private ResourceKey<Biome> pickBadlandsBiome(int p_187173_, Climate.Parameter p_187174_) {
       if (p_187173_ < 2) {
-        return PioneerBiomes.RED_ROCK_CANYON;
+        return RED_ROCK_CANYON_AREA;
       } else {
-        return PioneerBiomes.RED_ROCK_CLIFFS;
+        return RED_ROCK_CLIFFS_AREA;
       }
     }
 
@@ -356,9 +397,9 @@ public class PioneerModdedBiomeSlices {
 
     private ResourceKey<Biome> pickPeakBiome(int p_187241_, int p_187242_, Climate.Parameter p_187243_) {
       if (p_187241_ <= 2) {
-        return p_187243_.max() < 0L ? PioneerBiomes.WINDSWEPT_CLIFFS : VANILLA;
+        return p_187243_.max() < 0L ? WINDSWEPT_CLIFFS_AREA : VANILLA;
       } else {
-        return p_187241_ == 3 ? PioneerBiomes.WINDSWEPT_CLIFFS : this.pickBadlandsBiome(p_187242_, p_187243_);
+        return p_187241_ == 3 ? WINDSWEPT_CLIFFS_AREA : this.pickBadlandsBiome(p_187242_, p_187243_);
       }
     }
 

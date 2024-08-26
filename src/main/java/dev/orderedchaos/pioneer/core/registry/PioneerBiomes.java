@@ -75,7 +75,7 @@ public class PioneerBiomes {
     context.register(FLOODED_FOREST, floodedForest(features, carvers));
   }
 
-  private static ResourceKey<Biome> createKey(String name) {
+  public static ResourceKey<Biome> createKey(String name) {
     return ResourceKey.create(Registries.BIOME, new ResourceLocation(Pioneer.MOD_ID, name));
   }
 
