@@ -77,7 +77,9 @@ public class WoodTypeUtil {
     final RegistryObject<Block> TRAPDOOR = BLOCK_HELPER.createBlock(name + "_trapdoor", () -> new TrapDoorBlock(woodSetProperties.trapdoor(), blockSetType));
     final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> SIGNS = BLOCK_HELPER.createSignBlock(name, woodType, woodSetProperties.sign());
     final Pair<RegistryObject<BlueprintCeilingHangingSignBlock>, RegistryObject<BlueprintWallHangingSignBlock>> HANGING_SIGNS = BLOCK_HELPER.createHangingSignBlock(name, woodType, woodSetProperties.sign());
-    final RegistryObject<Block> POTTED_SAPLING = BLOCK_HELPER.createBlockNoItem("potted_" + name + "_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+    final RegistryObject<Block> POTTED_SAPLING = BLOCK_HELPER.createBlockNoItem("potted_" + name + "_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SAPLING, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+
+    ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SAPLING.getId() , POTTED_SAPLING);
 
     final TagKey<Block> LOGS_BLOCK_TAG = blockTag(name + "_logs");
     final TagKey<Item> LOGS_ITEM_TAG = itemTag(name + "_logs");

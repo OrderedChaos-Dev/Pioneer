@@ -5,9 +5,12 @@ import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import dev.orderedchaos.pioneer.Config;
 import dev.orderedchaos.pioneer.core.registry.*;
+import dev.orderedchaos.pioneer.core.registry.util.WoodTypeUtil;
 import dev.orderedchaos.pioneer.data.client.PioneerBlockStateProvider;
 import dev.orderedchaos.pioneer.data.client.PioneerItemModelProvider;
 import dev.orderedchaos.pioneer.data.server.*;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -25,6 +28,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -63,6 +67,7 @@ public class Pioneer {
     PioneerConfiguredFeatures.CONFIGURED_FEATURES.register(modEventBus);
 
     modEventBus.addListener(this::commonSetup);
+    modEventBus.addListener(this::clientSetup);
     modEventBus.addListener(this::dataSetup);
 
     ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -72,6 +77,17 @@ public class Pioneer {
     event.enqueueWork(() -> {
       PioneerVanillaIntegration.registerCompostables();
       PioneerVanillaIntegration.registerFlammables();
+    });
+  }
+
+  private void clientSetup(final FMLClientSetupEvent event) {
+    event.enqueueWork(() -> {
+      WoodTypeUtil.WOOD_BLOCK_SETS.forEach((name, woodSet) -> {
+        ItemBlockRenderTypes.setRenderLayer(woodSet.sapling().get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(woodSet.door().get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(woodSet.trapdoor().get(), RenderType.cutout());
+      });
+
     });
   }
 

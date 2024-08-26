@@ -42,8 +42,8 @@ public class PioneerBlocks {
   public static final RegistryObject<Block> ORANGE_MAPLE_SAPLING = BLOCK_HELPER.createBlock("orange_maple_sapling", () -> new SaplingBlock(PioneerTreeGrowers.ORANGE_MAPLE, WoodSets.MAPLE.sapling()));
   public static final RegistryObject<Block> PURPLE_MAPLE_SAPLING = BLOCK_HELPER.createBlock("purple_maple_sapling", () -> new SaplingBlock(PioneerTreeGrowers.PURPLE_MAPLE, WoodSets.MAPLE.sapling()));
 
-  public static final RegistryObject<Block> POTTED_ORANGE_MAPLE_SAPLING = BLOCK_HELPER.createBlockNoItem("potted_orange_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
-  public static final RegistryObject<Block> POTTED_PURPLE_MAPLE_SAPLING = BLOCK_HELPER.createBlockNoItem("potted_purple_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PURPLE_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+  public static final RegistryObject<Block> POTTED_ORANGE_MAPLE_SAPLING = flowerPot("potted_orange_maple_sapling", ORANGE_MAPLE_SAPLING);
+  public static final RegistryObject<Block> POTTED_PURPLE_MAPLE_SAPLING = flowerPot("potted_purple_maple_sapling", PURPLE_MAPLE_SAPLING);
 
   public static final RegistryObject<Block> COCONUT = BLOCK_HELPER.createBlock("coconut", () -> new CoconutBlock(Block.Properties.of().strength(0.4F, 0.7F).sound(SoundType.WOOD)));
 
@@ -57,6 +57,12 @@ public class PioneerBlocks {
   public static final RegistryObject<Block> RED_MAPLE_FALLEN_LEAVES = BLOCK_HELPER.createBlock("red_maple_fallen_leaves", () -> new FallenLeavesBlock(Block.Properties.of().strength(0.1F, 0.0F).sound(SoundType.GRASS).mapColor(MapColor.COLOR_RED).noOcclusion()));
   public static final RegistryObject<Block> ORANGE_MAPLE_FALLEN_LEAVES = BLOCK_HELPER.createBlock("orange_maple_fallen_leaves", () -> new FallenLeavesBlock(Block.Properties.of().strength(0.1F, 0.0F).sound(SoundType.GRASS).mapColor(MapColor.COLOR_ORANGE).noOcclusion()));
   public static final RegistryObject<Block> PURPLE_MAPLE_FALLEN_LEAVES = BLOCK_HELPER.createBlock("purple_maple_fallen_leaves", () -> new FallenLeavesBlock(Block.Properties.of().strength(0.1F, 0.0F).sound(SoundType.GRASS).mapColor(MapColor.COLOR_PURPLE).noOcclusion()));
+
+  private static RegistryObject<Block> flowerPot(String name, RegistryObject<Block> sapling) {
+    RegistryObject<Block> pot = BLOCK_HELPER.createBlockNoItem(name, () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, sapling, BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+    ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(sapling.getId(), pot);
+    return pot;
+  }
 
   public static class BlockSetTypes {
 
