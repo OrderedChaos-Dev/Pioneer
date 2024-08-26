@@ -69,7 +69,10 @@ public class Pioneer {
   }
 
   private void commonSetup(final FMLCommonSetupEvent event) {
-
+    event.enqueueWork(() -> {
+      PioneerVanillaIntegration.registerCompostables();
+      PioneerVanillaIntegration.registerFlammables();
+    });
   }
 
   private void dataSetup(final GatherDataEvent event) {
