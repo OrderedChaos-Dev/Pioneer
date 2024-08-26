@@ -14,6 +14,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -43,7 +44,8 @@ public class Pioneer {
   public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
   public static final RegistryObject<CreativeModeTab> PIONEER_TAB = CREATIVE_MODE_TABS.register(MOD_ID, () -> CreativeModeTab.builder()
-    .icon(Items.OAK_SAPLING::getDefaultInstance)
+    .icon(PioneerBlocks.FIR.sapling().get().asItem()::getDefaultInstance)
+    .title(Component.translatable("itemGroup." + MOD_ID))
     .displayItems((parameters, output) -> {
       REGISTRY_HELPER.getItemSubHelper().getDeferredRegister().getEntries().forEach(item -> output.accept(item.get()));
     }).build());

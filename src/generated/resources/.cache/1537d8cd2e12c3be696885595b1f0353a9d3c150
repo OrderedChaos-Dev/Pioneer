@@ -1,2 +1,26 @@
-// 1.20.1	2024-07-25T20:10:35.2189851	Item Models: pioneer
+// 1.20.1	2024-08-25T19:37:46.8608665	Item Models: pioneer
+9b680e04814e1d7594ebc591cbc8ac336458387b assets/pioneer/models/item/aspen_boat.json
+e06b5e1110130b2c6d6fd7c65f13b6444d219055 assets/pioneer/models/item/aspen_chest_boat.json
+1387d0ee97e1f6102da56734500414cd6189f3fd assets/pioneer/models/item/baobab_boat.json
+d1c619f71ed97325e8de3e7f1939ee4f608335a7 assets/pioneer/models/item/baobab_chest_boat.json
+40209fdacb664bcb3e1cae361c4db84371550bed assets/pioneer/models/item/cottonwood_boat.json
+c80f813df12fcec4b27aede0c84d8afa437e65fb assets/pioneer/models/item/cottonwood_chest_boat.json
+8606ed5ac1683433f8ae11498085fbe263bcbaab assets/pioneer/models/item/fir_boat.json
+520d402ada602da8e763cbcde4ba2ac59a615a07 assets/pioneer/models/item/fir_chest_boat.json
+e3efe7e7ce742b4250695f5b58a04f9d319c490b assets/pioneer/models/item/joshua_boat.json
+6fd39a4976067e91fa4f25fa624f3e2f384c5131 assets/pioneer/models/item/joshua_chest_boat.json
 9ead5229a7c4ae1258b01258da83818e52457a42 assets/pioneer/models/item/juniper_berries.json
+f47478edc5308e0075cc5ac57da663a7c5f82b22 assets/pioneer/models/item/juniper_boat.json
+63f24fc1542c01b677af08c4140c6a0123a394d4 assets/pioneer/models/item/juniper_chest_boat.json
+d8ab06d2c9bdb6e66b960332dbea58d3e555e003 assets/pioneer/models/item/maple_boat.json
+a987373e1ef3e9ab3f11c24da37675dcf7237614 assets/pioneer/models/item/maple_chest_boat.json
+a7482571638066f774e07c89252ffe99b7a84a29 assets/pioneer/models/item/palm_boat.json
+c57b774053b7d1018bce2081bf9cea75c33bae31 assets/pioneer/models/item/palm_chest_boat.json
+2b58be2024266fc829ddb3c514dd7e6e64ae894b assets/pioneer/models/item/pine_boat.json
+9c2168fc8c2c8ead810d80bbf913d847e4f1ecaf assets/pioneer/models/item/pine_chest_boat.json
+8b09af42d6353d2e0fb220426e59a8633010b483 assets/pioneer/models/item/redwood_boat.json
+6670f2b9b7e56493b60787657136691bc94b9cf3 assets/pioneer/models/item/redwood_chest_boat.json
+e235c28c9d4a137b5c02e952292bfd599a7e8ac4 assets/pioneer/models/item/tamarack_boat.json
+0bc87ff4a4531059563dde2bd1f97189dd07dd9b assets/pioneer/models/item/tamarack_chest_boat.json
+271573fa635fe06d110ec6e3fcf4e419f5392cac assets/pioneer/models/item/willow_boat.json
+261fadb8689a40630bc33a2f0426567b2daecefa assets/pioneer/models/item/willow_chest_boat.json
