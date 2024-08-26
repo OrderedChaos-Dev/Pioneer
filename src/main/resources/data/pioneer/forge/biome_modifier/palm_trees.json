@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:beach",
+  "features": "pioneer:trees_palm",
+  "step": "vegetal_decoration"
+}

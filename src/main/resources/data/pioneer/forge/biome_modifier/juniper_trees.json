@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_badlands",
+  "features": "pioneer:trees_juniper",
+  "step": "vegetal_decoration"
+}

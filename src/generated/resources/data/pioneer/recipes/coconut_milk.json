@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "pioneer:cracked_coconut"
+    },
+    {
+      "item": "pioneer:cracked_coconut"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "item": "pioneer:coconut_milk"
+  }
+}

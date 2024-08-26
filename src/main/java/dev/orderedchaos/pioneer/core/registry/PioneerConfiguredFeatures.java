@@ -12,8 +12,6 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.AquaticFeatures;
 import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.TreeFeatures;
-import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
@@ -50,7 +48,6 @@ import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.OptionalInt;
@@ -117,6 +114,8 @@ public class PioneerConfiguredFeatures {
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_PRAIRIE  = createKey("trees_prairie");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CRYSTAL_LAKES  = createKey("trees_crystal_lakes");
   public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_DESERT_SHRUBLAND  = createKey("trees_desert_shrubland");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_JUNIPER  = createKey("trees_juniper");
+  public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_PALM  = createKey("trees_palm");
 
   public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
     HolderGetter<PlacedFeature> holderGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -182,6 +181,8 @@ public class PioneerConfiguredFeatures {
     register(context, TREES_PRAIRIE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.COTTONWOOD_CHECKED), 0.55F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.COTTONWOOD_BEES_005_CHECKED), 0.4F)), holderGetter.getOrThrow(PioneerPlacedFeatures.COTTONWOOD_CHECKED)));
     register(context, TREES_CRYSTAL_LAKES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED), 0.75F), new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PINE_CHECKED), 0.2F)), holderGetter.getOrThrow(PioneerPlacedFeatures.FIR_CHECKED)));
     register(context, TREES_DESERT_SHRUBLAND, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.JOSHUA_CHECKED), 0.8F)), holderGetter.getOrThrow(PioneerPlacedFeatures.JOSHUA_CHECKED)));
+    register(context, TREES_JUNIPER, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.JUNIPER_CHECKED), 0.8F)), holderGetter.getOrThrow(PioneerPlacedFeatures.JUNIPER_CHECKED)));
+    register(context, TREES_PALM, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holderGetter.getOrThrow(PioneerPlacedFeatures.PALM_CHECKED), 0.8F)), holderGetter.getOrThrow(PioneerPlacedFeatures.PALM_CHECKED)));
   }
 
   private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {

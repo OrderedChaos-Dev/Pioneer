@@ -1,4 +1,4 @@
-// 1.20.1	2024-08-25T20:37:40.7215449	Recipes
+// 1.20.1	2024-08-25T23:11:20.2001842	Recipes
 0d038208abc1a809d477ae66f5a3efe62e5f7a19 data/pioneer/advancements/recipes/building_blocks/aspen_planks.json
 135a22a183c0a1822d3aa2ab8189fbe15a4d94d0 data/pioneer/advancements/recipes/building_blocks/aspen_slab.json
 3ef99b09d3c317a530111a8ee810453fb3af6806 data/pioneer/advancements/recipes/building_blocks/aspen_stairs.json
@@ -95,6 +95,8 @@ f9aa87126c52c550ef99acd102eb3463ea79f07a data/pioneer/advancements/recipes/decor
 72f589fb49dbe427fe5db08b75be1fe1ff628579 data/pioneer/advancements/recipes/decorations/willow_fence.json
 df01d3c83c188edc84078655d2f8d522fdc5c386 data/pioneer/advancements/recipes/decorations/willow_hanging_sign.json
 8b7b1d65022e3299e1a26c54284d8f9929e34ee0 data/pioneer/advancements/recipes/decorations/willow_sign.json
+40032398ad36ff0dbea25b45c9051ed5c538b5c5 data/pioneer/advancements/recipes/food/coconut_milk.json
+4ff275c51f4455db7aae5169ddaae96638416903 data/pioneer/advancements/recipes/misc/cracked_coconut_from_coconut.json
 7b82e881712d087a7b102e98181e8878a92044b5 data/pioneer/advancements/recipes/redstone/aspen_button.json
 173ebe5c4b205abd7b62ab80d94198c4441d14c6 data/pioneer/advancements/recipes/redstone/aspen_door.json
 6c92d161c1f77814a7823e83ce2c5e1624bfb513 data/pioneer/advancements/recipes/redstone/aspen_fence_gate.json
@@ -209,6 +211,7 @@ ad0b0d8de18e701577dff97ee5d8527fbd8fc7a3 data/pioneer/recipes/baobab_stairs.json
 01f56a08717cd22792ca780e3f356775f5a10e68 data/pioneer/recipes/baobab_stripped_wood.json
 0faa8d96f04deddaf7a1c1f2998a925f7f96a94b data/pioneer/recipes/baobab_trapdoor.json
 382754697bae3582972c2290ef28427709b8fc5a data/pioneer/recipes/baobab_wood.json
+fa7f91300047042c7dc0263564e70bdca95f9af9 data/pioneer/recipes/coconut_milk.json
 9f9568efc3ebcc5354a5a71d77b4d408068758d6 data/pioneer/recipes/cottonwood_boat.json
 9995b79eb261db2663d85351e710356e7e60d471 data/pioneer/recipes/cottonwood_button.json
 5e7b7cdc78c993aa917e371014e7d748514531f8 data/pioneer/recipes/cottonwood_chest_boat.json
@@ -224,6 +227,7 @@ cc0fde4bb8034bbeee9afbe43cf8bcb30166ec0c data/pioneer/recipes/cottonwood_stairs.
 cf11fc4fc8304457e1bbc8ec4ace4f22b184628a data/pioneer/recipes/cottonwood_stripped_wood.json
 21f9e2f315cb54d2fb1c3ee3a6617e1574d940ae data/pioneer/recipes/cottonwood_trapdoor.json
 0b99780be0ae508e656a90293f2410ba44da4b9e data/pioneer/recipes/cottonwood_wood.json
+d9d6f00d37666fe0b40dcdbfe6e6135b3a374945 data/pioneer/recipes/cracked_coconut_from_coconut.json
 1132b7eef2e9d9e633083599305eee9360bb3f92 data/pioneer/recipes/fir_boat.json
 4911340e6ee514cafbb85fcfa767c0ea32a097a5 data/pioneer/recipes/fir_button.json
 4876f5d938322e25737c656d4aac7e458c8f7a24 data/pioneer/recipes/fir_chest_boat.json

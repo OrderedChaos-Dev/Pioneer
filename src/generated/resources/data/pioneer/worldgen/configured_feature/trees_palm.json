@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "pioneer:palm_checked",
+    "features": [
+      {
+        "chance": 0.8,
+        "feature": "pioneer:palm_checked"
+      }
+    ]
+  }
+}

@@ -3,16 +3,12 @@ package dev.orderedchaos.pioneer.core.registry;
 import dev.orderedchaos.pioneer.core.Pioneer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.AquaticFeatures;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
-import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -21,8 +17,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
@@ -90,6 +84,8 @@ public class PioneerPlacedFeatures {
   public static final ResourceKey<PlacedFeature> TREES_CRYSTAL_LAKES  = createKey("trees_crystal_lakes");
   public static final ResourceKey<PlacedFeature> TREES_DESERT_SHRUBLAND = createKey("trees_desert_shrubland");
   public static final ResourceKey<PlacedFeature> TREES_FLOODED_FOREST = createKey("trees_flooded_forest");
+  public static final ResourceKey<PlacedFeature> TREES_JUNIPER  = createKey("trees_juniper");
+  public static final ResourceKey<PlacedFeature> TREES_PALM  = createKey("trees_palm");
 
   public static void bootstrap(BootstapContext<PlacedFeature> context) {
     register(context, PATCH_MANY_CACTUS, VegetationFeatures.PATCH_CACTUS, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -152,6 +148,8 @@ public class PioneerPlacedFeatures {
     register(context, TREES_CRYSTAL_LAKES, PioneerConfiguredFeatures.TREES_CRYSTAL_LAKES, VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.1F, 1)));
     register(context, TREES_DESERT_SHRUBLAND, PioneerConfiguredFeatures.TREES_DESERT_SHRUBLAND, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.2F, 1)));
     register(context, TREES_FLOODED_FOREST, VegetationFeatures.TREES_BIRCH_AND_OAK,PlacementUtils.countExtra(10, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(4), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)));
+    register(context, TREES_PALM, PioneerConfiguredFeatures.TREES_PALM, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
+    register(context, TREES_JUNIPER, PioneerConfiguredFeatures.TREES_JUNIPER, VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.04F, 1)));
   }
 
   private static ResourceKey<PlacedFeature> createKey(String name) {

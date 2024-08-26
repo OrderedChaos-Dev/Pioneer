@@ -54,7 +54,7 @@ public class PioneerBlockLoot extends BlockLootSubProvider {
 
     this.add(PioneerBlocks.BERRIED_JUNIPER_LEAVES.get(),
       block -> this.createLeavesDrops(block, PioneerBlocks.JUNIPER.sapling().get(), NORMAL_LEAVES_SAPLING_CHANCES)
-        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(PioneerItems.JUNIPER_BERRIES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))));
+        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(PioneerItems.JUNIPER_BERRIES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))));
 
     this.dropSelf(PioneerBlocks.ORANGE_MAPLE_SAPLING.get());
     this.dropSelf(PioneerBlocks.PURPLE_MAPLE_SAPLING.get());

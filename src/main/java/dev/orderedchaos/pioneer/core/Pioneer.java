@@ -3,7 +3,6 @@ package dev.orderedchaos.pioneer.core;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
-import dev.orderedchaos.pioneer.Config;
 import dev.orderedchaos.pioneer.core.registry.*;
 import dev.orderedchaos.pioneer.core.registry.util.WoodTypeUtil;
 import dev.orderedchaos.pioneer.data.client.PioneerBlockStateProvider;
@@ -19,15 +18,12 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -69,8 +65,6 @@ public class Pioneer {
     modEventBus.addListener(this::commonSetup);
     modEventBus.addListener(this::clientSetup);
     modEventBus.addListener(this::dataSetup);
-
-    ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
   }
 
   private void commonSetup(final FMLCommonSetupEvent event) {

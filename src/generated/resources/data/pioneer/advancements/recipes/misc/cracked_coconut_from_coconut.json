@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coconut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pioneer:coconut"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pioneer:cracked_coconut_from_coconut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coconut",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pioneer:cracked_coconut_from_coconut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -10,6 +10,7 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LeavesBlock;
@@ -31,7 +32,7 @@ public class BerriedJuniperLeavesBlock extends LeavesBlock {
   @Override
   public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult brt) {
     if(player.mayBuild()) {
-      Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(PioneerItems.JUNIPER_BERRIES.get(), 1 + world.getRandom().nextInt(2)));
+      popResource(world, pos, new ItemStack(PioneerItems.JUNIPER_BERRIES.get(), 1 + world.getRandom().nextInt(2)));
       world.setBlock(pos, PioneerBlocks.JUNIPER.leaves().get().defaultBlockState().setValue(PERSISTENT, state.getValue(PERSISTENT)), 2);
     }
     return InteractionResult.SUCCESS;

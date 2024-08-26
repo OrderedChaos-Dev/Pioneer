@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "pioneer:juniper_checked",
+    "features": [
+      {
+        "chance": 0.8,
+        "feature": "pioneer:juniper_checked"
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-30T20:29:23.3359677	Loot Tables
+// 1.20.1	2024-08-25T23:14:57.1531384	Loot Tables
 bbafef99fb46f9b7a18adb2c4d6d9f673cf204e6 data/pioneer/loot_tables/blocks/aspen_button.json
 013b9d54d7730b0a9a4a95cf168f649724f50b33 data/pioneer/loot_tables/blocks/aspen_door.json
 182b6b34a8b6301f00c58634b24bb2ecc59669ea data/pioneer/loot_tables/blocks/aspen_fallen_leaves.json
@@ -34,7 +34,7 @@ f96d8fec3d9c8cc32bebd0e54a8b4c05d7f30a4b data/pioneer/loot_tables/blocks/baobab_
 22481f1e21545e4d39c60a5aa7a634069c9ebbbc data/pioneer/loot_tables/blocks/baobab_stripped_wood.json
 63e34e370c984e8ad8fbe23ea42624a0a9a9cf8f data/pioneer/loot_tables/blocks/baobab_trapdoor.json
 853778e7a7266a5d80a9a5293927672e20ab61ae data/pioneer/loot_tables/blocks/baobab_wood.json
-0f6fc43d67da7da0dfa7f092147b0e657d83c473 data/pioneer/loot_tables/blocks/berried_juniper_leaves.json
+6aa524e709d44a57f9f5d84389969b4fbead2bb5 data/pioneer/loot_tables/blocks/berried_juniper_leaves.json
 6e97e5a3740cc37404ce257a22ce20b99bf2a670 data/pioneer/loot_tables/blocks/blooming_desert_agave.json
 4d3f6ebbee0d60689d44207ac9dc939d401065ef data/pioneer/loot_tables/blocks/coconut.json
 a3d3df39c0320a52c3039ff8ca4e287d6f96d222 data/pioneer/loot_tables/blocks/cottonwood_button.json
